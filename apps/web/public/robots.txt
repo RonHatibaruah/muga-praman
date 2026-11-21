@@ -1,0 +1,12 @@
+# Robots.txt for Assam Muga Silk Digital Traceability Platform (NESFIC-D-41)
+# Department of Handloom, Textiles & Sericulture, Government of Assam
+
+User-agent: *
+Allow: /
+Allow: /api/verify/
+Allow: /api/health
+Disallow: /api/admin/
+Disallow: /functions/
+
+# Geographic and Search Engine Sitemaps
+Sitemap: https://muga-trace.assam.gov.in/sitemap.xml

@@ -1,9 +1,11 @@
 :root {
-  --primary-tea: #1b4d3e;
-  --primary-light: #2c6e58;
+  --primary-muga: #78350f;
+  --primary-tea: #78350f; /* backward-compat alias */
+  --primary-light: #92400e;
   --accent-gold: #c59b27;
-  --accent-amber: #e6a117;
-  --bg-sand: #f8f6f0;
+  --accent-amber: #f59e0b;
+  --royal-maroon: #831843;
+  --bg-sand: #fbf9f4;
   --card-bg: #ffffff;
   --text-dark: #1f2937;
   --text-muted: #6b7280;
@@ -27,7 +29,7 @@ body {
 }
 
 header {
-  background: linear-gradient(135deg, #123524 0%, #1b4d3e 100%);
+  background: linear-gradient(135deg, #2a081d 0%, #4a0e2e 45%, #78350f 100%);
   color: #fff;
   padding: 1.25rem 2rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -119,7 +121,7 @@ header {
 
 .gi-tag-pill {
   background: #fef3c7;
-  color: #92400e;
+  color: #78350f;
   font-size: 0.8rem;
   font-weight: 700;
   padding: 0.4rem 0.75rem;
@@ -127,7 +129,33 @@ header {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  border: 1px solid #fde68a;
+  border: 1.5px solid #f59e0b;
+}
+
+.silk-mark-pill {
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.4rem 0.75rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1.5px solid #7dd3fc;
+}
+
+.cmerti-pill {
+  background: #ecfdf5;
+  color: #065f46;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.4rem 0.75rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1.5px solid #6ee7b7;
 }
 
 .tocklai-pill {

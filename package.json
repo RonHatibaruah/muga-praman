@@ -1,8 +1,8 @@
 {
-  "name": "nesfic-i08-tea-traceability",
+  "name": "muga-praman-nesfic-d41",
   "version": "1.0.0",
   "private": true,
-  "description": "End-to-End Digital Traceability of Tea Across the Assam Tea Value Chain (NESFIC-I-08)",
+  "description": "Digital Traceability and Non-Destructive Authentication of Muga Silk and Apparel from Cocoon to Consumer (NESFIC-D-41)",
   "workspaces": [
     "packages/*",
     "apps/*"
@@ -14,17 +14,21 @@
     "dev:api": "npm run --workspace=apps/api dev",
     "dev:web": "npm run --workspace=apps/web dev",
     "build:cloudflare": "echo '✅ Cloudflare Pages assets ready at apps/web/public'",
-    "deploy:cloudflare": "npx wrangler pages deploy apps/web/public --project-name=chah-praman",
+    "deploy:cloudflare": "npx wrangler pages deploy apps/web/public --project-name=muga-praman",
     "dev:cloudflare": "npx wrangler pages dev apps/web/public"
   },
   "keywords": [
-    "assam-tea",
+    "muga-silk",
     "nesfic-2026",
+    "nesfic-d-41",
+    "assam-sericulture",
+    "non-destructive-spectroscopy",
+    "sualkuchi-handloom",
+    "gi-tag-38",
+    "silk-mark",
+    "cmerti-lahdoigarh",
     "blockchain",
-    "traceability",
-    "tocklai",
-    "iot",
-    "gi-tag"
+    "traceability"
   ],
   "author": "NESFIC Innovators",
   "license": "Apache-2.0"

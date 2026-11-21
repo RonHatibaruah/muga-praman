@@ -1,70 +1,113 @@
-import { STGProfile } from "./types.js";
+import { RearerProfile, WeaverProfile } from "./types.js";
 
-export const ASSAM_DISTRICTS = [
-  "Jorhat",
-  "Dibrugarh",
-  "Tinsukia",
-  "Golaghat",
+export const ASSAM_SERICULTURE_DISTRICTS = [
+  "Kamrup (Sualkuchi)",
+  "Lakhimpur (Dhakuakhana)",
+  "Dhemaji",
   "Sivasagar",
-  "Sonitpur",
-  "Cachar",
+  "Jorhat (Lahdoigarh)",
+  "Golaghat",
+  "Goalpara",
 ] as const;
 
-export const TRA_PPC_PESTICIDE_LIMITS = [
-  { chemical: "Emamectin Benzoate", maxPpm: 0.05, unit: "ppm" },
-  { chemical: "Quinalphos", maxPpm: 0.01, unit: "ppm" },
-  { chemical: "Hexaconazole", maxPpm: 0.10, unit: "ppm" },
-  { chemical: "Thiamethoxam", maxPpm: 0.05, unit: "ppm" },
-  { chemical: "Propargite", maxPpm: 5.00, unit: "ppm" },
-  { chemical: "Azoxystrobin", maxPpm: 0.10, unit: "ppm" },
-];
+export const CMERTI_SPECTRAL_STANDARDS = {
+  pureMugaFibroinMin: 98.0, // Minimum % pure Antheraea assamensis fibroin required for GI-38 authorization
+  toleranceBandPct: 2.0,
+  keyAbsorptionPeaks: [
+    { name: "Amide I (C=O stretch, beta-sheet fibroin)", wavenumberCm1: 1650, expectedMin: 0.65, expectedMax: 0.95 },
+    { name: "Amide II (N-H bend, C-N stretch)", wavenumberCm1: 1520, expectedMin: 0.50, expectedMax: 0.85 },
+    { name: "Amide III (C-N stretch, N-H in-plane)", wavenumberCm1: 1235, expectedMin: 0.35, expectedMax: 0.65 },
+    { name: "Sericin Residue (Degumming check)", wavenumberCm1: 1400, expectedMin: 0.05, expectedMax: 0.20 },
+  ],
+  adulterantSignatures: {
+    polyesterEsterPeakCm1: 1720, // Distinct ester carbonyl stretch absent in natural silk
+    nylonMethylenePeakCm1: 2930,
+    viscoseCellulosePeakCm1: 1050,
+  },
+};
 
-export const SAMPLE_GROWERS: STGProfile[] = [
+export const SAMPLE_REARERS: RearerProfile[] = [
   {
-    id: "STG-JHT-001",
-    name: "Mukund Saikia",
-    assameseName: "মুকুন্দ শইকীয়া",
-    teaBoardRegNo: "TB-AS-JHT-44012",
-    district: "Jorhat",
-    estateName: "Borbhetta Smallholding Cluster #4",
+    id: "REAR-LAK-001",
+    name: "Bhaben Chutia",
+    assameseName: "ভবেন চুতীয়া",
+    sericultureCardNo: "SERI-AS-LAK-1029",
+    district: "Lakhimpur",
+    village: "Dhakuakhana Muga Reserve",
+    hostPlantSpecies: "Som (Persea bombycina)",
+    totalHostTrees: 280,
+    cropSeason: "Katia (Autumn)",
     giCertified: true,
     walletAddress: "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
-    polygonCoordinates: [
-      { lat: 26.7512, lng: 94.2155 },
-      { lat: 26.7535, lng: 94.2182 },
-      { lat: 26.7508, lng: 94.2210 },
-      { lat: 26.7485, lng: 94.2178 },
+    farmPolygon: [
+      { lat: 27.2412, lng: 94.4515, cadastralDag: "Dag #118/340", cadastralPatta: "Periodic Patta #24" },
+      { lat: 27.2435, lng: 94.4538, cadastralDag: "Dag #119/341", cadastralPatta: "Periodic Patta #24" },
+      { lat: 27.2408, lng: 94.4565, cadastralDag: "Dag #120/342", cadastralPatta: "Periodic Patta #25" },
+      { lat: 27.2385, lng: 94.4528, cadastralDag: "Dag #118/340", cadastralPatta: "Periodic Patta #24" },
     ],
   },
   {
-    id: "STG-DIB-002",
-    name: "Pronab Gogoi",
-    assameseName: "প্ৰণৱ গগৈ",
-    teaBoardRegNo: "TB-AS-DIB-18920",
-    district: "Dibrugarh",
-    estateName: "Moran Small Tea Growers Co-Op",
+    id: "REAR-DHE-002",
+    name: "Hemanta Borgohain",
+    assameseName: "হেমন্ত বৰগোহাঁই",
+    sericultureCardNo: "SERI-AS-DHE-4081",
+    district: "Dhemaji",
+    village: "Jonai Sericulture Belt",
+    hostPlantSpecies: "Soalu (Litsea polyantha)",
+    totalHostTrees: 340,
+    cropSeason: "Jethua (Spring)",
     giCertified: true,
     walletAddress: "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
-    polygonCoordinates: [
-      { lat: 27.2845, lng: 94.9211 },
-      { lat: 27.2882, lng: 94.9256 },
-      { lat: 27.2851, lng: 94.9302 },
-      { lat: 27.2818, lng: 94.9248 },
+    farmPolygon: [
+      { lat: 27.4845, lng: 94.5811, cadastralDag: "Dag #205/612", cadastralPatta: "Myadi Patta #88" },
+      { lat: 27.4882, lng: 94.5856, cadastralDag: "Dag #206/613", cadastralPatta: "Myadi Patta #88" },
+      { lat: 27.4851, lng: 94.5902, cadastralDag: "Dag #207/614", cadastralPatta: "Myadi Patta #89" },
+      { lat: 27.4818, lng: 94.5848, cadastralDag: "Dag #205/612", cadastralPatta: "Myadi Patta #88" },
     ],
   },
   {
-    id: "EST-TIN-003",
-    name: "Doom Dooma Heritage Estate",
-    teaBoardRegNo: "TB-AS-TIN-00108",
-    district: "Tinsukia",
-    estateName: "Doom Dooma Division North",
+    id: "REAR-SIV-003",
+    name: "Sivasagar Heritage Sericulture Farm",
+    sericultureCardNo: "SERI-AS-SIV-0044",
+    district: "Sivasagar",
+    village: "Joysagar Sericulture Complex",
+    hostPlantSpecies: "Mixed Agroforestry",
+    totalHostTrees: 520,
+    cropSeason: "Katia (Autumn)",
     giCertified: true,
     walletAddress: "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
-    polygonCoordinates: [
-      { lat: 27.5688, lng: 95.5712 },
-      { lat: 27.5745, lng: 95.5789 },
-      { lat: 27.5692, lng: 95.5862 },
-      { lat: 27.5634, lng: 95.5791 },
+    farmPolygon: [
+      { lat: 26.9688, lng: 94.6312, cadastralDag: "Dag #512/890", cadastralPatta: "Govt Institutional Grant #04" },
+      { lat: 26.9745, lng: 94.6389, cadastralDag: "Dag #513/891", cadastralPatta: "Govt Institutional Grant #04" },
+      { lat: 26.9692, lng: 94.6462, cadastralDag: "Dag #514/892", cadastralPatta: "Govt Institutional Grant #04" },
+      { lat: 26.9634, lng: 94.6391, cadastralDag: "Dag #512/890", cadastralPatta: "Govt Institutional Grant #04" },
     ],
+  },
+];
+
+export const SAMPLE_WEAVERS: WeaverProfile[] = [
+  {
+    id: "WEAV-SUA-001",
+    name: "Prabin Baishya",
+    assameseName: "প্ৰবীন বৈশ্য",
+    artisanPehchanCard: "PEHCHAN-AS-KAM-09941",
+    cluster: "Sualkuchi",
+    cooperativeSociety: "Sualkuchi Resham Samabai Samiti Ltd.",
+    loomType: "Jacquard Pattern Loom",
+    registeredLooms: 6,
+    giAuthorizedUserNo: "GI-38-AUTH-AS-102",
+    walletAddress: "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+  },
+  {
+    id: "WEAV-SUA-002",
+    name: "Hemaprabha Das",
+    assameseName: "হেমপ্ৰভা দাস",
+    artisanPehchanCard: "PEHCHAN-AS-KAM-14520",
+    cluster: "Sualkuchi",
+    cooperativeSociety: "Silkalay Master Artisans Guild",
+    loomType: "Traditional Throw-Shuttle",
+    registeredLooms: 4,
+    giAuthorizedUserNo: "GI-38-AUTH-AS-108",
+    walletAddress: "0x9965507D1a55bcC2695C58ba16FB37d819B0A4df",
   },
 ];

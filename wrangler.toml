@@ -1,10 +1,10 @@
-name = "chah-praman"
+name = "muga-praman"
 compatibility_date = "2024-11-01"
 pages_build_output_dir = "apps/web/public"
 
 [vars]
 ENVIRONMENT = "production"
-CHALLENGE_CODE = "NESFIC-I-08"
-ORGANIZATION = "Tea Research Association (TRA) Tocklai"
+CHALLENGE_CODE = "NESFIC-D-41"
+ORGANIZATION = "Department of Handloom, Textiles & Sericulture, Government of Assam"
 LEAD_DEVELOPER = "Ron Hatibaruah"
 CONTACT_EMAIL = "ron.hatibaruah@gmail.com"

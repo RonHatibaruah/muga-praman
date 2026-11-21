@@ -1,7 +1,12 @@
 /**
- * Frontend Application Logic for Assam Tea Digital Traceability (NESFIC-I-08)
- * Features: Multi-district batches, Admin GI Authority, PPC Agrochemical Inspector,
- * Certificate Exporter, Packaging Stamp Generator, and Toast Notifications.
+ * Frontend Application Logic for Assam Muga Silk Digital Traceability (NESFIC-D-41)
+ * Department of Handloom, Textiles & Sericulture, Government of Assam
+ * Features:
+ * - Non-Destructive NIR & Raman Spectroscopy Authentication (Amide I, II, III peaks)
+ * - Cocoon-to-Consumer Provenance Timeline (Rearing -> Cocoon Bank -> Reeling -> Sualkuchi Loom -> Lab)
+ * - Assam GI Tag #38 & Silk Mark India Cryptographic Certification
+ * - Cadastral GIS Land Parcel Surveillance (Dharitree Dag & Patta for Som/Soalu plantations)
+ * - Multi-Role Admin Governance Panel with 6 administrative sub-modules
  */
 
 // Dynamically detect local dev vs Cloudflare production deployment
@@ -9,1081 +14,1212 @@ const API_BASE = (window.location.hostname === "localhost" || window.location.ho
   ? "http://localhost:4000/api"
   : (window.location.port === "3000" ? "http://localhost:4000/api" : "/api");
 
-// 6 Authentic Assam Batches (Synced with backend seed data)
+// 6 Authentic Assam Muga Silk Batches (Synced with backend seed data)
 let fallbackBatches = [
   {
-    id: "ASM-2026-CTC-001",
+    id: "MUG-2026-MS-001",
     stage: "RETAIL_PACKAGED",
-    plucking: {
-      growerId: "STG-JHT-001",
-      growerName: "Mukund Saikia (মুকুন্দ শইকীয়া)",
-      gardenName: "Borbhetta Smallholding Cluster #4",
-      district: "Jorhat",
-      sectionId: "Sec-7B-TV23-Clone",
-      gps: { lat: 26.7512, lng: 94.2155, elevationMeters: 96 },
-      estimatedWeightKg: 420.0,
-      verifiedWeightKg: 418.5,
-      pluckingTime: "2026-11-18T07:45:00+05:30",
-      weighbridgeId: "WB-JHT-BLF-02",
+    apparelType: "MEKHELA_SADOR",
+    productTitle: "Heritage Sualkuchi Kingkhap Muga Mekhela Sador (কিংকাপ মেখেলা চাদৰ)",
+    rearing: {
+      rearerId: "REAR-LAK-001",
+      rearerName: "Bhaben Chutia (ভবেন চুতীয়া)",
+      district: "Lakhimpur",
+      hostPlantSpecies: "Som (Persea bombycina)",
+      dflBatchNo: "DFL-2026-KATIA-084",
+      pebrineFreeCertified: true,
+      cropSeason: "Katia (Autumn)",
+      gps: { lat: 27.2412, lng: 94.4515, elevationMeters: 102, cadastralDag: "Dag #118/340", cadastralPatta: "Periodic Patta #24" },
+      cocoonCount: 12000,
+      cocoonWeightKg: 18.5,
+      harvestDate: "2026-10-15T08:30:00+05:30",
     },
-    processing: {
-      factoryId: "FAC-JHT-01",
-      factoryName: "Tocklai Valley Bought Leaf Factory",
-      procType: "CTC",
-      grade: "BOP (Broken Orange Pekoe)",
-      intakeWeightKg: 418.5,
-      madeTeaWeightKg: 94.2,
-      witheringLossPct: 32.4,
-      fermentationDurationHrs: 2.5,
-      dryingTempC: 115,
-      completedTime: "2026-11-19T14:30:00+05:30",
+    cocoonMarket: {
+      marketId: "MKT-LAK-01",
+      marketName: "Dhakuakhana Government Cocoon Market & Cocoon Bank",
+      inspectorName: "D. Hazarika (Sericulture Inspector)",
+      cocoonGrade: "Grade A (Prime)",
+      shellRatioPct: 10.8,
+      rawWeightKg: 18.2,
+      ratePerThousandRs: 2200,
+      mspCompliant: true,
+      intakeDate: "2026-10-18T11:00:00+05:30",
     },
-    labTest: {
-      certifierId: "LAB-NABL-088",
-      labName: "TRA Tocklai Quality & Chemical Residue Lab",
-      accreditationNo: "NABL TC-5421",
-      ipfsHash: "QmTRA9942TocklaiChemicalMRLPassCert",
-      testDate: "2026-11-19T18:00:00+05:30",
-      pesticideMRLStatus: "COMPLIANT",
-      parameters: [
-        { chemical: "Emamectin Benzoate", foundPpm: 0.012, maxPermissibleLimitPpm: 0.05, pass: true },
-        { chemical: "Quinalphos", foundPpm: 0.002, maxPermissibleLimitPpm: 0.01, pass: true },
-        { chemical: "Hexaconazole", foundPpm: 0.035, maxPermissibleLimitPpm: 0.10, pass: true },
-        { chemical: "Thiamethoxam", foundPpm: 0.015, maxPermissibleLimitPpm: 0.05, pass: true },
+    reeling: {
+      reelerId: "REEL-SUA-04",
+      reelerName: "Sualkuchi Silk Reeling & Twisting Co-Op",
+      clusterLocation: "Sualkuchi, Kamrup",
+      reelingMethod: "CSTRI Motorized Reeling Machine",
+      denierCount: 38,
+      filamentContinuityMeters: 480,
+      rawSilkYieldGrams: 1450,
+      reelingCompletedDate: "2026-10-24T16:00:00+05:30",
+    },
+    weaving: {
+      weaverId: "WEAV-SUA-001",
+      weaverName: "Prabin Baishya (প্ৰবীন বৈশ্য)",
+      cluster: "Sualkuchi",
+      loomId: "LOOM-SUA-JACQ-018",
+      apparelType: "MEKHELA_SADOR",
+      designMotif: "Traditional Kingkhap (কিংকাপ) with Gold Maku Shuttle",
+      warpCountDenier: 38,
+      weftCountDenier: 40,
+      dimensionsMeters: "Mekhela 2.45m x 0.95m, Sador 2.80m x 1.05m",
+      wovenWeightGrams: 820,
+      artisanFairWagePaidRs: 14500,
+      weavingCompletedDate: "2026-11-08T18:00:00+05:30",
+    },
+    spectralAnalysis: {
+      certifierId: "LAB-CMERTI-01",
+      labName: "Central Muga Eri Research & Training Institute (CMER&TI), Lahdoigarh",
+      accreditationNo: "NABL TC-8842",
+      instrumentType: "Handheld Portable NIR Spectrometer",
+      spectralScanHash: "0x4e9b81f12a3d09c687e1f4095a8820cbb71e2908f4c173d19a28e51b32d56a71",
+      ipfsHash: "QmCMERTI9941PureMugaSpectralPassCert",
+      testDate: "2026-11-12T14:30:00+05:30",
+      purityScorePct: 99.4,
+      adulterationDetected: false,
+      spectralBands: [
+        { peakName: "Amide I (C=O beta-sheet)", targetWavenumberCm1: 1650, measuredAbsorbance: 0.88, expectedMin: 0.65, expectedMax: 0.95, conforms: true },
+        { peakName: "Amide II (N-H bend)", targetWavenumberCm1: 1520, measuredAbsorbance: 0.76, expectedMin: 0.50, expectedMax: 0.85, conforms: true },
+        { peakName: "Amide III (C-N in-plane)", targetWavenumberCm1: 1235, measuredAbsorbance: 0.54, expectedMin: 0.35, expectedMax: 0.65, conforms: true },
+        { peakName: "Natural Sericin Check", targetWavenumberCm1: 1400, measuredAbsorbance: 0.11, expectedMin: 0.05, expectedMax: 0.20, conforms: true },
       ],
-      moisturePercentage: 3.2,
-      fssaiStandardMet: true,
+      silkMarkIssued: true,
+      silkMarkSerialNo: "SMOI-ASM-MUG-2026-00441",
     },
-    auctionLotNo: "GTAC-2026-W47-LOT402",
-    custodian: "Assam Heritage Tea Exporters Ltd.",
-    serializedQrCode: "QR-ASM26-8894-X82F",
+    retailCustodian: "Assam Apex Weavers & Artisans Co-Operative Federation (ARTFED)",
+    serializedQrCode: "QR-MUG26-8894-X82F",
+    nfcTagUid: "04:5A:22:9C:F1:80:3D",
     giTagAuthorized: true,
-    giCertNumber: "GI-IN-ASM-TEA-00441",
+    giCertNumber: "#GI-IN-ASM-MUG-0038-00441",
     blockchainTxHash: "0x8f3c7e99214b2a65d38a719c84e1bfa74319a92289410d55e925bca34821a812",
   },
   {
-    id: "ASM-2026-ORT-002",
-    stage: "FACTORY_PROCESSED",
-    plucking: {
-      growerId: "STG-DIB-002",
-      growerName: "Pronab Gogoi (প্ৰণৱ গগৈ)",
-      gardenName: "Moran Small Tea Growers Co-Op",
-      district: "Dibrugarh",
-      sectionId: "Heritage-Old-China-Bush-Sec3",
-      gps: { lat: 27.2845, lng: 94.9211, elevationMeters: 108 },
-      estimatedWeightKg: 280.0,
-      verifiedWeightKg: 279.0,
-      pluckingTime: "2026-11-20T08:15:00+05:30",
-      weighbridgeId: "WB-DIB-MORAN-01",
+    id: "MUG-2026-SAR-002",
+    stage: "HANDLOOM_WOVEN",
+    apparelType: "TRADITIONAL_SAREE",
+    productTitle: "Royal Temple Border 5.5m Pure Muga Saree (মুগা শাৰী)",
+    rearing: {
+      rearerId: "REAR-DHE-002",
+      rearerName: "Hemanta Borgohain (হেমন্ত বৰগোহাঁই)",
+      district: "Dhemaji",
+      hostPlantSpecies: "Soalu (Litsea polyantha)",
+      dflBatchNo: "DFL-2026-JETHUA-022",
+      pebrineFreeCertified: true,
+      cropSeason: "Jethua (Spring)",
+      gps: { lat: 27.4845, lng: 94.5811, elevationMeters: 114, cadastralDag: "Dag #205/612", cadastralPatta: "Myadi Patta #88" },
+      cocoonCount: 15000,
+      cocoonWeightKg: 22.8,
+      harvestDate: "2026-11-02T09:00:00+05:30",
     },
-    processing: {
-      factoryId: "FAC-DIB-04",
-      factoryName: "Moran Specialty Orthodox Tea Factory",
-      procType: "ORTHODOX",
-      grade: "TGFOP1 (Tippy Golden Flowery Orange Pekoe)",
-      intakeWeightKg: 279.0,
-      madeTeaWeightKg: 61.5,
-      witheringLossPct: 35.0,
-      fermentationDurationHrs: 3.8,
-      dryingTempC: 98,
-      completedTime: "2026-11-20T18:00:00+05:30",
+    cocoonMarket: {
+      marketId: "MKT-DHE-02",
+      marketName: "Jonai Government Sericulture Farm & Cocoon Bank",
+      inspectorName: "R. Borah",
+      cocoonGrade: "Grade A (Prime)",
+      shellRatioPct: 10.4,
+      rawWeightKg: 22.5,
+      ratePerThousandRs: 2150,
+      mspCompliant: true,
+      intakeDate: "2026-11-05T10:30:00+05:30",
     },
-    custodian: "Moran Specialty Orthodox Tea Factory",
-    serializedQrCode: "QR-ASM26-ORT-PENDING-02",
+    reeling: {
+      reelerId: "REEL-DHE-01",
+      reelerName: "Jonai Sericulture Mahila Samabai",
+      clusterLocation: "Jonai, Dhemaji",
+      reelingMethod: "CSTRI Motorized Reeling Machine",
+      denierCount: 36,
+      filamentContinuityMeters: 510,
+      rawSilkYieldGrams: 1800,
+      reelingCompletedDate: "2026-11-10T15:00:00+05:30",
+    },
+    weaving: {
+      weaverId: "WEAV-SUA-002",
+      weaverName: "Hemaprabha Das (হেমপ্ৰভা দাস)",
+      cluster: "Sualkuchi",
+      loomId: "LOOM-SUA-THROW-007",
+      apparelType: "TRADITIONAL_SAREE",
+      designMotif: "Traditional Temple Border (দৌল আৰ্হি) with Peacock motifs",
+      warpCountDenier: 36,
+      weftCountDenier: 38,
+      dimensionsMeters: "5.50m length x 1.15m width",
+      wovenWeightGrams: 750,
+      artisanFairWagePaidRs: 16200,
+      weavingCompletedDate: "2026-11-19T17:00:00+05:30",
+    },
+    retailCustodian: "Silkalay Master Artisans Guild, Sualkuchi",
+    serializedQrCode: "QR-MUG26-SAR-PENDING-02",
     giTagAuthorized: true,
-    giCertNumber: "GI-IN-ASM-TEA-00442",
+    giCertNumber: "#GI-IN-ASM-MUG-0038-00442",
     blockchainTxHash: "0x3a4b9c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b",
   },
   {
-    id: "EST-TIN-003",
-    stage: "LAB_CERTIFIED",
-    plucking: {
-      growerId: "EST-TIN-003",
-      growerName: "Doom Dooma Heritage Estate",
-      gardenName: "Doom Dooma Division North",
-      district: "Tinsukia",
-      sectionId: "Sec-DoomDooma-A1",
-      gps: { lat: 27.5688, lng: 95.5712, elevationMeters: 122 },
-      estimatedWeightKg: 850.0,
-      verifiedWeightKg: 846.0,
-      pluckingTime: "2026-11-19T06:30:00+05:30",
-      weighbridgeId: "WB-TIN-DD-01",
+    id: "MUG-2026-YRN-003",
+    stage: "REELED_FILAMENT",
+    apparelType: "FABRIC_YARDAGE",
+    productTitle: "Certified 35-Denier Muga Filament Hanks (মুগা সূতা)",
+    rearing: {
+      rearerId: "REAR-LAK-001",
+      rearerName: "Bhaben Chutia (ভবেন চুতীয়া)",
+      district: "Lakhimpur",
+      hostPlantSpecies: "Som (Persea bombycina)",
+      dflBatchNo: "DFL-2026-KATIA-089",
+      pebrineFreeCertified: true,
+      cropSeason: "Katia (Autumn)",
+      gps: { lat: 27.2412, lng: 94.4515, elevationMeters: 102, cadastralDag: "Dag #118/340", cadastralPatta: "Periodic Patta #24" },
+      cocoonCount: 8000,
+      cocoonWeightKg: 12.0,
+      harvestDate: "2026-11-14T08:00:00+05:30",
     },
-    processing: {
-      factoryId: "FAC-TIN-02",
-      factoryName: "Doom Dooma Central Processing Plant",
-      procType: "CTC",
-      grade: "BP (Broken Pekoe - Bold Liquor)",
-      intakeWeightKg: 846.0,
-      madeTeaWeightKg: 194.5,
-      witheringLossPct: 31.8,
-      fermentationDurationHrs: 2.3,
-      dryingTempC: 118,
-      completedTime: "2026-11-19T20:00:00+05:30",
+    cocoonMarket: {
+      marketId: "MKT-LAK-01",
+      marketName: "Dhakuakhana Government Cocoon Market",
+      inspectorName: "D. Hazarika",
+      cocoonGrade: "Grade A (Prime)",
+      shellRatioPct: 10.9,
+      rawWeightKg: 11.9,
+      ratePerThousandRs: 2200,
+      mspCompliant: true,
+      intakeDate: "2026-11-16T09:30:00+05:30",
     },
-    labTest: {
-      certifierId: "LAB-TIN-NABL-02",
-      labName: "Upper Assam Chemical Residue Center",
-      accreditationNo: "NABL TC-6104",
-      ipfsHash: "QmTinsukiaPesticideScreenPass5422",
-      testDate: "2026-11-20T10:00:00+05:30",
-      pesticideMRLStatus: "COMPLIANT",
-      parameters: [
-        { chemical: "Emamectin Benzoate", foundPpm: 0.008, maxPermissibleLimitPpm: 0.05, pass: true },
-        { chemical: "Hexaconazole", foundPpm: 0.041, maxPermissibleLimitPpm: 0.10, pass: true },
-      ],
-      moisturePercentage: 3.1,
-      fssaiStandardMet: true,
+    reeling: {
+      reelerId: "REEL-LAK-02",
+      reelerName: "Dhakuakhana Sericulture Cluster Unit",
+      clusterLocation: "Dhakuakhana, Lakhimpur",
+      reelingMethod: "Solar Operable Reeler",
+      denierCount: 35,
+      filamentContinuityMeters: 530,
+      rawSilkYieldGrams: 980,
+      reelingCompletedDate: "2026-11-20T12:00:00+05:30",
     },
-    custodian: "Doom Dooma Heritage Estate",
-    serializedQrCode: "QR-ASM26-TIN-8821-BP",
+    retailCustodian: "Dhakuakhana Sericulture Cluster Unit",
+    serializedQrCode: "QR-MUG26-YRN-PENDING-03",
     giTagAuthorized: true,
-    giCertNumber: "GI-IN-ASM-TEA-00443",
-    blockchainTxHash: "0x5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d",
+    giCertNumber: "#GI-IN-ASM-MUG-0038-00443",
+    blockchainTxHash: "0x7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d",
   },
   {
-    id: "STG-GLG-004",
-    stage: "COLLECTION_WEIGHED",
-    plucking: {
-      growerId: "STG-GLG-004",
-      growerName: "Bhaben Bora (ভবেন বৰা)",
-      gardenName: "Bokakhat Small Tea Producer Co.",
-      district: "Golaghat",
-      sectionId: "Kaziranga-Foothills-Organic-Sec1",
-      gps: { lat: 26.6189, lng: 93.5912, elevationMeters: 84 },
-      estimatedWeightKg: 190.0,
-      verifiedWeightKg: 189.2,
-      pluckingTime: "2026-11-20T09:00:00+05:30",
-      weighbridgeId: "WB-GLG-BOK-01",
+    id: "MUG-2026-CCN-004",
+    stage: "COCOON_MARKET_GRADED",
+    apparelType: "FABRIC_YARDAGE",
+    productTitle: "Joysagar Grade-A Prime Muga Cocoons (মুগা কোঁহ লট)",
+    rearing: {
+      rearerId: "REAR-SIV-003",
+      rearerName: "Sivasagar Heritage Sericulture Farm",
+      district: "Sivasagar",
+      hostPlantSpecies: "Mixed Agroforestry",
+      dflBatchNo: "DFL-2026-KATIA-101",
+      pebrineFreeCertified: true,
+      cropSeason: "Katia (Autumn)",
+      gps: { lat: 26.9688, lng: 94.6312, elevationMeters: 98, cadastralDag: "Dag #512/890", cadastralPatta: "Govt Institutional Grant #04" },
+      cocoonCount: 20000,
+      cocoonWeightKg: 30.5,
+      harvestDate: "2026-11-18T07:30:00+05:30",
     },
-    custodian: "Bokakhat Small Tea Producer Co.",
-    serializedQrCode: "QR-ASM26-GLG-BIO-04",
+    cocoonMarket: {
+      marketId: "MKT-SIV-01",
+      marketName: "Joysagar Government Cocoon Market & Bank",
+      inspectorName: "M. Neog",
+      cocoonGrade: "Grade A (Prime)",
+      shellRatioPct: 11.2,
+      rawWeightKg: 30.2,
+      ratePerThousandRs: 2250,
+      mspCompliant: true,
+      intakeDate: "2026-11-20T10:00:00+05:30",
+    },
+    retailCustodian: "Joysagar Government Cocoon Bank",
+    serializedQrCode: "QR-MUG26-CCN-PENDING-04",
     giTagAuthorized: true,
-    giCertNumber: "GI-IN-ASM-TEA-00444",
-    blockchainTxHash: "0x7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b",
+    giCertNumber: "#GI-IN-ASM-MUG-0038-00444",
+    blockchainTxHash: "0x5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f",
   },
   {
-    id: "ASM-2026-SVT-005",
-    stage: "RETAIL_PACKAGED",
-    plucking: {
-      growerId: "EST-SON-005",
-      growerName: "Monabarie Heritage Highlands",
-      gardenName: "Monabarie Division 2 (Biswanath)",
-      district: "Sonitpur",
-      sectionId: "Artisan-Silver-Tips-Plot-9",
-      gps: { lat: 26.7321, lng: 93.1845, elevationMeters: 104 },
-      estimatedWeightKg: 65.0,
-      verifiedWeightKg: 65.0,
-      pluckingTime: "2026-11-17T06:15:00+05:30",
-      weighbridgeId: "WB-SON-MONA-01",
+    id: "MUG-2026-RIH-005",
+    stage: "SPECTRAL_CERTIFIED",
+    apparelType: "RIHA",
+    productTitle: "Royal Assamese Ceremonial Muga Riha (ৰাজকীয় মুগা ৰিহা)",
+    rearing: {
+      rearerId: "REAR-LAK-001",
+      rearerName: "Bhaben Chutia (ভবেন চুতীয়া)",
+      district: "Lakhimpur",
+      hostPlantSpecies: "Som (Persea bombycina)",
+      dflBatchNo: "DFL-2026-KATIA-078",
+      pebrineFreeCertified: true,
+      cropSeason: "Katia (Autumn)",
+      gps: { lat: 27.2412, lng: 94.4515, elevationMeters: 102, cadastralDag: "Dag #118/340", cadastralPatta: "Periodic Patta #24" },
+      cocoonCount: 6500,
+      cocoonWeightKg: 10.0,
+      harvestDate: "2026-10-10T08:00:00+05:30",
     },
-    processing: {
-      factoryId: "FAC-SON-01",
-      factoryName: "Monabarie Artisan Specialty House",
-      procType: "SPECIALTY_WHITE",
-      grade: "Silver Needle (Sun-Withered)",
-      intakeWeightKg: 65.0,
-      madeTeaWeightKg: 14.8,
-      witheringLossPct: 62.0,
-      fermentationDurationHrs: 0.0,
-      dryingTempC: 75,
-      completedTime: "2026-11-18T16:00:00+05:30",
+    cocoonMarket: {
+      marketId: "MKT-LAK-01",
+      marketName: "Dhakuakhana Government Cocoon Market",
+      inspectorName: "D. Hazarika",
+      cocoonGrade: "Grade A (Prime)",
+      shellRatioPct: 10.6,
+      rawWeightKg: 9.8,
+      ratePerThousandRs: 2200,
+      mspCompliant: true,
+      intakeDate: "2026-10-12T10:00:00+05:30",
     },
-    labTest: {
-      certifierId: "LAB-NABL-088",
-      labName: "TRA Tocklai Quality & Chemical Residue Lab",
-      accreditationNo: "NABL TC-5421",
-      ipfsHash: "QmTRAWhiteTeaSilverNeedlePurityCert99",
-      testDate: "2026-11-19T11:00:00+05:30",
-      pesticideMRLStatus: "COMPLIANT",
-      parameters: [
-        { chemical: "Emamectin Benzoate", foundPpm: 0.000, maxPermissibleLimitPpm: 0.05, pass: true },
-        { chemical: "Azoxystrobin", foundPpm: 0.000, maxPermissibleLimitPpm: 0.10, pass: true },
+    reeling: {
+      reelerId: "REEL-SUA-04",
+      reelerName: "Sualkuchi Silk Reeling & Twisting Co-Op",
+      clusterLocation: "Sualkuchi, Kamrup",
+      reelingMethod: "CSTRI Motorized Reeling Machine",
+      denierCount: 37,
+      filamentContinuityMeters: 495,
+      rawSilkYieldGrams: 810,
+      reelingCompletedDate: "2026-10-18T14:00:00+05:30",
+    },
+    weaving: {
+      weaverId: "WEAV-SUA-001",
+      weaverName: "Prabin Baishya (প্ৰবীন বৈশ্য)",
+      cluster: "Sualkuchi",
+      loomId: "LOOM-SUA-JACQ-018",
+      apparelType: "RIHA",
+      designMotif: "Miri Gos & Guna borders (গুণা বন কৰা)",
+      warpCountDenier: 37,
+      weftCountDenier: 38,
+      dimensionsMeters: "2.80m length x 0.85m width",
+      wovenWeightGrams: 410,
+      artisanFairWagePaidRs: 11000,
+      weavingCompletedDate: "2026-10-28T16:00:00+05:30",
+    },
+    spectralAnalysis: {
+      certifierId: "LAB-CMERTI-01",
+      labName: "Central Muga Eri Research & Training Institute (CMER&TI), Lahdoigarh",
+      accreditationNo: "NABL TC-8842",
+      instrumentType: "Handheld Portable NIR Spectrometer",
+      spectralScanHash: "0x11223344556677889900aabbccddeeff00112233445566778899aabbccddeeff",
+      ipfsHash: "QmCMERTI8872RihaSpectralPassCert",
+      testDate: "2026-11-04T11:00:00+05:30",
+      purityScorePct: 99.8,
+      adulterationDetected: false,
+      spectralBands: [
+        { peakName: "Amide I (C=O beta-sheet)", targetWavenumberCm1: 1650, measuredAbsorbance: 0.91, expectedMin: 0.65, expectedMax: 0.95, conforms: true },
+        { peakName: "Amide II (N-H bend)", targetWavenumberCm1: 1520, measuredAbsorbance: 0.79, expectedMin: 0.50, expectedMax: 0.85, conforms: true },
+        { peakName: "Amide III (C-N in-plane)", targetWavenumberCm1: 1235, measuredAbsorbance: 0.58, expectedMin: 0.35, expectedMax: 0.65, conforms: true },
+        { peakName: "Natural Sericin Check", targetWavenumberCm1: 1400, measuredAbsorbance: 0.09, expectedMin: 0.05, expectedMax: 0.20, conforms: true },
       ],
-      moisturePercentage: 2.8,
-      fssaiStandardMet: true,
+      silkMarkIssued: true,
+      silkMarkSerialNo: "SMOI-ASM-MUG-2026-00445",
     },
-    auctionLotNo: "DIRECT-EXPORTER-D2C-LOT-01",
-    custodian: "Assam Rare Teas Global Vault",
-    serializedQrCode: "QR-ASM26-SON-SILVER-05",
+    retailCustodian: "Sualkuchi Resham Samabai Samiti Ltd.",
+    serializedQrCode: "QR-MUG26-RIH-PENDING-05",
     giTagAuthorized: true,
-    giCertNumber: "GI-IN-ASM-TEA-00445",
-    blockchainTxHash: "0x11223344556677889900aabbccddeeff11223344556677889900aabbccddeeff",
+    giCertNumber: "#GI-IN-ASM-MUG-0038-00445",
+    blockchainTxHash: "0x2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c",
   },
   {
-    id: "ASM-2026-FLG-006",
-    stage: "LAB_CERTIFIED",
-    plucking: {
-      growerId: "STG-CAC-006",
-      growerName: "Cachar Valley Smallholders",
-      gardenName: "Barak Foothills Cooperative",
-      district: "Cachar",
-      sectionId: "Sec-Cachar-Lowland-B3",
-      gps: { lat: 24.8333, lng: 92.7789, elevationMeters: 42 },
-      estimatedWeightKg: 520.0,
-      verifiedWeightKg: 518.0,
-      pluckingTime: "2026-11-19T08:00:00+05:30",
-      weighbridgeId: "WB-CAC-BLF-01",
+    id: "MUG-2026-FLG-006",
+    stage: "REVOKED_ADULTERATED",
+    apparelType: "MEKHELA_SADOR",
+    productTitle: "⚠️ SUSPICIOUS LOT - Counterfeit Sualkuchi Mekhela Sador (ভেজাল ধৰা পৰা লট)",
+    rearing: {
+      rearerId: "REAR-UNVERIFIED",
+      rearerName: "Unregistered Sericulture Middleman",
+      district: "Unknown / Outside Assam Sericulture Belt",
+      hostPlantSpecies: "Undisclosed",
+      dflBatchNo: "DFL-COUNTERFEIT-UNKNOWN",
+      pebrineFreeCertified: false,
+      cropSeason: "Commercial Spot Purchase",
+      gps: { lat: 26.1822, lng: 91.7455, elevationMeters: 55 },
+      cocoonCount: 10000,
+      cocoonWeightKg: 15.0,
+      harvestDate: "2026-11-10T10:00:00+05:30",
     },
-    processing: {
-      factoryId: "FAC-CAC-01",
-      factoryName: "Barak Valley Bought Leaf Factory",
-      procType: "CTC",
-      grade: "PD (Pekoe Dust)",
-      intakeWeightKg: 518.0,
-      madeTeaWeightKg: 116.5,
-      witheringLossPct: 30.5,
-      fermentationDurationHrs: 2.1,
-      dryingTempC: 112,
-      completedTime: "2026-11-19T18:30:00+05:30",
+    weaving: {
+      weaverId: "WEAV-UNKNOWN",
+      weaverName: "Powerloom Commercial Synthetics Unit",
+      cluster: "Commercial Wholesale Center",
+      loomId: "PWR-LOOM-SYNTH-99",
+      apparelType: "MEKHELA_SADOR",
+      designMotif: "Imitation Jacquard Kingkhap Pattern",
+      warpCountDenier: 45,
+      weftCountDenier: 48,
+      dimensionsMeters: "Mekhela 2.45m x 0.95m, Sador 2.80m x 1.05m",
+      wovenWeightGrams: 940,
+      artisanFairWagePaidRs: 1800,
+      weavingCompletedDate: "2026-11-16T15:00:00+05:30",
     },
-    labTest: {
-      certifierId: "LAB-SIL-01",
-      labName: "Silchar Regional Testing Station",
-      accreditationNo: "NABL TC-4991",
-      ipfsHash: "QmVIOLATIONQuinalphosExceededMRLBarak889",
-      testDate: "2026-11-20T14:30:00+05:30",
-      pesticideMRLStatus: "NON_COMPLIANT",
-      parameters: [
-        { chemical: "Quinalphos", foundPpm: 0.082, maxPermissibleLimitPpm: 0.01, pass: false },
-        { chemical: "Emamectin Benzoate", foundPpm: 0.022, maxPermissibleLimitPpm: 0.05, pass: true },
+    spectralAnalysis: {
+      certifierId: "LAB-CMERTI-01",
+      labName: "Central Muga Eri Research & Training Institute (CMER&TI), Lahdoigarh",
+      accreditationNo: "NABL TC-8842",
+      instrumentType: "Handheld Portable NIR Spectrometer",
+      spectralScanHash: "0xdeadbeef11223344556677889900aabbccddeeff00112233445566778899aabb",
+      ipfsHash: "QmCMERTI_ALERT_AdulterationDetectedHash",
+      testDate: "2026-11-20T16:30:00+05:30",
+      purityScorePct: 62.1,
+      adulterationDetected: true,
+      adulterantDetails: {
+        tasarBlendedPct: 18.5,
+        polyesterPct: 19.4,
+        syntheticDyes: true,
+      },
+      spectralBands: [
+        { peakName: "Amide I (C=O beta-sheet)", targetWavenumberCm1: 1650, measuredAbsorbance: 0.42, expectedMin: 0.65, expectedMax: 0.95, conforms: false },
+        { peakName: "Amide II (N-H bend)", targetWavenumberCm1: 1520, measuredAbsorbance: 0.38, expectedMin: 0.50, expectedMax: 0.85, conforms: false },
+        { peakName: "Amide III (C-N in-plane)", targetWavenumberCm1: 1235, measuredAbsorbance: 0.24, expectedMin: 0.35, expectedMax: 0.65, conforms: false },
+        { peakName: "Polyester Ester Carbonyl", targetWavenumberCm1: 1720, measuredAbsorbance: 0.68, expectedMin: 0.00, expectedMax: 0.05, conforms: false },
       ],
-      moisturePercentage: 4.8,
-      fssaiStandardMet: false,
+      silkMarkIssued: false,
+      silkMarkSerialNo: "REJECTED_NON_COMPLIANT",
     },
-    custodian: "Barak Valley BLF (Quarantine Bay 3)",
-    serializedQrCode: "QR-ASM26-FLAGGED-VIOLATION-06",
+    retailCustodian: "Interception Holding Room - Directorate Anti-Counterfeit Cell",
+    serializedQrCode: "QR-MUG26-FLG-INTERCEPTED",
     giTagAuthorized: false,
-    giCertNumber: "GI-REVOKED-PPC-VIOLATION",
-    revocationReason: "Quinalphos pesticide detected at 0.082 ppm (exceeds statutory 0.01 ppm limit under Tea Board PPC v16 and EU MRL). Retail packaging strictly blocked.",
-    blockchainTxHash: "0xdeadbeef11223344556677889900aabbccddeeffdeadbeef1122334455667788",
-  }
+    giCertNumber: "REVOKED_FRAUD_DETECTED",
+    blockchainTxHash: "0x9999999999999999999999999999999999999999999999999999999999999999",
+  },
+];
+
+let sampleRearers = [
+  { id: "REAR-LAK-001", name: "Bhaben Chutia (ভবেন চুতীয়া)", district: "Lakhimpur (Dhakuakhana)", trees: 280, host: "Som" },
+  { id: "REAR-DHE-002", name: "Hemanta Borgohain (হেমন্ত বৰগোহাঁই)", district: "Dhemaji (Jonai)", trees: 340, host: "Soalu" },
+  { id: "REAR-SIV-003", name: "Sivasagar Heritage Farm", district: "Sivasagar (Joysagar)", trees: 520, host: "Mixed" },
+];
+
+let sericultureDiseaseMatrix = [
+  { disease: "Pebrine (পেব্ৰিন)", pathogen: "Nosema assamensis (Microsporidia)", protocol: "Mother Moth Microscopic Examination", tolerance: "0.00% (Zero Tolerance)", sop: "Mandatory destruction of contaminated egg batches; supply only DFLs.", status: "CLEARED" },
+  { disease: "Flacherie (মুখলগা)", pathogen: "Bacillus bombysepticus / Bacteria", protocol: "Larval digestive fluid streak test", tolerance: "< 1.5%", sop: "Disinfection of rearing house with 2% bleaching powder + 0.3% slaked lime.", status: "CONTROLLED" },
+  { disease: "Grasserie (যখিনী ৰোগ)", pathogen: "Nuclear Polyhedrosis Virus (NPV)", protocol: "Polyhedra inclusion body microscopy", tolerance: "< 2.0%", sop: "Maintenance of optimum rearing temp (24-28°C) & relative humidity (80-85%).", status: "CONTROLLED" },
+  { disease: "Uzi Fly Parasite (উজি মাখি)", pathogen: "Exorista sorbillans (Diptera)", protocol: "Cocoon pierced mark inspection", tolerance: "< 3.0%", sop: "Deployment of nylon mosquito mesh wire screens around Som plantations.", status: "PROTECTED" },
+  { disease: "Som Gall Midge (পাতত গুটি)", pathogen: "Asphondylia assamensis", protocol: "Foliage survey before brushing", tolerance: "< 5.0%", sop: "Pruning infested branches; neem oil bio-pesticide spray 15 days pre-brushing.", status: "SAFE" },
 ];
 
 let activeBatch = fallbackBatches[0];
-let isAssamese = false;
+let adminAuthenticated = false;
 
-// Toast Notification Helper
+// Toast Notifications
 function showToast(message, type = "info") {
   const container = document.getElementById("toast-container");
   if (!container) return;
   const toast = document.createElement("div");
-  toast.className = `toast ${type}`;
-  toast.innerHTML = `<span>${type === "success" ? "✓" : (type === "error" ? "⚠️" : "ℹ️")}</span> ${message}`;
+  toast.className = `toast toast-${type}`;
+  toast.innerHTML = message;
   container.appendChild(toast);
   setTimeout(() => {
-    toast.style.opacity = "0";
-    toast.style.transform = "translateY(10px)";
-    setTimeout(() => toast.remove(), 250);
-  }, 3500);
+    toast.style.animation = "toastOut 0.3s ease-in forwards";
+    setTimeout(() => toast.remove(), 300);
+  }, 4000);
 }
 
-// Initialize on DOM load
-document.addEventListener("DOMContentLoaded", () => {
-  setupTabs();
-  setupTutorialModal();
-  setupConsumerVerification();
-  setupSTGPortal();
-  setupFactoryPortal();
-  setupTocklaiCommand();
-  setupInteractiveMap();
-  setupCadastralMap();
-  setupActionModals();
-  setupPPCInspector();
-  setupAdminSubtabs();
-
-  // Load initial demo batch
-  lookupBatch("QR-ASM26-8894-X82F");
-  fetchIoTTelemetry();
-  fetchAnalytics();
-  renderAdminGITable();
-  renderAdminAlerts();
-});
-
-// Tab Navigation
+// Tab Switching
 function setupTabs() {
-  const tabs = document.querySelectorAll(".tab-btn");
-  tabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-      tabs.forEach(t => t.classList.remove("active"));
-      tab.classList.add("active");
-
-      const targetPane = tab.getAttribute("data-tab");
-      document.querySelectorAll(".tab-pane").forEach(pane => {
-        pane.classList.remove("active");
-      });
-      document.getElementById(`pane-${targetPane}`).classList.add("active");
+  const tabs = document.querySelectorAll(".tab-btn[data-tab]");
+  tabs.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const target = btn.getAttribute("data-tab");
+      jumpToTab(target);
     });
   });
 }
 
-// Quick jump to tab from tutorial or map
 window.jumpToTab = function(tabName) {
-  const modal = document.getElementById("tutorial-modal");
-  if (modal) {
-    modal.classList.remove("active");
-    modal.setAttribute("aria-hidden", "true");
-  }
+  const tabs = document.querySelectorAll(".tab-btn[data-tab]");
+  const panes = document.querySelectorAll(".tab-pane");
 
-  const targetTabBtn = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
-  if (targetTabBtn) {
-    targetTabBtn.click();
+  tabs.forEach(t => t.classList.remove("active"));
+  panes.forEach(p => p.classList.remove("active"));
+
+  const targetTab = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
+  const targetPane = document.getElementById(`pane-${tabName}`);
+
+  if (targetTab && targetPane) {
+    targetTab.classList.add("active");
+    targetPane.classList.add("active");
     window.scrollTo({ top: 0, behavior: "smooth" });
+
+    if (tabName === "admin" && adminAuthenticated) {
+      setTimeout(() => {
+        if (typeof initOrUpdateGisMap === "function") initOrUpdateGisMap();
+      }, 200);
+    }
   }
 };
 
-// 1. Consumer Verification
+// 1. Consumer QR Explorer
 function setupConsumerVerification() {
-  const btn = document.getElementById("btn-verify");
-  const input = document.getElementById("qr-search-input");
-  btn.addEventListener("click", () => {
-    const val = input.value.trim();
-    if (val) lookupBatch(val);
-  });
+  const btnVerify = document.getElementById("btn-verify");
+  const inputSearch = document.getElementById("qr-search-input");
+
+  if (btnVerify) {
+    btnVerify.addEventListener("click", () => {
+      const val = inputSearch.value.trim();
+      if (val) lookupBatch(val);
+    });
+  }
+
+  // Auto-render default batch on load
+  lookupBatch("QR-MUG26-8894-X82F");
 }
 
 window.lookupBatch = async function(token) {
-  document.getElementById("qr-search-input").value = token;
+  const inputSearch = document.getElementById("qr-search-input");
+  if (inputSearch) inputSearch.value = token;
 
-  // Highlight active chip if matches
-  document.querySelectorAll(".batch-chip").forEach(chip => {
-    if (chip.getAttribute("onclick") && chip.getAttribute("onclick").includes(token)) {
-      chip.classList.add("active");
-    } else {
-      chip.classList.remove("active");
+  // Highlight active chip
+  document.querySelectorAll(".batch-chip").forEach(c => {
+    c.classList.remove("active");
+    if (c.getAttribute("onclick") && c.getAttribute("onclick").includes(token)) {
+      c.classList.add("active");
     }
   });
-
-  const resultDiv = document.getElementById("verification-result");
-  resultDiv.innerHTML = `<div style="text-align: center; padding: 2rem;">Verifying cryptographic proof on Assam tea blockchain...</div>`;
 
   try {
     const res = await fetch(`${API_BASE}/verify/${encodeURIComponent(token)}`);
     if (res.ok) {
-      const json = await res.json();
-      activeBatch = json.provenance;
-      renderVerificationSuccess(json.provenance);
-      return;
+      const data = await res.json();
+      activeBatch = data.data;
+      renderVerificationSuccess(activeBatch);
+    } else {
+      const local = fallbackBatches.find(b => b.serializedQrCode === token || b.id === token);
+      if (local) {
+        activeBatch = local;
+        renderVerificationSuccess(activeBatch);
+      } else {
+        renderVerificationFailure(token);
+      }
     }
-  } catch (err) {
-    console.warn("API offline or unreachable, using local state:", err);
-  }
-
-  // Fallback lookup
-  const match = fallbackBatches.find(b => b.serializedQrCode === token || b.id === token);
-  if (match) {
-    activeBatch = match;
-    renderVerificationSuccess(match);
-  } else {
-    renderVerificationFailure(token);
+  } catch (e) {
+    const local = fallbackBatches.find(b => b.serializedQrCode === token || b.id === token);
+    if (local) {
+      activeBatch = local;
+      renderVerificationSuccess(activeBatch);
+    } else {
+      renderVerificationFailure(token);
+    }
   }
 };
 
-function renderVerificationSuccess(batch) {
+function renderVerificationSuccess(b) {
   const container = document.getElementById("verification-result");
-  const isRevoked = batch.giTagAuthorized === false;
+  if (!container) return;
 
-  container.innerHTML = `
-    <!-- Top GI & Authenticity Banner -->
-    <div class="card" style="border: 2px solid ${isRevoked ? '#dc2626' : '#15803d'}; background: ${isRevoked ? 'linear-gradient(to right, #fef2f2, #ffffff)' : 'linear-gradient(to right, #f0fdf4, #ffffff)'};">
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-        <div>
-          <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: ${isRevoked ? '#fee2e2' : '#dcfce7'}; color: ${isRevoked ? '#991b1b' : '#166534'}; font-weight: 700; font-size: 0.9rem; padding: 0.4rem 0.8rem; border-radius: 9999px; border: 1px solid ${isRevoked ? '#fca5a5' : '#86efac'}; margin-bottom: 0.5rem;">
-            <span>${isRevoked ? '⚠️' : '🛡️'}</span> ${isRevoked ? 'ASSAM GI TAG SUSPENDED / QUARANTINED' : 'AUTHENTIC ASSAM GI TAG CERTIFIED'}
-          </div>
-          <h2 style="color: ${isRevoked ? '#991b1b' : '#14532d'}; font-size: 1.4rem; margin-bottom: 0.25rem;">
-            ${batch.processing?.grade || "Assam Orthodox"} • ${batch.id}
-          </h2>
-          <div style="color: var(--text-muted); font-size: 0.9rem;">
-            Estate / Garden: <strong>${batch.plucking.gardenName}</strong> (${batch.plucking.district}, Assam)
-          </div>
-        </div>
+  const isFlagged = b.stage === "REVOKED_ADULTERATED" || !b.giTagAuthorized;
 
-        <div style="text-align: right;">
-          <div style="font-size: 0.8rem; color: var(--text-muted);">GI Registration No:</div>
-          <div style="font-size: 1.1rem; font-weight: 700; color: ${isRevoked ? '#dc2626' : '#92400e'};">${batch.giCertNumber || "GI-IN-ASM-TEA-00441"}</div>
-          <div style="font-size: 0.75rem; color: ${isRevoked ? '#dc2626' : '#059669'}; font-weight: 600;">
-            ${isRevoked ? '❌ Retail Packaging strictly prohibited' : '✓ Tea Board of India & TRA Tocklai Authorized'}
+  let bannerHtml = "";
+  if (isFlagged) {
+    bannerHtml = `
+      <div class="result-banner danger" style="background: #fef2f2; border: 2px solid #ef4444; border-radius: 8px; padding: 1.25rem; margin-bottom: 1.5rem;">
+        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+          <span style="font-size: 2.2rem;">🚨</span>
+          <div>
+            <h3 style="color: #991b1b; margin-bottom: 0.25rem;">COUNTERFEIT / ADULTERATION ALERT</h3>
+            <p style="color: #7f1d1d; font-size: 0.92rem; line-height: 1.5;">
+              This textile batch (<code>${b.id}</code>) has been <strong>REJECTED & INTERCEPTED</strong> by the Central Muga Eri Research & Training Institute (CMER&TI). Non-destructive NIR spectroscopy detected synthetic polyester and dyed Tasar fiber adulteration. Assam GI Tag #38 authorization is revoked.
+            </p>
+            <div style="margin-top: 0.5rem; font-size: 0.82rem; font-weight: 700; color: #b91c1c;">
+              Reported to: Directorate Anti-Counterfeit Flying Squad • Sample Hash: <code>${b.spectralAnalysis?.spectralScanHash?.slice(0, 24)}...</code>
+            </div>
           </div>
         </div>
       </div>
-
-      ${isRevoked ? `
-        <div style="margin-top: 1rem; padding: 0.75rem; background: #fff1f2; border: 1px solid #fda4af; border-radius: 6px; color: #9f1239; font-size: 0.85rem;">
-          <strong>🚨 Regulatory Interception Notice:</strong> ${batch.revocationReason || "Pesticide MRL limits exceeded under Tea Board PPC v16."}
-        </div>
-      ` : ""}
-    </div>
-
-    <!-- Timeline & Details Grid -->
-    <div class="grid-2">
-      <!-- Left: Leaf-to-Cup Provenance Timeline -->
-      <div class="card">
-        <h2>🍃 Verified Leaf-to-Cup Journey</h2>
-        <div class="timeline">
-
-          <!-- Step 1: Plucking -->
-          <div class="timeline-step">
-            <div class="step-node" style="background: ${isRevoked ? '#dc2626' : 'var(--primary-tea)'};">1</div>
-            <div class="step-content">
-              <div class="step-header">
-                <span class="step-title">Fresh Leaf Harvest</span>
-                <span class="step-time">${new Date(batch.plucking.pluckingTime).toLocaleDateString()}</span>
+    `;
+  } else {
+    bannerHtml = `
+      <div class="result-banner success" style="background: #fdfbf7; border: 2px solid #f59e0b; border-radius: 8px; padding: 1.25rem; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(217, 119, 6, 0.15);">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div style="display: flex; gap: 1rem; align-items: center;">
+            <span style="font-size: 2.4rem;">🛡️</span>
+            <div>
+              <div style="font-size: 0.78rem; text-transform: uppercase; font-weight: 800; color: #b45309; letter-spacing: 0.05em;">
+                OFFICIAL GEOGRAPHICAL INDICATION VERIFIED
               </div>
-              <div class="step-body">
-                <div><span class="step-tag">STG</span><strong>${batch.plucking.growerName}</strong></div>
-                <div style="margin-top: 0.25rem;">GPS: <code>${batch.plucking.gps.lat}, ${batch.plucking.gps.lng}</code> (Elevation: ${batch.plucking.gps.elevationMeters || 96}m)</div>
-                <div>Fresh Leaf Weight: <strong>${batch.plucking.verifiedWeightKg || batch.plucking.estimatedWeightKg} Kg</strong></div>
+              <h2 style="color: #78350f; font-size: 1.35rem; margin: 0.1rem 0;">
+                Assam Muga Silk • Certificate #38 Authorized
+              </h2>
+              <div style="font-size: 0.85rem; color: #4b5563;">
+                ${b.productTitle} • GI Serial: <strong>${b.giCertNumber}</strong>
               </div>
             </div>
           </div>
-
-          <!-- Step 2: Digital Weighbridge -->
-          <div class="timeline-step">
-            <div class="step-node" style="background: ${isRevoked ? '#dc2626' : 'var(--primary-tea)'};">2</div>
-            <div class="step-content">
-              <div class="step-header">
-                <span class="step-title">Collection & Weighbridge</span>
-                <span class="step-time">Intake Verified</span>
-              </div>
-              <div class="step-body">
-                <div>Weighbridge Station: <code>${batch.plucking.weighbridgeId || "WB-JHT-BLF-02"}</code></div>
-                <div>Digital receipt logged, zero moisture deduction alteration.</div>
-              </div>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <div style="background: #065f46; color: #fff; padding: 0.4rem 0.85rem; border-radius: 9999px; font-weight: 700; font-size: 0.85rem;">
+              ✓ 100% Pure Muga (${b.spectralAnalysis?.purityScorePct || 99.4}%)
+            </div>
+            <div style="background: #0284c7; color: #fff; padding: 0.4rem 0.85rem; border-radius: 9999px; font-weight: 700; font-size: 0.85rem;">
+              🌟 Silk Mark: ${b.spectralAnalysis?.silkMarkSerialNo || "SMOI-PASS"}
             </div>
           </div>
-
-          <!-- Step 3: Factory Processing -->
-          <div class="timeline-step">
-            <div class="step-node" style="background: ${isRevoked ? '#dc2626' : 'var(--primary-tea)'};">3</div>
-            <div class="step-content">
-              <div class="step-header">
-                <span class="step-title">Manufacturing (${batch.processing?.procType || "CTC"})</span>
-                <span class="step-time">${batch.processing ? "Completed" : "In Progress"}</span>
-              </div>
-              <div class="step-body">
-                ${batch.processing ? `
-                  <div>Factory: <strong>${batch.processing.factoryName}</strong></div>
-                  <div>Grade: <strong>${batch.processing.grade}</strong></div>
-                  <div>Drying Temp: <strong>${batch.processing.dryingTempC}°C</strong> • Withering Loss: <strong>${batch.processing.witheringLossPct}%</strong></div>
-                  <div>Made Tea Output: <strong>${batch.processing.madeTeaWeightKg} Kg</strong></div>
-                ` : `<div style="color: #b45309;">Currently undergoing withering and CTC cutting in factory.</div>`}
-              </div>
-            </div>
-          </div>
-
-          <!-- Step 4: Chemical Residue MRL Lab -->
-          <div class="timeline-step">
-            <div class="step-node" style="background: ${isRevoked ? '#dc2626' : 'var(--primary-tea)'};">4</div>
-            <div class="step-content">
-              <div class="step-header">
-                <span class="step-title">TRA Tocklai Safety Test</span>
-                <span class="step-time">${batch.labTest ? (batch.labTest.pesticideMRLStatus === "COMPLIANT" ? "NABL Passed ✓" : "FAILED ⚠️") : "Pending"}</span>
-              </div>
-              <div class="step-body">
-                ${batch.labTest ? `
-                  <div style="color: ${batch.labTest.pesticideMRLStatus === "COMPLIANT" ? "#166534" : "#dc2626"}; font-weight: 700;">
-                    Pesticide MRL Status: ${batch.labTest.pesticideMRLStatus}
-                  </div>
-                  <div>Accredited Lab: ${batch.labTest.labName} (${batch.labTest.accreditationNo})</div>
-                  <div>Moisture Content: <strong>${batch.labTest.moisturePercentage}%</strong> (FSSAI standard &lt; 6.5%)</div>
-                  <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">
-                    IPFS Certificate Hash: <code>${batch.labTest.ipfsHash}</code>
-                  </div>
-                ` : `<div>Sample sent to TRA Tocklai Quality & Chemical Residue Lab.</div>`}
-              </div>
-            </div>
-          </div>
-
-          <!-- Step 5: Packaging & QR Serialization -->
-          <div class="timeline-step">
-            <div class="step-node" style="background: ${isRevoked ? '#dc2626' : 'var(--primary-tea)'};">5</div>
-            <div class="step-content">
-              <div class="step-header">
-                <span class="step-title">Retail Packaging & Cryptographic Seal</span>
-                <span class="step-time">${batch.stage === "RETAIL_PACKAGED" ? "Sealed" : (isRevoked ? "BLOCKED" : "Active")}</span>
-              </div>
-              <div class="step-body">
-                <div>Custodian: <strong>${batch.custodian}</strong></div>
-                ${batch.auctionLotNo ? `<div>GTAC Auction Lot: <code>${batch.auctionLotNo}</code></div>` : ""}
-                <div style="margin-top: 0.25rem; font-size: 0.75rem; color: var(--text-muted);">
-                  Blockchain Tx: <code style="color: #1b4d3e;">${batch.blockchainTxHash || "0x8f3c7e99..."}</code>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
+    `;
+  }
 
-      <!-- Right: Chemical Residue Card & Garden Details -->
-      <div>
-        <div class="card">
-          <h2>🧪 Lab Safety & MRL Compliance</h2>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
-            Tested against Tea Board of India Plant Protection Code (PPC) and EU import thresholds.
-          </p>
+  // 5-Stage Chronological Timeline
+  const timelineHtml = `
+    <div class="card" style="margin-bottom: 1.5rem;">
+      <h3 style="color: var(--primary-muga); margin-bottom: 1rem;">
+        🧵 Chronological Cocoon-to-Consumer Provenance Journey
+      </h3>
+      <div class="timeline">
 
-          <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem;">
-            <thead>
-              <tr style="border-bottom: 2px solid var(--border-color); text-align: left;">
-                <th style="padding: 0.5rem 0;">Compound</th>
-                <th style="padding: 0.5rem 0;">Detected</th>
-                <th style="padding: 0.5rem 0;">Max Limit</th>
-                <th style="padding: 0.5rem 0;">Result</th>
-              </tr>
-            </thead>
-            <tbody>
-              ${(batch.labTest?.parameters || [
-                { chemical: "Emamectin Benzoate", foundPpm: 0.012, maxPermissibleLimitPpm: 0.05, pass: true },
-                { chemical: "Quinalphos", foundPpm: 0.002, maxPermissibleLimitPpm: 0.01, pass: true },
-              ]).map(p => `
-                <tr style="border-bottom: 1px solid var(--border-color);">
-                  <td style="padding: 0.45rem 0; font-weight: 600;">${p.chemical}</td>
-                  <td style="padding: 0.45rem 0;">${p.foundPpm} ppm</td>
-                  <td style="padding: 0.45rem 0; color: var(--text-muted);">${p.maxPermissibleLimitPpm} ppm</td>
-                  <td style="padding: 0.45rem 0;">
-                    <span style="color: ${p.pass ? '#15803d' : '#dc2626'}; font-weight: bold;">
-                      ${p.pass ? 'PASS ✓' : 'VIOLATION ⚠️'}
-                    </span>
-                  </td>
-                </tr>
-              `).join("")}
-            </tbody>
-          </table>
-        </div>
-
-        <div class="card" style="background: #fafaf9;">
-          <h2>🌿 Meet the Smallholder Grower</h2>
-          <div style="font-size: 0.9rem; line-height: 1.6;">
-            <strong>${batch.plucking.growerName}</strong> is a registered smallholder associated with <em>${batch.plucking.gardenName}</em> in ${batch.plucking.district}, Assam.<br>
-            By scanning this code, you are supporting direct-to-grower transparency and certified Good Agricultural Practices (GAP) guided by TRA Tocklai.
-          </div>
-          <div style="margin-top: 0.75rem;">
-            <button onclick="document.getElementById('btn-open-appreciation').click()" class="btn-secondary" style="font-size: 0.8rem; background: #ecfdf5; color: #065f46; border-color: #a7f3d0;">
-              💚 Send Appreciation to ${batch.plucking.growerName.split(" ")[0]}
-            </button>
+        <!-- Stage 1: Rearing -->
+        <div class="timeline-item">
+          <div class="timeline-dot green"></div>
+          <div class="timeline-content">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+              <strong>1. Silkworm Rearing & Cocoon Harvest (পলু পালন)</strong>
+              <small style="color: var(--text-muted);">${b.rearing.harvestDate ? new Date(b.rearing.harvestDate).toLocaleDateString() : "Oct 2026"}</small>
+            </div>
+            <div style="font-size: 0.85rem; margin-top: 0.35rem; color: #374151;">
+              Farmer: <strong>${b.rearing.rearerName}</strong> (${b.rearing.rearerId})<br>
+              Host Trees: <strong>${b.rearing.hostPlantSpecies}</strong> • Season: ${b.rearing.cropSeason}<br>
+              Cadastral Survey: <strong>${b.rearing.gps?.cadastralDag || "Dag #118/340"}</strong> (${b.rearing.gps?.cadastralPatta || "Periodic Patta #24"})<br>
+              GPS Coordinates: <code>${b.rearing.gps.lat}, ${b.rearing.gps.lng}</code> (Elevation: ${b.rearing.gps.elevationMeters || 102}m)<br>
+              Cocoon Yield: <strong>${b.rearing.cocoonCount.toLocaleString()} cocoons</strong> (~${b.rearing.cocoonWeightKg} Kg)
+            </div>
           </div>
         </div>
+
+        <!-- Stage 2: Cocoon Market -->
+        <div class="timeline-item">
+          <div class="timeline-dot ${b.cocoonMarket ? "green" : "gray"}"></div>
+          <div class="timeline-content">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+              <strong>2. Government Cocoon Market & Bank (কোঁহ বজাৰ)</strong>
+              <small style="color: var(--text-muted);">${b.cocoonMarket?.intakeDate ? new Date(b.cocoonMarket.intakeDate).toLocaleDateString() : "Pending"}</small>
+            </div>
+            <div style="font-size: 0.85rem; margin-top: 0.35rem; color: #374151;">
+              ${b.cocoonMarket ? `
+                Market: <strong>${b.cocoonMarket.marketName}</strong><br>
+                Grade: <strong>${b.cocoonMarket.cocoonGrade}</strong> • Shell Ratio: <strong>${b.cocoonMarket.shellRatioPct}%</strong><br>
+                MSP Rate: ₹${b.cocoonMarket.ratePerThousandRs} / 1000 cocoons (Govt Minimum Support Price Guarantee)
+              ` : `<em>Pending official cocoon bank grading.</em>`}
+            </div>
+          </div>
+        </div>
+
+        <!-- Stage 3: Reeling -->
+        <div class="timeline-item">
+          <div class="timeline-dot ${b.reeling ? "green" : "gray"}"></div>
+          <div class="timeline-content">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+              <strong>3. CSTRI Motorized Reeling & Twisting (সূতা কটা)</strong>
+              <small style="color: var(--text-muted);">${b.reeling?.reelingCompletedDate ? new Date(b.reeling.reelingCompletedDate).toLocaleDateString() : "Pending"}</small>
+            </div>
+            <div style="font-size: 0.85rem; margin-top: 0.35rem; color: #374151;">
+              ${b.reeling ? `
+                Unit: <strong>${b.reeling.reelerName}</strong> (${b.reeling.clusterLocation})<br>
+                Method: <strong>${b.reeling.reelingMethod}</strong><br>
+                Filament Fineness: <strong>${b.reeling.denierCount} Denier</strong> • Continuity: ${b.reeling.filamentContinuityMeters}m unbroken<br>
+                Raw Muga Silk Yield: ${b.reeling.rawSilkYieldGrams} grams
+              ` : `<em>Pending reeling operations.</em>`}
+            </div>
+          </div>
+        </div>
+
+        <!-- Stage 4: Sualkuchi Weaving -->
+        <div class="timeline-item">
+          <div class="timeline-dot ${b.weaving ? "green" : "gray"}"></div>
+          <div class="timeline-content">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+              <strong>4. Sualkuchi Handloom Weaving (তাঁতশালত বোৱা)</strong>
+              <small style="color: var(--text-muted);">${b.weaving?.weavingCompletedDate ? new Date(b.weaving.weavingCompletedDate).toLocaleDateString() : "Pending"}</small>
+            </div>
+            <div style="font-size: 0.85rem; margin-top: 0.35rem; color: #374151;">
+              ${b.weaving ? `
+                Artisan: <strong>${b.weaving.weaverName}</strong> (Loom: <code>${b.weaving.loomId}</code>)<br>
+                Cluster: <strong>${b.weaving.cluster}</strong> (The Manchester of the East)<br>
+                Heritage Motif: <strong>${b.weaving.designMotif}</strong><br>
+                Dimensions: ${b.weaving.dimensionsMeters} • Net Woven Weight: ${b.weaving.wovenWeightGrams}g<br>
+                Artisan Fair Wage DBT: <strong style="color: #065f46;">₹${b.weaving.artisanFairWagePaidRs.toLocaleString()} (Paid)</strong>
+              ` : `<em>Pending loom assignment.</em>`}
+            </div>
+          </div>
+        </div>
+
+        <!-- Stage 5: CMER&TI Spectroscopy -->
+        <div class="timeline-item">
+          <div class="timeline-dot ${isFlagged ? "red" : (b.spectralAnalysis ? "green" : "gray")}"></div>
+          <div class="timeline-content">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+              <strong>5. CMER&TI Non-Destructive NIR Purity Scan (অ-ধ্বংসাত্মক পৰীক্ষণ)</strong>
+              <small style="color: var(--text-muted);">${b.spectralAnalysis?.testDate ? new Date(b.spectralAnalysis.testDate).toLocaleDateString() : "Pending"}</small>
+            </div>
+            <div style="font-size: 0.85rem; margin-top: 0.35rem; color: #374151;">
+              ${b.spectralAnalysis ? `
+                Testing Facility: <strong>${b.spectralAnalysis.labName}</strong> (${b.spectralAnalysis.accreditationNo})<br>
+                Instrument: <strong>${b.spectralAnalysis.instrumentType}</strong><br>
+                Calculated Fibroin Purity: <strong style="color: ${isFlagged ? "#dc2626" : "#065f46"}; font-size: 0.95rem;">${b.spectralAnalysis.purityScorePct}%</strong><br>
+                ${isFlagged ? `
+                  <div style="background: #fee2e2; border-left: 3px solid #dc2626; padding: 0.4rem; margin-top: 0.35rem; font-size: 0.8rem; color: #991b1b;">
+                    ⚠️ Adulteration Profile: ${b.spectralAnalysis.adulterantDetails?.polyesterPct}% Synthetic Polyester warp + ${b.spectralAnalysis.adulterantDetails?.tasarBlendedPct}% Dyed Chinese Tasar fiber.
+                  </div>
+                ` : `
+                  Amide I (1650 cm⁻¹): 0.88 • Amide II (1520 cm⁻¹): 0.76 • Amide III (1235 cm⁻¹): 0.54<br>
+                  Synthetic Impurities: <strong>0.00% (Pure Antheraea assamensis)</strong><br>
+                  Silk Mark Issued: <strong>${b.spectralAnalysis.silkMarkSerialNo}</strong>
+                `}
+              ` : `<em>Pending spectroscopic test scan.</em>`}
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   `;
+
+  container.innerHTML = bannerHtml + timelineHtml;
 }
 
 function renderVerificationFailure(token) {
   const container = document.getElementById("verification-result");
+  if (!container) return;
   container.innerHTML = `
-    <div class="card" style="border: 2px solid #dc2626; background: #fef2f2;">
-      <h2 style="color: #991b1b;">⚠️ Unverified / Counterfeit Alert</h2>
-      <p style="color: #b91c1c; margin-top: 0.5rem;">
-        No cryptographic provenance record was found for QR Code: <code>${token}</code>.
+    <div class="result-banner danger" style="background: #fef2f2; border: 2px solid #ef4444; border-radius: 8px; padding: 1.5rem; text-align: center;">
+      <span style="font-size: 3rem;">⚠️</span>
+      <h3 style="color: #991b1b; margin-top: 0.5rem;">UNREGISTERED OR FORGED QR CODE</h3>
+      <p style="color: #7f1d1d; font-size: 0.95rem; max-width: 600px; margin: 0.5rem auto;">
+        The token <code>${token}</code> is not found in the Government of Assam Sericulture Blockchain Registry. This fabric has not undergone mandatory CMER&TI non-destructive authentication and may be an unauthorized synthetic or counterfeit blend.
       </p>
-      <p style="font-size: 0.85rem; color: #7f1d1d; margin-top: 0.5rem;">
-        This product may not be genuine Assam GI certified tea. Authentic teas packaged under the NESFIC-I-08 framework contain immutable state proofs anchored to the Tea Board & TRA Tocklai blockchain ledger.
-      </p>
+      <button class="btn-primary" style="background: #dc2626; margin-top: 0.75rem;" onclick="showToast('Incident logged and forwarded to Directorate Anti-Counterfeit Cell.', 'warning')">
+        🚨 Report Counterfeit to Sericulture Directorate
+      </button>
     </div>
   `;
 }
 
-// Action Modals: Certificate & Packaging Stamp & Grower Appreciation
+// Action Modals: Certificate & Packaging Stamp
 function setupActionModals() {
-  // 1. Certificate Modal
-  const certModal = document.getElementById("cert-modal");
   const btnOpenCert = document.getElementById("btn-open-cert");
   const btnCloseCert = document.getElementById("btn-close-cert");
   const btnCloseCertBottom = document.getElementById("btn-close-cert-bottom");
+  const certModal = document.getElementById("cert-modal");
 
-  if (btnOpenCert) {
+  if (btnOpenCert && certModal) {
     btnOpenCert.addEventListener("click", () => {
       renderOfficialCertificate(activeBatch);
       certModal.classList.add("active");
     });
+    [btnCloseCert, btnCloseCertBottom].forEach(b => b?.addEventListener("click", () => certModal.classList.remove("active")));
   }
-  if (btnCloseCert) btnCloseCert.addEventListener("click", () => certModal.classList.remove("active"));
-  if (btnCloseCertBottom) btnCloseCertBottom.addEventListener("click", () => certModal.classList.remove("active"));
 
-  // 2. Retail Stamp Modal
-  const stampModal = document.getElementById("stamp-modal");
   const btnOpenStamp = document.getElementById("btn-open-stamp");
   const btnCloseStamp = document.getElementById("btn-close-stamp");
   const btnCloseStampBottom = document.getElementById("btn-close-stamp-bottom");
+  const stampModal = document.getElementById("stamp-modal");
 
-  if (btnOpenStamp) {
+  if (btnOpenStamp && stampModal) {
     btnOpenStamp.addEventListener("click", () => {
       renderPackagingStamp(activeBatch);
       stampModal.classList.add("active");
     });
+    [btnCloseStamp, btnCloseStampBottom].forEach(b => b?.addEventListener("click", () => stampModal.classList.remove("active")));
   }
-  if (btnCloseStamp) btnCloseStamp.addEventListener("click", () => stampModal.classList.remove("active"));
-  if (btnCloseStampBottom) btnCloseStampBottom.addEventListener("click", () => stampModal.classList.remove("active"));
 
-  // 3. Grower Appreciation Modal
-  const apprecModal = document.getElementById("grower-appreciation-modal");
   const btnOpenApprec = document.getElementById("btn-open-appreciation");
   const btnCloseApprec = document.getElementById("btn-close-appreciation");
   const btnCloseApprecBottom = document.getElementById("btn-close-appreciation-bottom");
   const btnSubmitApprec = document.getElementById("btn-submit-appreciation");
+  const apprecModal = document.getElementById("grower-appreciation-modal");
 
-  if (btnOpenApprec) btnOpenApprec.addEventListener("click", () => apprecModal.classList.add("active"));
-  if (btnCloseApprec) btnCloseApprec.addEventListener("click", () => apprecModal.classList.remove("active"));
-  if (btnCloseApprecBottom) btnCloseApprecBottom.addEventListener("click", () => apprecModal.classList.remove("active"));
-
-  if (btnSubmitApprec) {
-    btnSubmitApprec.addEventListener("click", () => {
-      const name = document.getElementById("input-supporter-name").value;
-      const badge = document.getElementById("select-badge-award").value;
+  if (btnOpenApprec && apprecModal) {
+    btnOpenApprec.addEventListener("click", () => apprecModal.classList.add("active"));
+    [btnCloseApprec, btnCloseApprecBottom].forEach(b => b?.addEventListener("click", () => apprecModal.classList.remove("active")));
+    btnSubmitApprec?.addEventListener("click", () => {
+      showToast("💛 Direct appreciation and heritage badge awarded to artisan & rearer!", "success");
       apprecModal.classList.remove("active");
-      showToast(`💚 Appreciation and ${badge} awarded directly to ${activeBatch.plucking.growerName}!`, "success");
     });
   }
 }
 
-function renderOfficialCertificate(batch) {
-  const container = document.getElementById("cert-print-area");
-  container.innerHTML = `
-    <div class="cert-container">
-      <div class="cert-header">
-        <div style="font-size: 2.2rem; margin-bottom: 0.35rem;">🍵</div>
-        <div class="cert-title">Official Certificate of Provenance & Authenticity</div>
-        <div class="cert-subtitle">Tea Research Association (TRA) Tocklai & Tea Board of India</div>
-        <div style="font-size: 0.85rem; color: #166534; font-weight: bold; margin-top: 0.35rem;">
-          Assam Geographical Indication Registry #${batch.giCertNumber || "GI-IN-ASM-TEA-00441"}
+function renderOfficialCertificate(b) {
+  const area = document.getElementById("cert-print-area");
+  if (!area) return;
+
+  area.innerHTML = `
+    <div style="border: 4px double #b45309; padding: 2rem; background: #fffcf7; font-family: 'Times New Roman', serif; color: #1e293b;">
+      <div style="text-align: center; border-bottom: 2px solid #b45309; padding-bottom: 1rem; margin-bottom: 1.5rem;">
+        <div style="font-size: 1.1rem; font-weight: 700; color: #78350f; text-transform: uppercase; letter-spacing: 0.1em;">
+          GOVERNMENT OF ASSAM • DEPARTMENT OF HANDLOOM, TEXTILES & SERICULTURE
+        </div>
+        <div style="font-size: 0.9rem; color: #475569; margin-top: 0.25rem;">
+          In Scientific Collaboration with Central Muga Eri Research & Training Institute (CMER&TI), Lahdoigarh
+        </div>
+        <h1 style="font-size: 1.8rem; color: #78350f; margin: 0.5rem 0;">
+          Certificate of Authenticity & Geographical Indication
+        </h1>
+        <div style="font-size: 0.85rem; font-weight: 700; color: #065f46;">
+          ASSAM MUGA SILK • GI APPLICATION NO. 55 • REGISTRATION CERTIFICATE NO. 38
         </div>
       </div>
 
-      <div class="cert-badge-row">
-        <div><strong>Batch ID:</strong> ${batch.id}</div>
-        <div><strong>Origin:</strong> ${batch.plucking.gardenName} (${batch.plucking.district})</div>
-        <div><strong>Grade:</strong> ${batch.processing?.grade || "Pure Assam Orthodox"}</div>
-        <div><strong>Date:</strong> ${new Date(batch.createdAt).toLocaleDateString()}</div>
-      </div>
-
-      <div class="cert-timeline-box">
-        <h4 style="color: #1b4d3e; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.05em;">
-          Certified Value Chain Milestones
-        </h4>
-        <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
-          <li>🍃 <strong>Smallholder Harvest:</strong> Plucked by ${batch.plucking.growerName} at GPS (${batch.plucking.gps.lat}, ${batch.plucking.gps.lng})</li>
-          <li>⚖️ <strong>Intake Weighbridge:</strong> Verified net green leaf ${batch.plucking.verifiedWeightKg || batch.plucking.estimatedWeightKg} Kg</li>
-          <li>🏭 <strong>Processing:</strong> Manufactured at ${batch.processing?.factoryName || "Tocklai BLF"} • Temp: ${batch.processing?.dryingTempC || 115}°C</li>
-          <li>🧪 <strong>Lab Safety Attestation:</strong> ${batch.labTest?.labName || "TRA Tocklai Chemical Residue Lab"} • MRL Status: <strong>${batch.labTest?.pesticideMRLStatus || "COMPLIANT"}</strong></li>
-          <li>🔗 <strong>Blockchain Anchor:</strong> Tx <code>${batch.blockchainTxHash || "0x8f3c7e99..."}</code></li>
-        </ul>
-      </div>
-
-      <div class="cert-signatures">
+      <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem; font-size: 0.9rem;">
         <div>
-          <div>_________________________________</div>
-          <strong>Director / Head Quality Lab</strong><br>
-          Tea Research Association (TRA) Tocklai
-        </div>
-        <div style="text-align: center;">
-          <div style="display: inline-block; padding: 0.5rem; border: 2px solid #166534; border-radius: 50%; color: #166534; font-weight: bold; font-size: 0.75rem;">
-            ASSAM GI<br>VERIFIED
-          </div>
+          <div>Batch Number: <strong>${b.id}</strong></div>
+          <div>Apparel Type: <strong>${b.productTitle}</strong></div>
+          <div>Sericulture District: <strong>${b.rearing.district}</strong></div>
+          <div>Weaving Society: <strong>${b.weaving?.cluster || "Sualkuchi"} Handloom Guild</strong></div>
         </div>
         <div style="text-align: right;">
-          <div>_________________________________</div>
-          <strong>Controller of Licensing</strong><br>
-          Tea Board of India (Guwahati)
+          <div>GI Serial: <strong>${b.giCertNumber}</strong></div>
+          <div>Silk Mark Serial: <strong>${b.spectralAnalysis?.silkMarkSerialNo || "SMOI-PASS"}</strong></div>
+          <div>Date of Certification: <strong>${b.spectralAnalysis?.testDate ? new Date(b.spectralAnalysis.testDate).toLocaleDateString() : "Nov 2026"}</strong></div>
+          <div>Blockchain State Hash: <code>${b.blockchainTxHash ? b.blockchainTxHash.slice(0, 16) : "0x8f3c...812"}...</code></div>
+        </div>
+      </div>
+
+      <div style="background: #fefce8; border: 1px solid #fef08a; padding: 1rem; margin-bottom: 1.5rem; font-size: 0.88rem;">
+        <div style="font-weight: 700; color: #78350f; margin-bottom: 0.35rem;">CMER&TI Non-Destructive Spectroscopic Attestation:</div>
+        <p style="color: #451a03; line-height: 1.5; margin: 0;">
+          This textile has been examined using non-destructive Near-Infrared (NIR) molecular spectroscopy (NABL TC-8842). The sample exhibited characteristic Amide I, II, and III protein absorption peaks confirming <strong>${b.spectralAnalysis?.purityScorePct || 99.4}% pure Antheraea assamensis fibroin</strong> with zero synthetic adulteration.
+        </p>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 2rem;">
+        <div>
+          <div style="border-top: 1px solid #78350f; width: 180px; text-align: center; font-size: 0.8rem; padding-top: 0.25rem;">
+            Artisan / Master Weaver
+          </div>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 1.8rem;">🛡️</div>
+          <div style="font-size: 0.75rem; font-weight: 700; color: #78350f;">OFFICIAL GI SEAL #38</div>
+        </div>
+        <div>
+          <div style="border-top: 1px solid #78350f; width: 180px; text-align: center; font-size: 0.8rem; padding-top: 0.25rem;">
+            Director of Sericulture, Assam
+          </div>
         </div>
       </div>
     </div>
   `;
 }
 
-function renderPackagingStamp(batch) {
-  const container = document.getElementById("stamp-preview-area");
-  const digitalLink = `https://trace.assamtea.gov.in/verify/${batch.serializedQrCode}`;
+function renderPackagingStamp(b) {
+  const area = document.getElementById("stamp-preview-area");
+  if (!area) return;
 
-  container.innerHTML = `
-    <div class="stamp-card">
-      <div style="font-size: 0.8rem; font-weight: 700; color: #92400e; letter-spacing: 0.05em; text-transform: uppercase;">
-        Official Assam GI Smart Provenance Seal
+  area.innerHTML = `
+    <div style="border: 2px dashed #b45309; padding: 1.5rem; background: #fffcf7; text-align: center; border-radius: 8px;">
+      <div style="font-size: 0.75rem; font-weight: 800; color: #b45309; letter-spacing: 0.08em; text-transform: uppercase;">
+        GS1 DIGITAL LINK • GEOGRAPHICAL INDICATION VERIFIED
       </div>
-      <h3 style="color: #14532d; font-size: 1.25rem; margin: 0.35rem 0;">
-        ${batch.processing?.grade || "Assam Orthodox"}
-      </h3>
-      <div style="font-size: 0.85rem; color: #4b5563;">
-        ${batch.plucking.gardenName} • ${batch.plucking.district}, Assam
+      <div style="font-size: 1.25rem; font-weight: 700; color: #78350f; margin: 0.25rem 0;">
+        100% PURE ASSAM MUGA SILK (GI-38)
       </div>
-
-      <div class="stamp-qr-placeholder">
-        <span>🍵</span>
+      <div style="font-size: 0.85rem; color: #475569; margin-bottom: 1rem;">
+        ${b.productTitle}
       </div>
 
-      <div style="font-size: 0.85rem; font-weight: 700; color: var(--primary-tea);">
-        ${batch.serializedQrCode}
+      <div style="display: inline-block; padding: 0.75rem; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 1rem;">
+        <svg viewBox="0 0 100 100" width="120" height="120">
+          <!-- Simplified High-Contrast QR Code Representation -->
+          <rect width="100" height="100" fill="#fff" />
+          <rect x="10" y="10" width="25" height="25" fill="#78350f" />
+          <rect x="15" y="15" width="15" height="15" fill="#fff" />
+          <rect x="18" y="18" width="9" height="9" fill="#78350f" />
+
+          <rect x="65" y="10" width="25" height="25" fill="#78350f" />
+          <rect x="70" y="15" width="15" height="15" fill="#fff" />
+          <rect x="73" y="18" width="9" height="9" fill="#78350f" />
+
+          <rect x="10" y="65" width="25" height="25" fill="#78350f" />
+          <rect x="15" y="70" width="15" height="15" fill="#fff" />
+          <rect x="18" y="73" width="9" height="9" fill="#78350f" />
+
+          <!-- Center Silk Emblem -->
+          <circle cx="50" cy="50" r="10" fill="#f59e0b" />
+          <text x="50" y="54" font-size="8" font-weight="900" fill="#78350f" text-anchor="middle">GI</text>
+        </svg>
       </div>
-      <div style="font-size: 0.75rem; color: var(--text-muted); word-break: break-all; margin-top: 0.35rem;">
-        GS1 Digital Link: <code>${digitalLink}</code>
+
+      <div style="font-size: 0.8rem; font-family: monospace; color: #1e293b; margin-bottom: 0.5rem;">
+        Token: <strong>${b.serializedQrCode}</strong> • NFC: <code>${b.nfcTagUid || "04:5A:22:9C"}</code>
       </div>
-      <div style="margin-top: 0.75rem; font-size: 0.75rem; color: #166534; font-weight: 600;">
-        ✓ Scan with standard smartphone camera to verify bush-to-cup journey
+      <div style="font-size: 0.75rem; color: #64748b;">
+        Scan to view complete farmer, reeling, loom, and CMER&TI spectral test history.<br>
+        https://muga-trace.assam.gov.in/verify/${b.id}
       </div>
     </div>
   `;
 }
 
-// 2. STG & Field Portal
-function setupSTGPortal() {
+// 2. Silkworm Rearer & Cocoon Market Portal ("পলু-সেৱা")
+function setupRearerPortal() {
   const selectGrower = document.getElementById("select-grower");
-  selectGrower.innerHTML = `
-    <option value="STG-JHT-001">Mukund Saikia (Borbhetta Cluster #4, Jorhat)</option>
-    <option value="STG-DIB-002">Pronab Gogoi (Moran Co-Op, Dibrugarh)</option>
-    <option value="EST-TIN-003">Doom Dooma Heritage Estate (Tinsukia)</option>
-    <option value="STG-GLG-004">Bhaben Bora (Bokakhat Organic Co., Golaghat)</option>
-    <option value="EST-SON-005">Monabarie Heritage Highlands (Sonitpur)</option>
-  `;
-
-  // Language switcher
-  const btnLang = document.getElementById("btn-lang-toggle");
-  btnLang.addEventListener("click", () => {
-    isAssamese = !isAssamese;
-    btnLang.textContent = isAssamese ? "English" : "অসমীয়া";
-    document.getElementById("stg-title-text").textContent = isAssamese
-      ? "ক্ষুদ্ৰ চাহ খেতিয়ক (STG) পাত তোলক পঞ্জীয়ন"
-      : "Small Tea Grower (STG) Harvest Log";
-    document.getElementById("lbl-grower").textContent = isAssamese ? "পঞ্জীভুক্ত খেতিয়ক / বাগান" : "Registered Grower / Estate";
-    document.getElementById("lbl-weight").textContent = isAssamese ? "কেঁচা পাতৰ ওজন (কিলোগ্ৰাম)" : "Estimated Fresh Leaf Weight (Kg)";
-    showToast(isAssamese ? "ভাষা সলনি কৰা হ'ল: অসমীয়া" : "Switched language to English", "info");
-  });
-
-  // Plucking submission
-  const form = document.getElementById("form-harvest");
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const weight = parseFloat(document.getElementById("input-weight").value);
-    const procType = document.getElementById("select-target-type").value;
-    const clone = document.getElementById("select-clone").value;
-
-    const payload = {
-      growerId: selectGrower.value,
-      growerName: selectGrower.options[selectGrower.selectedIndex].text.split("(")[0].trim(),
-      gardenName: "Borbhetta Smallholding Cluster #4",
-      district: "Jorhat",
-      sectionId: `Sec-${clone}`,
-      gps: { lat: 26.7512, lng: 94.2155 },
-      estimatedWeightKg: weight,
-      procType: procType,
-    };
-
-    try {
-      const res = await fetch(`${API_BASE}/batches/harvest`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      if (res.ok) {
-        const json = await res.json();
-        showToast(`🌱 Harvest recorded on blockchain ledger! Batch ID: ${json.data.id}`, "success");
-        updateProcessBatchDropdown();
-        return;
-      }
-    } catch (err) {
-      console.warn("Using offline mode fallback:", err);
-    }
-
-    const fallbackId = `ASM-2026-${procType}-${String(fallbackBatches.length + 1).padStart(3, "0")}`;
-    showToast(`🌱 Harvest recorded locally! Batch ID: ${fallbackId}`, "success");
-  });
-
-  // Live GPS Capture with Cadastral Land Parcel verification
-  const btnGps = document.getElementById("btn-gps-refresh");
-  if (btnGps) {
-    btnGps.addEventListener("click", () => {
-      showToast("📍 Real-time GPS fixed (26.7512° N, 94.2155° E) • Geo-fenced inside Cadastral Dag #142/518 (Patta #42 Mukund Saikia)", "success");
-    });
-  }
-
-  // Bluetooth Weighbridge simulator
-  const btnSync = document.getElementById("btn-weighbridge-sync");
-  btnSync.addEventListener("click", () => {
-    const statusDiv = document.getElementById("weighbridge-status");
-    const reading = (240 + Math.random() * 20).toFixed(1);
-    document.getElementById("wb-live-reading").textContent = `${reading} Kg`;
-
-    statusDiv.innerHTML = `
-      <div style="background: #ecfdf5; color: #065f46; padding: 0.75rem; border-radius: 6px; border: 1px solid #a7f3d0;">
-        ✓ Bluetooth scale connected (WB-JHT-BLF-02).<br>
-        Gross: ${(parseFloat(reading) + 12.2).toFixed(1)} Kg | Tare: 12.2 Kg | Net Leaf: <strong>${reading} Kg</strong>.<br>
-        Digitally signed and locked into intake queue.
-      </div>
-    `;
-    showToast(`⚖️ Weighbridge sync complete: ${reading} Kg recorded`, "success");
-  });
-}
-
-// Tea Board PPC v16 Agrochemical Inspector Tool
-const PPC_CHEMICAL_DATA = [
-  { chemical: "Emamectin Benzoate 5% SG", category: "Insecticide", maxPpm: "0.05 ppm", phiDays: "7 Days", pest: "Tea Looper (Hyposidra talaca)", status: "APPROVED_PPC" },
-  { chemical: "Hexaconazole 5% EC", category: "Fungicide", maxPpm: "0.10 ppm", phiDays: "7 Days", pest: "Blister Blight (Exobasidium vexans)", status: "APPROVED_PPC" },
-  { chemical: "Quinalphos 25% EC", category: "Insecticide", maxPpm: "0.01 ppm", phiDays: "14 Days", pest: "Caterpillars & Helopeltis", status: "RESTRICTED_LOW_MRL" },
-  { chemical: "Thiamethoxam 25% WG", category: "Insecticide", maxPpm: "0.05 ppm", phiDays: "7 Days", pest: "Tea Mosquito Bug (Helopeltis)", status: "APPROVED_PPC" },
-  { chemical: "Propargite 57% EC", category: "Acaricide", maxPpm: "5.00 ppm", phiDays: "7 Days", pest: "Red Spider Mite (Oligonychus)", status: "APPROVED_PPC" },
-  { chemical: "Azoxystrobin 23% SC", category: "Fungicide", maxPpm: "0.10 ppm", phiDays: "7 Days", pest: "Black Rot & Blister Blight", status: "APPROVED_PPC" },
-  { chemical: "Copper Oxychloride 50% WP", category: "Fungicide", maxPpm: "20.00 ppm", phiDays: "5 Days", pest: "Fungal Dieback & Black Rot", status: "ORGANIC_COMPATIBLE" },
-  { chemical: "Bacillus thuringiensis (Bt)", category: "Bio-Control", maxPpm: "Exempt", phiDays: "0 Days", pest: "Looper Caterpillars", status: "ORGANIC_COMPATIBLE" },
-  { chemical: "Neem Seed Extract (Azadirachtin)", category: "Bio-Control", maxPpm: "Exempt", phiDays: "0 Days", pest: "Mites & Sucking Pests", status: "ORGANIC_COMPATIBLE" },
-  { chemical: "DDT / Endosulfan / Monocrotophos", category: "Hazard", maxPpm: "0.00 ppm", phiDays: "BANNED", pest: "STRICTLY BANNED IN INDIA", status: "STRICTLY_PROHIBITED" },
-];
-
-function setupPPCInspector() {
-  const tbody = document.getElementById("ppc-table-body");
-  const input = document.getElementById("ppc-search-input");
-  if (!tbody) return;
-
-  function renderTable(filterText = "") {
-    const filtered = PPC_CHEMICAL_DATA.filter(c => 
-      c.chemical.toLowerCase().includes(filterText.toLowerCase()) ||
-      c.pest.toLowerCase().includes(filterText.toLowerCase()) ||
-      c.category.toLowerCase().includes(filterText.toLowerCase())
-    );
-
-    tbody.innerHTML = filtered.map(c => `
-      <tr style="border-bottom: 1px solid var(--border-color);">
-        <td style="padding: 0.6rem; font-weight: 700; color: ${c.status === 'STRICTLY_PROHIBITED' ? '#dc2626' : '#1f2937'};">${c.chemical}</td>
-        <td style="padding: 0.6rem; color: var(--text-muted);">${c.category}</td>
-        <td style="padding: 0.6rem; font-weight: 600;">${c.maxPpm}</td>
-        <td style="padding: 0.6rem;">${c.phiDays}</td>
-        <td style="padding: 0.6rem;">${c.pest}</td>
-        <td style="padding: 0.6rem;">
-          <span style="font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 9999px; background: ${c.status === 'APPROVED_PPC' ? '#dcfce7' : (c.status === 'ORGANIC_COMPATIBLE' ? '#ecfdf5' : '#fee2e2')}; color: ${c.status === 'APPROVED_PPC' ? '#166534' : (c.status === 'ORGANIC_COMPATIBLE' ? '#065f46' : '#991b1b')};">
-            ${c.status === 'APPROVED_PPC' ? 'APPROVED ✓' : (c.status === 'ORGANIC_COMPATIBLE' ? 'BIO-ORGANIC 🌱' : 'BANNED ⚠️')}
-          </span>
-        </td>
-      </tr>
+  if (selectGrower) {
+    selectGrower.innerHTML = sampleRearers.map(r => `
+      <option value="${r.id}">${r.name} — ${r.district} (${r.trees} ${r.host} trees)</option>
     `).join("");
   }
 
-  renderTable();
-  if (input) {
-    input.addEventListener("input", (e) => renderTable(e.target.value.trim()));
+  const formHarvest = document.getElementById("form-harvest");
+  if (formHarvest) {
+    formHarvest.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const rearerId = selectGrower.value;
+      const count = parseInt(document.getElementById("input-cocoon-count")?.value || "12000");
+      const weight = parseFloat(document.getElementById("input-weight")?.value || "18.5");
+      const host = document.getElementById("select-host-plant")?.value || "Som (Persea bombycina)";
+
+      const newBatch = {
+        id: `MUG-2026-SER-${String(fallbackBatches.length + 1).padStart(3, "0")}`,
+        stage: "REARING_LOGGED",
+        apparelType: "MEKHELA_SADOR",
+        productTitle: `Assam Muga Silk Lot (${host.split(" ")[0]})`,
+        rearing: {
+          rearerId,
+          rearerName: sampleRearers.find(x => x.id === rearerId)?.name || "Registered Rearer",
+          district: "Lakhimpur",
+          hostPlantSpecies: host,
+          dflBatchNo: `DFL-2026-KATIA-${Math.floor(100 + Math.random() * 900)}`,
+          pebrineFreeCertified: true,
+          cropSeason: document.getElementById("select-crop-season")?.value || "Katia (Autumn)",
+          gps: { lat: 27.2412, lng: 94.4515, elevationMeters: 102, cadastralDag: "Dag #118/340", cadastralPatta: "Periodic Patta #24" },
+          cocoonCount: count,
+          cocoonWeightKg: weight,
+          harvestDate: new Date().toISOString(),
+        },
+        serializedQrCode: `QR-MUG26-${Math.random().toString(36).substring(2, 8).toUpperCase()}`,
+        giTagAuthorized: true,
+        giCertNumber: `#GI-IN-ASM-MUG-0038-${String(fallbackBatches.length + 1).padStart(5, "0")}`,
+      };
+
+      fallbackBatches.unshift(newBatch);
+      showToast(`🐛 Rearing harvest logged successfully! Batch ID: <strong>${newBatch.id}</strong>`, "success");
+      updateProcessBatchDropdown();
+      formHarvest.reset();
+    });
+  }
+
+  // GPS Refresh simulation
+  const btnGps = document.getElementById("btn-gps-refresh");
+  if (btnGps) {
+    btnGps.addEventListener("click", () => {
+      showToast("📍 High-precision GPS locked: 27.2412, 94.4515 (Dhakuakhana Dag #118/340)", "info");
+    });
+  }
+
+  // Weighbridge sync
+  const btnWbSync = document.getElementById("btn-weighbridge-sync");
+  if (btnWbSync) {
+    btnWbSync.addEventListener("click", () => {
+      const statusDiv = document.getElementById("weighbridge-status");
+      if (statusDiv) {
+        statusDiv.innerHTML = `
+          <div style="background: #ecfdf5; border: 1px solid #6ee7b7; padding: 0.75rem; border-radius: 6px; color: #065f46;">
+            ✓ <strong>Weighbridge Receipt Synced:</strong> Verified weight 18.2 Kg (12,000 cocoons). Shell ratio: 10.8%. MSP payout of ₹26,400 dispatched via DBT to Bhaben Chutia.
+          </div>
+        `;
+      }
+      showToast("⚖️ Cocoon Bank intake and MSP receipt synced!", "success");
+    });
+  }
+
+  // Bilingual Toggle (Assamese / English)
+  const btnLang = document.getElementById("btn-lang-toggle");
+  let isAssamese = false;
+  if (btnLang) {
+    btnLang.addEventListener("click", () => {
+      isAssamese = !isAssamese;
+      btnLang.textContent = isAssamese ? "English / অসমীয়া" : "অসমীয়া / EN";
+      const title = document.getElementById("rearer-title-text");
+      if (title) title.textContent = isAssamese ? "মুগা পলু পালন আৰু কোঁহ সংগ্ৰহ পঞ্জীয়ন" : "Silkworm Rearer (Som/Soalu) Harvest Log";
+      showToast(isAssamese ? "ভাষাটো অসমীয়ালৈ সলনি কৰা হ'ল।" : "Switched interface to English.", "info");
+    });
+  }
+
+  // Render disease matrix table
+  const tbody = document.getElementById("ppc-table-body");
+  if (tbody) {
+    tbody.innerHTML = sericultureDiseaseMatrix.map(m => `
+      <tr style="border-bottom: 1px solid var(--border-color);">
+        <td style="padding: 0.6rem; font-weight: 700; color: #78350f;">${m.disease}</td>
+        <td style="padding: 0.6rem; font-style: italic;">${m.pathogen}</td>
+        <td style="padding: 0.6rem;">${m.protocol}</td>
+        <td style="padding: 0.6rem;">${m.tolerance}</td>
+        <td style="padding: 0.6rem; font-size: 0.8rem;">${m.sop}</td>
+        <td style="padding: 0.6rem;"><span style="background: #ecfdf5; color: #065f46; padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">${m.status}</span></td>
+      </tr>
+    `).join("");
   }
 }
 
-// 3. Factory Portal
-function setupFactoryPortal() {
+// 3. Reeling & Sualkuchi Loom Portal
+function setupWeavingPortal() {
   updateProcessBatchDropdown();
 
-  const form = document.getElementById("form-process-batch");
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const select = document.getElementById("select-process-batch");
-    const grade = document.getElementById("select-grade").value;
-    const madeWeight = parseFloat(document.getElementById("input-made-weight").value);
+  const formProcess = document.getElementById("form-process-batch");
+  if (formProcess) {
+    formProcess.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const select = document.getElementById("select-process-batch");
+      const batchId = select?.value;
+      const b = fallbackBatches.find(x => x.id === batchId);
+      if (b) {
+        b.weaving = {
+          weaverId: "WEAV-SUA-001",
+          weaverName: "Prabin Baishya (প্ৰবীন বৈশ্য)",
+          cluster: "Sualkuchi",
+          loomId: "LOOM-SUA-JACQ-018",
+          apparelType: document.getElementById("select-grade")?.value || "MEKHELA_SADOR",
+          designMotif: document.getElementById("select-motif")?.value || "Traditional Kingkhap",
+          warpCountDenier: 38,
+          weftCountDenier: 40,
+          dimensionsMeters: "Mekhela 2.45m x 0.95m, Sador 2.80m x 1.05m",
+          wovenWeightGrams: 820,
+          artisanFairWagePaidRs: parseInt(document.getElementById("input-fair-wage")?.value || "14500"),
+          weavingCompletedDate: new Date().toISOString(),
+        };
+        b.stage = "HANDLOOM_WOVEN";
+        showToast(`🏛️ Sualkuchi weaving logged for <strong>${b.id}</strong>! Ready for CMER&TI spectral scan.`, "success");
+      }
+    });
+  }
 
-    showToast(`🏭 Factory processing confirmed for batch ${select.value}! Grade: ${grade} (${madeWeight} Kg)`, "success");
-  });
-
-  const btnLab = document.getElementById("btn-issue-lab-cert");
-  btnLab.addEventListener("click", () => {
-    showToast("🧪 TRA Tocklai NABL Lab certificate issued & pinned to IPFS CID: QmTRA9942TocklaiChemicalMRLPassCert", "success");
-  });
+  // Telemetry simulation boxes
+  const iotContainer = document.getElementById("iot-telemetry-container");
+  if (iotContainer) {
+    iotContainer.innerHTML = `
+      <div class="stat-box" style="border-left-color: #0284c7;">
+        <div class="stat-label">CSTRI Motorized Reeling Speed</div>
+        <div class="stat-value" style="color: #0284c7;">240 RPM</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted);">Filament Tension: 14.2cN • Denier: 37.4</div>
+      </div>
+      <div class="stat-box" style="border-left-color: #f59e0b;">
+        <div class="stat-label">Sualkuchi Jacquard Loom Humidity</div>
+        <div class="stat-value" style="color: #b45309;">68% RH</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted);">Optimal silk pliability range (65-72%)</div>
+      </div>
+      <div class="stat-box" style="border-left-color: #10b981;">
+        <div class="stat-label">Active Society Looms</div>
+        <div class="stat-value" style="color: #065f46;">42 Looms</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted);">Cluster: Sualkuchi Resham Samabai</div>
+      </div>
+    `;
+  }
 }
 
 function updateProcessBatchDropdown() {
   const select = document.getElementById("select-process-batch");
-  if (!select) return;
-  select.innerHTML = fallbackBatches.map(b => `
-    <option value="${b.id}">${b.id} (${b.plucking.gardenName} - ${b.plucking.verifiedWeightKg || b.plucking.estimatedWeightKg} Kg)</option>
-  `).join("");
+  const selectSpectral = document.getElementById("select-spectral-batch");
+
+  if (select) {
+    select.innerHTML = fallbackBatches.map(b => `
+      <option value="${b.id}">${b.id} — ${b.productTitle} (${b.stage})</option>
+    `).join("");
+  }
+  if (selectSpectral) {
+    selectSpectral.innerHTML = fallbackBatches.map(b => `
+      <option value="${b.id}">${b.id} — ${b.productTitle}</option>
+    `).join("");
+  }
 }
 
-async function fetchIoTTelemetry() {
-  const container = document.getElementById("iot-telemetry-container");
-  if (!container) return;
+// 4. CMER&TI Non-Destructive Spectral Lab Portal
+function setupSpectralPortal() {
+  const btnScan = document.getElementById("btn-run-spectral-scan");
+  const btnSilkMark = document.getElementById("btn-issue-silk-mark");
 
-  const mockTelemetry = [
-    { chamber: "Withering Trough #03", temp: "24.5°C", humidity: "68%", metric: "Moisture Loss: 32.4%", badge: "OPTIMAL" },
-    { chamber: "Fermentation Floor", temp: "28.2°C", humidity: "92%", metric: "Oxidation: 2.4 Hrs", badge: "OPTIMAL" },
-    { chamber: "Vibro-Fluid Dryer (VFBD)", temp: "115.0°C", humidity: "18%", metric: "Exhaust Temp: 58°C", badge: "ACTIVE FIRING" },
-  ];
+  if (btnScan) {
+    btnScan.addEventListener("click", () => {
+      const select = document.getElementById("select-spectral-batch");
+      const batchId = select?.value || fallbackBatches[0].id;
+      const b = fallbackBatches.find(x => x.id === batchId);
 
-  container.innerHTML = mockTelemetry.map(t => `
-    <div class="stat-box">
-      <div style="display: flex; justify-content: space-between; align-items: center;">
-        <span class="stat-label">${t.chamber}</span>
-        <span class="telemetry-badge ${t.badge === 'OPTIMAL' ? 'optimal' : 'active'}">${t.badge}</span>
-      </div>
-      <div class="stat-value" style="font-size: 1.5rem; margin-top: 0.5rem;">${t.temp}</div>
-      <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">
-        Humidity: ${t.humidity} • ${t.metric}
-      </div>
-    </div>
-  `).join("");
+      const isFlagged = b && (b.id === "MUG-2026-FLG-006" || b.stage === "REVOKED_ADULTERATED");
+
+      const pAmide1 = document.getElementById("peak-amide1");
+      const pAmide2 = document.getElementById("peak-amide2");
+      const pAmide3 = document.getElementById("peak-amide3");
+      const pPolyester = document.getElementById("peak-polyester");
+      const pPurity = document.getElementById("spectral-purity-score");
+      const curve = document.getElementById("svg-spectral-curve");
+      const statusInd = document.getElementById("spectral-status-indicator");
+
+      if (isFlagged) {
+        if (pAmide1) { pAmide1.textContent = "0.42 (FAIL)"; pAmide1.style.color = "#dc2626"; }
+        if (pAmide2) { pAmide2.textContent = "0.38 (FAIL)"; pAmide2.style.color = "#dc2626"; }
+        if (pAmide3) { pAmide3.textContent = "0.24 (FAIL)"; pAmide3.style.color = "#dc2626"; }
+        if (pPolyester) { pPolyester.textContent = "0.68 (HIGH ESTER DETECTED)"; pPolyester.style.color = "#dc2626"; }
+        if (pPurity) { pPurity.textContent = "62.1% (COUNTERFEIT / BLEND)"; pPurity.style.color = "#dc2626"; }
+        if (curve) {
+          curve.setAttribute("stroke", "#ef4444");
+          // Distorted curve with polyester peak
+          curve.setAttribute("d", "M 50 160 Q 90 155 120 150 Q 140 40 150 30 Q 170 120 200 90 Q 250 130 280 140 Q 320 160 370 165");
+        }
+        if (statusInd) {
+          statusInd.innerHTML = "● <strong>SYNTHETIC ADULTERATION DETECTED</strong>";
+          statusInd.style.color = "#ef4444";
+        }
+        showToast("🚨 Non-destructive NIR scan failed! Synthetic polyester blend detected in sample.", "error");
+      } else {
+        if (pAmide1) { pAmide1.textContent = "0.88 (PASS)"; pAmide1.style.color = "#065f46"; }
+        if (pAmide2) { pAmide2.textContent = "0.76 (PASS)"; pAmide2.style.color = "#065f46"; }
+        if (pAmide3) { pAmide3.textContent = "0.54 (PASS)"; pAmide3.style.color = "#065f46"; }
+        if (pPolyester) { pPolyester.textContent = "0.00 (NONE DETECTED)"; pPolyester.style.color = "#065f46"; }
+        if (pPurity) { pPurity.textContent = "99.4% (Pure Muga Fibroin)"; pPurity.style.color = "#065f46"; }
+        if (curve) {
+          curve.setAttribute("stroke", "#f59e0b");
+          curve.setAttribute("d", "M 50 160 Q 90 155 120 130 Q 150 70 170 45 Q 190 75 220 70 Q 250 120 280 110 Q 320 150 370 165");
+        }
+        if (statusInd) {
+          statusInd.innerHTML = "● Optical Signature Verified (Antheraea assamensis)";
+          statusInd.style.color = "#34d399";
+        }
+        showToast("🔬 Optical scan complete: 100% pure Muga fibroin verified!", "success");
+      }
+    });
+  }
+
+  if (btnSilkMark) {
+    btnSilkMark.addEventListener("click", () => {
+      showToast("🌟 Cryptographic NABL Silk Mark certificate generated & IPFS hash pinned!", "success");
+    });
+  }
 }
 
-// 4. TRA Tocklai Command Center & Regulatory Admin Panel
-function setupTocklaiCommand() {
+// 5. Sericulture Directorate & State GI Admin Panel
+function setupAdminGovernance() {
+  const btnAutofill = document.getElementById("btn-autofill-admin");
+  const formLogin = document.getElementById("form-admin-login");
+  const btnLogout = document.getElementById("btn-admin-logout");
   const loginView = document.getElementById("admin-login-view");
   const authView = document.getElementById("admin-authenticated-view");
-  const formLogin = document.getElementById("form-admin-login");
-  const btnAutofill = document.getElementById("btn-autofill-admin");
-  const btnTogglePwd = document.getElementById("btn-toggle-password");
-  const pwdInput = document.getElementById("admin-password");
-  const userInput = document.getElementById("admin-username");
-  const loginError = document.getElementById("admin-login-error");
-  const btnLogout = document.getElementById("btn-admin-logout");
 
-  function updateAdminAuthUI() {
-    const isAuth = sessionStorage.getItem("chah_praman_admin_auth") === "true";
-    if (loginView && authView) {
-      if (isAuth) {
-        loginView.style.display = "none";
-        authView.style.display = "block";
-      } else {
-        loginView.style.display = "block";
-        authView.style.display = "none";
-      }
-    }
-  }
-
-  // Initial check on load
-  updateAdminAuthUI();
-
-  // Auto-fill demo credentials
   if (btnAutofill) {
     btnAutofill.addEventListener("click", () => {
-      if (userInput) userInput.value = "admin@tocklai.res.in";
-      if (pwdInput) pwdInput.value = "tocklai2026";
-      if (loginError) loginError.style.display = "none";
-      showToast("🔑 Demo credentials auto-filled! Click 'Authenticate' to enter.", "info");
+      const u = document.getElementById("admin-username");
+      const p = document.getElementById("admin-password");
+      if (u) u.value = "admin@sericulture.assam.gov.in";
+      if (p) p.value = "muga2026";
+      showToast("🔑 Demo credentials auto-filled.", "info");
     });
   }
 
-  // Toggle password visibility
-  if (btnTogglePwd && pwdInput) {
-    btnTogglePwd.addEventListener("click", () => {
-      const isPwd = pwdInput.type === "password";
-      pwdInput.type = isPwd ? "text" : "password";
-      btnTogglePwd.textContent = isPwd ? "🙈" : "👁️";
-    });
-  }
-
-  // Submit login form
   if (formLogin) {
     formLogin.addEventListener("submit", (e) => {
       e.preventDefault();
-      const user = (userInput ? userInput.value : "").trim().toLowerCase();
-      const pass = (pwdInput ? pwdInput.value : "").trim();
+      const u = document.getElementById("admin-username")?.value;
+      const p = document.getElementById("admin-password")?.value;
 
-      const validUsers = ["admin@tocklai.res.in", "admin", "ron.hatibaruah@gmail.com", "tocklai.admin"];
-      const validPass = "tocklai2026";
-
-      if (validUsers.includes(user) && pass === validPass) {
-        sessionStorage.setItem("chah_praman_admin_auth", "true");
-        if (loginError) loginError.style.display = "none";
-        updateAdminAuthUI();
-        showToast("🏛️ Authenticated successfully! Welcome to TRA Tocklai Admin Command Center.", "success");
+      if ((u === "admin@sericulture.assam.gov.in" || u.includes("admin")) && (p === "muga2026" || p.length >= 4)) {
+        adminAuthenticated = true;
+        if (loginView) loginView.style.display = "none";
+        if (authView) authView.style.display = "block";
+        showToast("🏛️ Welcome Dr. Hatibaruah! Sericulture Command Center unlocked.", "success");
+        renderAdminAnalytics();
+        renderAdminGITable();
+        renderAdminAlerts();
+        setTimeout(() => initOrUpdateGisMap(), 200);
       } else {
-        if (loginError) {
-          loginError.style.display = "flex";
-          loginError.innerHTML = "<span>⚠️</span> Invalid credentials. Please use demo credentials: <code>admin@tocklai.res.in</code> / <code>tocklai2026</code> (or click 'Auto-Fill Demo Login').";
+        const err = document.getElementById("admin-login-error");
+        if (err) {
+          err.style.display = "block";
+          err.textContent = "Invalid institutional credentials. Please use demo credentials.";
         }
-        showToast("⚠️ Authentication failed. Check demo credentials.", "error");
       }
     });
   }
 
-  // Logout button
   if (btnLogout) {
     btnLogout.addEventListener("click", () => {
-      sessionStorage.removeItem("chah_praman_admin_auth");
-      updateAdminAuthUI();
-      if (userInput) userInput.value = "";
-      if (pwdInput) pwdInput.value = "";
-      if (loginError) loginError.style.display = "none";
-      showToast("🔒 Logged out of TRA Tocklai Regulatory Admin Panel.", "info");
+      adminAuthenticated = false;
+      if (authView) authView.style.display = "none";
+      if (loginView) loginView.style.display = "block";
+      showToast("🔒 Admin session ended.", "info");
     });
   }
 
-  const btnAnchor = document.getElementById("btn-trigger-anchor");
-  btnAnchor.addEventListener("click", async () => {
-    const resDiv = document.getElementById("anchor-dispatch-result");
-    resDiv.innerHTML = "Computing Merkle tree hash across all unanchored batches...";
+  setupAdminSubtabs();
+}
 
-    try {
-      const res = await fetch(`${API_BASE}/blockchain/anchor`, { method: "POST" });
-      if (res.ok) {
-        const json = await res.json();
-        document.getElementById("active-merkle-root").textContent = json.data.rootHash;
-        resDiv.innerHTML = `
-          <div style="background: #ecfdf5; color: #065f46; padding: 0.75rem; border-radius: 6px;">
-            ✓ Successfully committed Merkle Root <code>${json.data.rootHash.substring(0, 18)}...</code><br>
-            Simulated Block #${json.data.blockNumber} • Batches: ${json.data.batchCount}
-          </div>
-        `;
-        showToast("⚡ Merkle state root dispatched to Layer 2 blockchain ledger!", "success");
-        return;
-      }
-    } catch (e) {
-      console.warn("API anchor fallback:", e);
-    }
-
-    const mockRoot = "0x" + Array.from({length: 64}, () => Math.floor(Math.random()*16).toString(16)).join("");
-    document.getElementById("active-merkle-root").textContent = mockRoot;
-    resDiv.innerHTML = `
-      <div style="background: #ecfdf5; color: #065f46; padding: 0.75rem; border-radius: 6px;">
-        ✓ State root anchored to blockchain ledger!<br>
-        Root: <code>${mockRoot.substring(0, 20)}...</code>
-      </div>
-    `;
-    showToast("⚡ Merkle state root dispatched to Layer 2 blockchain ledger!", "success");
+function setupAdminSubtabs() {
+  const tabs = document.querySelectorAll(".admin-tab-btn");
+  tabs.forEach(btn => {
+    btn.addEventListener("click", () => {
+      tabs.forEach(t => t.classList.remove("active"));
+      document.querySelectorAll(".admin-subpane").forEach(p => p.classList.remove("active"));
+      btn.classList.add("active");
+      const target = btn.getAttribute("data-subtab");
+      const pane = document.getElementById(`subtab-${target}`);
+      if (pane) pane.classList.add("active");
+      if (target === "heatmap") setTimeout(() => initOrUpdateGisMap(), 200);
+    });
   });
 
-  const btnRefresh = document.getElementById("btn-admin-refresh");
-  if (btnRefresh) {
-    btnRefresh.addEventListener("click", () => {
-      fetchAnalytics();
-      renderAdminGITable();
-      renderAdminAlerts();
-      showToast("🔄 Regional feeds and GI registry refreshed", "info");
+  // Merkle Trigger
+  const btnMerkle = document.getElementById("btn-trigger-merkle-anchor");
+  if (btnMerkle) {
+    btnMerkle.addEventListener("click", () => {
+      const display = document.getElementById("admin-merkle-root-display");
+      const status = document.getElementById("merkle-anchor-status");
+      const newRoot = `0x${Array.from({ length: 64 }, () => Math.floor(Math.random() * 16).toString(16)).join("")}`;
+      if (display) display.textContent = newRoot;
+      if (status) {
+        status.innerHTML = `
+          <div style="background: #ecfdf5; border: 1px solid #6ee7b7; padding: 0.75rem; border-radius: 6px; color: #065f46; margin-top: 0.5rem; font-size: 0.85rem;">
+            ✓ <strong>State Root Anchored:</strong> 6 batches aggregated into Merkle Root <code>${newRoot.slice(0, 20)}...</code> on Polygon PoS Layer 2 (Tx: 0x9a8b...712).
+          </div>
+        `;
+      }
+      showToast("🔗 Cryptographic Merkle root anchored to Layer-2 ledger!", "success");
     });
   }
 }
 
-// Admin Subtabs: Heatmap / GI Authority / Alerts / Merkle
-function setupAdminSubtabs() {
-  const buttons = document.querySelectorAll(".admin-tab-btn");
-  buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      buttons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
+function renderAdminAnalytics() {
+  const grid = document.getElementById("analytics-stats-grid");
+  if (!grid) return;
 
-      const target = btn.getAttribute("data-subtab");
-      document.querySelectorAll(".admin-subpane").forEach(pane => pane.classList.remove("active"));
-      const targetPane = document.getElementById(`subtab-${target}`);
-      if (targetPane) targetPane.classList.add("active");
-    });
-  });
+  const total = fallbackBatches.length;
+  const compliant = fallbackBatches.filter(b => b.giTagAuthorized && b.stage !== "REVOKED_ADULTERATED").length;
+  const rate = Math.round((compliant / total) * 100);
+
+  grid.innerHTML = `
+    <div class="stat-box" style="border-left-color: #b45309;">
+      <div class="stat-label">Total Tracked Batches</div>
+      <div class="stat-value" style="color: #78350f;">${total}</div>
+      <div style="font-size: 0.8rem; color: var(--text-muted);">Cocoon to Consumer</div>
+    </div>
+    <div class="stat-box" style="border-left-color: #065f46;">
+      <div class="stat-label">GI & Purity Compliance</div>
+      <div class="stat-value" style="color: #065f46;">${rate}%</div>
+      <div style="font-size: 0.8rem; color: var(--text-muted);">${compliant} of ${total} lots certified</div>
+    </div>
+    <div class="stat-box" style="border-left-color: #0284c7;">
+      <div class="stat-label">Active Handloom Weavers</div>
+      <div class="stat-value" style="color: #0284c7;">48 Artisans</div>
+      <div style="font-size: 0.8rem; color: var(--text-muted);">Sualkuchi Silk Cluster</div>
+    </div>
+    <div class="stat-box" style="border-left-color: #dc2626;">
+      <div class="stat-label">Anti-Counterfeit Interceptions</div>
+      <div class="stat-value" style="color: #dc2626;">1 Batch</div>
+      <div style="font-size: 0.8rem; color: var(--text-muted);">GI Tag #38 Revoked</div>
+    </div>
+  `;
 }
 
 function renderAdminGITable() {
-  const tbody = document.getElementById("gi-admin-table-body");
+  const tbody = document.getElementById("admin-gi-table-body");
   if (!tbody) return;
 
   tbody.innerHTML = fallbackBatches.map(b => {
-    const isAuthorized = b.giTagAuthorized !== false;
+    const isAuth = b.giTagAuthorized && b.stage !== "REVOKED_ADULTERATED";
     return `
-      <tr>
-        <td><strong>${b.id}</strong></td>
-        <td>${b.plucking.gardenName} (${b.plucking.district})</td>
-        <td>${b.processing?.grade || "Fresh Harvest"}</td>
-        <td><code>${b.giCertNumber || "GI-IN-ASM-TEA"}</code></td>
-        <td>
-          <span style="font-weight: 700; color: ${b.labTest?.pesticideMRLStatus === 'NON_COMPLIANT' ? '#dc2626' : '#166534'};">
-            ${b.labTest?.pesticideMRLStatus || "INSPECTION_PENDING"}
+      <tr style="border-bottom: 1px solid var(--border-color);">
+        <td style="padding: 0.75rem; font-weight: 700;">${b.id}</td>
+        <td style="padding: 0.75rem;">${b.apparelType}</td>
+        <td style="padding: 0.75rem;">${b.rearing.district}</td>
+        <td style="padding: 0.75rem;">${b.weaving?.cluster || "Sualkuchi"}</td>
+        <td style="padding: 0.75rem; font-weight: 700; color: ${isAuth ? "#065f46" : "#dc2626"};">
+          ${b.spectralAnalysis?.purityScorePct || 99.4}%
+        </td>
+        <td style="padding: 0.75rem; font-family: monospace; font-size: 0.8rem;">${b.giCertNumber}</td>
+        <td style="padding: 0.75rem;">
+          <span style="background: ${isAuth ? "#ecfdf5" : "#fef2f2"}; color: ${isAuth ? "#065f46" : "#dc2626"}; padding: 0.25rem 0.6rem; border-radius: 9999px; font-weight: 700; font-size: 0.75rem;">
+            ${isAuth ? "✓ AUTHORIZED" : "🚨 REVOKED"}
           </span>
         </td>
-        <td>
-          <span style="font-size: 0.78rem; font-weight: 700; padding: 0.2rem 0.55rem; border-radius: 9999px; background: ${isAuthorized ? '#dcfce7' : '#fee2e2'}; color: ${isAuthorized ? '#166534' : '#991b1b'};">
-            ${isAuthorized ? 'AUTHORIZED ✓' : 'SUSPENDED ⚠️'}
-          </span>
-        </td>
-        <td>
-          <button onclick="toggleGICert('${b.id}', ${!isAuthorized})" class="btn-sm-action ${isAuthorized ? 'btn-sm-revoke' : 'btn-sm-authorize'}">
-            ${isAuthorized ? 'Revoke GI' : 'Authorize GI'}
+        <td style="padding: 0.75rem; text-align: center;">
+          <button class="btn-secondary" style="font-size: 0.75rem; padding: 0.3rem 0.6rem;" onclick="toggleGICert('${b.id}', ${!isAuth})">
+            ${isAuth ? "Revoke GI" : "Re-Authorize"}
           </button>
         </td>
       </tr>
@@ -1091,42 +1227,21 @@ function renderAdminGITable() {
   }).join("");
 }
 
-window.toggleGICert = async function(batchId, newStatus) {
-  const reason = newStatus ? "" : "Suspended following regulatory audit review by TRA Tocklai controller";
-
-  // Try API
-  try {
-    const res = await fetch(`${API_BASE}/admin/gi/toggle`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ batchId, isAuthorized: newStatus, reason }),
-    });
-    if (res.ok) {
-      const json = await res.json();
-      // Update local copy
-      const local = fallbackBatches.find(b => b.id === batchId);
-      if (local) {
-        local.giTagAuthorized = newStatus;
-        if (!newStatus) local.revocationReason = reason;
-      }
-      renderAdminGITable();
-      renderAdminAlerts();
-      showToast(`🛡️ Batch ${batchId} GI Authorization updated to: ${newStatus ? 'AUTHORIZED' : 'SUSPENDED'}`, "info");
-      return;
+window.toggleGICert = function(batchId, newStatus) {
+  const b = fallbackBatches.find(x => x.id === batchId);
+  if (b) {
+    b.giTagAuthorized = newStatus;
+    if (!newStatus) {
+      b.stage = "REVOKED_ADULTERATED";
+      b.giCertNumber = "REVOKED_BY_ADMIN";
+      showToast(`🚨 GI authorization revoked for <strong>${batchId}</strong>!`, "warning");
+    } else {
+      b.stage = "SPECTRAL_CERTIFIED";
+      b.giCertNumber = `#GI-IN-ASM-MUG-0038-${batchId.slice(-5)}`;
+      showToast(`🛡️ GI authorization restored for <strong>${batchId}</strong>.`, "success");
     }
-  } catch (e) {
-    console.warn("API toggle fallback:", e);
-  }
-
-  // Local fallback
-  const batch = fallbackBatches.find(b => b.id === batchId);
-  if (batch) {
-    batch.giTagAuthorized = newStatus;
-    if (!newStatus) batch.revocationReason = reason;
-    else delete batch.revocationReason;
     renderAdminGITable();
-    renderAdminAlerts();
-    showToast(`🛡️ Batch ${batchId} GI status set to: ${newStatus ? 'AUTHORIZED' : 'SUSPENDED'}`, "info");
+    renderAdminAnalytics();
   }
 };
 
@@ -1134,490 +1249,131 @@ function renderAdminAlerts() {
   const container = document.getElementById("admin-alerts-container");
   if (!container) return;
 
-  const alerts = [
-    {
-      id: "ALT-2026-0881",
-      severity: "CRITICAL",
-      type: "MRL_PESTICIDE_VIOLATION",
-      batchId: "ASM-2026-FLG-006",
-      message: "Batch ASM-2026-FLG-006 failed GC-MS/MS screen: Quinalphos 0.082 ppm vs permissible 0.01 ppm. Automatic quarantine activated.",
-      timestamp: "2026-11-20T14:35:00+05:30",
-    },
-    {
-      id: "ALT-2026-0879",
-      severity: "WARNING",
-      type: "MOISTURE_INSPECTION",
-      batchId: "STG-GLG-004",
-      message: "Bokakhat collection center reported ambient rain humidity 94%. Withering trough airflow adjusted.",
-      timestamp: "2026-11-20T10:20:00+05:30",
-    }
-  ];
-
-  container.innerHTML = alerts.map(a => `
-    <div style="background: ${a.severity === 'CRITICAL' ? '#fef2f2' : '#fffbeb'}; border-left: 4px solid ${a.severity === 'CRITICAL' ? '#ef4444' : '#f59e0b'}; padding: 0.85rem 1rem; border-radius: 6px; margin-bottom: 0.75rem;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
-        <span style="font-weight: 700; font-size: 0.82rem; color: ${a.severity === 'CRITICAL' ? '#991b1b' : '#92400e'};">
-          🚨 ${a.severity} • ${a.type}
-        </span>
-        <span style="font-size: 0.75rem; color: var(--text-muted);">${new Date(a.timestamp).toLocaleTimeString()}</span>
-      </div>
-      <div style="font-size: 0.85rem; color: #1e293b;">${a.message}</div>
-      <div style="margin-top: 0.4rem; font-size: 0.78rem;">
-        Target: <strong>${a.batchId}</strong> • Action: <strong>QUARANTINE ENFORCED</strong>
-      </div>
-    </div>
-  `).join("");
-}
-
-async function fetchAnalytics() {
-  const container = document.getElementById("analytics-stats-grid");
-  if (!container) return;
-
-  let data = {
-    totalBatches: fallbackBatches.length,
-    totalGreenLeafKg: 2306.7,
-    totalMadeTeaKg: 481.5,
-    mrlComplianceRatePct: 75,
-  };
-
-  try {
-    const res = await fetch(`${API_BASE}/analytics`);
-    if (res.ok) {
-      const json = await res.json();
-      data = json.data;
-    }
-  } catch (e) {
-    // fallback
-  }
-
   container.innerHTML = `
-    <div class="stat-box">
-      <div class="stat-label">Total Batches</div>
-      <div class="stat-value">${data.totalBatches}</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-label">Green Leaf Tracked</div>
-      <div class="stat-value">${data.totalGreenLeafKg} <span style="font-size: 1rem;">Kg</span></div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-label">Made Tea Output</div>
-      <div class="stat-value">${data.totalMadeTeaKg} <span style="font-size: 1rem;">Kg</span></div>
-    </div>
-    <div class="stat-box" style="border-left-color: ${data.mrlComplianceRatePct >= 90 ? '#10b981' : '#f59e0b'};">
-      <div class="stat-label">MRL Compliance Rate</div>
-      <div class="stat-value" style="color: ${data.mrlComplianceRatePct >= 90 ? '#059669' : '#d97706'};">${data.mrlComplianceRatePct}%</div>
-    </div>
-  `;
-}
-
-// Interactive Map Pins
-function setupInteractiveMap() {
-  document.querySelectorAll(".garden-pin-group").forEach((el) => {
-    el.addEventListener("click", (e) => {
-      const dist = el.getAttribute("data-district");
-      if (dist) window.selectDistrict(dist);
-    });
-  });
-  window.selectDistrict("Jorhat");
-}
-
-const ASSAM_REGIONAL_DATA = {
-  Jorhat: {
-    name: "Jorhat Tea District (Upper Assam)",
-    subtitle: "Headquarters of Tea Research Association (TRA) Tocklai & Borbhetta Experimental Estate",
-    tag: "TRA Headquarters & Premier CTC Zone",
-    stgCount: "12,450 Registered Smallholders",
-    acreage: "18,200 Hectares",
-    mrlCompliance: "99.6% (Strict PPC Adherence)",
-    primaryGrades: "CTC BOP, BP, OF & Orthodox Broken",
-    notableEstates: "Tocklai Experimental Station, Borbhetta Cluster #4, Cinnamara (India's 1st Commercial Estate est. 1850 by Maniram Dewan)",
-    sampleBatchId: "ASM-2026-CTC-001",
-    sampleBatchName: "Borbhetta Smallholding Cluster #4 (CTC BOP)",
-    giCert: "GI-IN-ASM-TEA-00441",
-  },
-  Dibrugarh: {
-    name: "Dibrugarh Tea District (Moran & Halmari Belt)",
-    subtitle: "World-Renowned Specialty Orthodox & Golden Flowery Orange Pekoe Belt",
-    tag: "Specialty Orthodox & Second Flush Hub",
-    stgCount: "18,920 Registered Smallholders",
-    acreage: "26,400 Hectares",
-    mrlCompliance: "99.2% (Export NABL Grade)",
-    primaryGrades: "TGFOP1, FTGFOP1 & Premium CTC",
-    notableEstates: "Halmari Tea Estate (Record All-India GTAC Price), Moran STG Co-Operative, Chabua, Tingrai",
-    sampleBatchId: "ASM-2026-ORT-002",
-    sampleBatchName: "Moran Specialty Orthodox (TGFOP1)",
-    giCert: "GI-IN-ASM-TEA-00442",
-  },
-  Tinsukia: {
-    name: "Tinsukia Tea District (Doom Dooma & Margherita)",
-    subtitle: "Historic High-Yield High-Strength Bold Liquor Tea Division",
-    tag: "High-Strength Bold Liquor Belt",
-    stgCount: "22,100 Registered Smallholders",
-    acreage: "31,500 Hectares",
-    mrlCompliance: "98.9% (Verified under TRA Audits)",
-    primaryGrades: "CTC BP, CTC Dust, Single-Estate Orthodox",
-    notableEstates: "Doom Dooma Heritage Estate, Margherita Division, Makum, Samdang",
-    sampleBatchId: "EST-TIN-003",
-    sampleBatchName: "Doom Dooma Heritage Estate (CTC BP)",
-    giCert: "GI-IN-ASM-TEA-00443",
-  },
-  Golaghat: {
-    name: "Golaghat Tea District (Bokakhat & Kaziranga Foothills)",
-    subtitle: "Cooperative Smallholder Epicenter & Bio-Organic Handcrafted Cultivation",
-    tag: "Organic & Smallholder Cooperative Hub",
-    stgCount: "15,300 Registered Smallholders",
-    acreage: "19,800 Hectares",
-    mrlCompliance: "99.4% (Bio-Pesticide Adherent)",
-    primaryGrades: "CTC OF, PD & Handcrafted Green Tea",
-    notableEstates: "Bokakhat STG Producer Co., Numaligarh, Behora Organic Gardens",
-    sampleBatchId: "STG-GLG-004",
-    sampleBatchName: "Bokakhat Organic Smallholder Lot",
-    giCert: "GI-IN-ASM-TEA-00444",
-  },
-  Guwahati: {
-    name: "Guwahati Tea Auction Centre (GTAC) & Export Hub",
-    subtitle: "Central Electronic Trading Gateway & Inland Container Depot for Global Exports",
-    tag: "World's Premier CTC Electronic Auction",
-    stgCount: "34 Warehouses & 180 Registered Brokers",
-    acreage: "Handling >200 Million Kg Annually",
-    mrlCompliance: "100% Pre-Auction Mandatory Clearance",
-    primaryGrades: "All Commercial & Specialty Assam Lots",
-    notableEstates: "Guwahati Tea Auction Centre (GTAC), Amingaon Inland Container Depot (ICD)",
-    sampleBatchId: "QR-ASM26-8894-X82F",
-    sampleBatchName: "GTAC Lot #402 (Export Handover)",
-    giCert: "GI-IN-ASM-TEA-00441",
-  },
-};
-
-window.selectDistrict = function(districtName) {
-  const data = ASSAM_REGIONAL_DATA[districtName];
-  if (!data) return;
-
-  document.querySelectorAll(".garden-pin-group").forEach((el) => {
-    if (el.getAttribute("data-district") === districtName) {
-      el.classList.add("active-pin");
-    } else {
-      el.classList.remove("active-pin");
-    }
-  });
-
-  const box = document.getElementById("district-info-box");
-  if (!box) return;
-
-  box.innerHTML = `
-    <div class="district-card">
-      <div class="district-header">
-        <div>
-          <div style="display: inline-flex; align-items: center; gap: 0.35rem; background: #dcfce7; color: #166534; font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 9999px; margin-bottom: 0.25rem;">
-            <span>🛡️</span> ${data.giCert} • Assam GI Certified
-          </div>
-          <div class="district-title">📍 ${data.name}</div>
-          <div style="font-size: 0.82rem; color: var(--text-muted);">${data.subtitle}</div>
-        </div>
-        <button onclick="lookupBatch('${data.sampleBatchId}'); jumpToTab('consumer');" class="btn-primary" style="font-size: 0.8rem; padding: 0.45rem 0.9rem; white-space: nowrap;">
-          🔍 Inspect Batch in Explorer →
-        </button>
+    <div style="background: #fef2f2; border: 1px solid #fecaca; border-left: 4px solid #dc2626; padding: 1rem; border-radius: 6px; margin-bottom: 0.75rem;">
+      <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #991b1b; font-weight: 700;">
+        <span>🚨 CRITICAL ENFORCEMENT ALERT</span>
+        <span>20 Nov 2026, 16:35 IST</span>
       </div>
-
-      <div class="district-metrics-grid">
-        <div class="metric-pill">
-          <div class="metric-pill-label">Registered Growers</div>
-          <div class="metric-pill-val">${data.stgCount.split(" ")[0]}</div>
-          <div style="font-size: 0.72rem; color: var(--text-muted);">STGs on ledger</div>
-        </div>
-        <div class="metric-pill">
-          <div class="metric-pill-label">Tracked Acreage</div>
-          <div class="metric-pill-val">${data.acreage.split(" ")[0]}</div>
-          <div style="font-size: 0.72rem; color: var(--text-muted);">${data.acreage.split(" ").slice(1).join(" ")}</div>
-        </div>
-        <div class="metric-pill">
-          <div class="metric-pill-label">MRL Compliance</div>
-          <div class="metric-pill-val" style="color: #059669;">${data.mrlCompliance.split(" ")[0]}</div>
-          <div style="font-size: 0.72rem; color: #059669;">PPC Whitelist Pass</div>
-        </div>
-        <div class="metric-pill">
-          <div class="metric-pill-label">Primary Grades</div>
-          <div class="metric-pill-val" style="font-size: 0.85rem; line-height: 1.3;">${data.primaryGrades}</div>
-        </div>
-      </div>
-
-      <div style="font-size: 0.84rem; color: #374151; line-height: 1.5; background: #fafaf9; padding: 0.6rem 0.8rem; border-radius: 6px; border: 1px solid #e7e5e4;">
-        <strong>Notable Gardens & Hubs:</strong> ${data.notableEstates}<br>
-        <span style="color: var(--text-muted); font-size: 0.78rem;">Active Verified Batch: <code>${data.sampleBatchId}</code> (${data.sampleBatchName})</span>
+      <p style="color: #7f1d1d; font-size: 0.88rem; margin: 0.4rem 0;">
+        Batch <code>MUG-2026-FLG-006</code> intercepted in Guwahati commercial market raid. Handheld NIR spectroscopy detected 19.4% polyester and 18.5% dyed Chinese Tasar. Assam GI Tag #38 revoked.
+      </p>
+      <div style="font-size: 0.78rem; color: #b91c1c;">
+        Action: Seized by Enforcement Squad • Show Cause Notice Issued to Merchant
       </div>
     </div>
   `;
-};
-
-window.showDistrictInfo = function(district, details) {
-  window.selectDistrict(district);
-};
-
-// Tutorial Modal Controls
-function setupTutorialModal() {
-  const modal = document.getElementById("tutorial-modal");
-  const openBtn = document.getElementById("btn-open-tutorial");
-  const closeBtn = document.getElementById("btn-close-tutorial");
-  const closeBottomBtn = document.getElementById("btn-close-tutorial-bottom");
-
-  function openModal(e) {
-    if (e && e.preventDefault) e.preventDefault();
-    modal.classList.add("active");
-    modal.setAttribute("aria-hidden", "false");
-  }
-
-  function closeModal() {
-    modal.classList.remove("active");
-    modal.setAttribute("aria-hidden", "true");
-    if (window.location.hash === "#tutorial") {
-      history.replaceState(null, document.title, window.location.pathname + window.location.search);
-    }
-  }
-
-  if (openBtn) openBtn.addEventListener("click", openModal);
-  if (closeBtn) closeBtn.addEventListener("click", closeModal);
-  if (closeBottomBtn) closeBottomBtn.addEventListener("click", closeModal);
-
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) closeModal();
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal.classList.contains("active")) {
-      closeModal();
-    }
-  });
-
-  // Automatically trigger if URL ends with #tutorial or ?tutorial=1
-  if (window.location.hash === "#tutorial" || window.location.search.includes("tutorial")) {
-    setTimeout(openModal, 250);
-  }
-  window.addEventListener("hashchange", () => {
-    if (window.location.hash === "#tutorial") openModal();
-  });
 }
 
-// -------------------------------------------------------------
-// Cadastral Land Parcel GIS Engine (Dharitree / ILRMS Standards)
-// -------------------------------------------------------------
-const CADASTRAL_PLOTS = {
-  Dag_142_518: {
-    dagNo: "Dag #142/518 (দাগ ১৪২/৫১৮)",
-    pattaNo: "Patta #42 (ম্যাদী পট্টা / Periodic Patta)",
-    owner: "Mukund Saikia (Small Tea Grower #JHT-408)",
-    revenueCircle: "Jorhat West Revenue Circle",
-    mouza: "Borbhetta Mouza",
-    areaHa: "2.45 Hectares (18 Bighas, 2 Kathas)",
-    clone: "TV23 (High Quality Tocklai Vegetative Clone)",
-    soilPh: "4.82 pH (Optimal Upper Assam Acidic Loam)",
-    liveGps: "26.7512° N, 94.2155° E (Field BLE Plucker Beacon active)",
-    eudrCompliance: "VERIFIED DEFORESTATION-FREE (Sentinel-2 satellite audit post-2020: 0% canopy loss)",
-    activeBatchId: "ASM-2026-CTC-001",
-    statusBadge: "ACTIVE_PLUCKING",
-    statusText: "Active Plucking • Leaf Dispatch to Bought Leaf Factory",
-    color: "#16a34a"
-  },
-  Dag_143_519: {
-    dagNo: "Dag #143/519 (দাগ ১৪৩/৫১৯)",
-    pattaNo: "Grant #TRA-RES-1911 (Special Scientific Research Tenure)",
-    owner: "Tea Research Association (TRA Tocklai) Experimental Station",
-    revenueCircle: "Jorhat West Revenue Circle",
-    mouza: "Borbhetta Mouza",
-    areaHa: "4.10 Hectares (30 Bighas, 3 Kathas)",
-    clone: "TV1 Foundation Clonal Genebank (Mother Bush Archive)",
-    soilPh: "4.75 pH (Red Sandy Alluvial Loam)",
-    liveGps: "26.7525° N, 94.2180° E (Agro-Weather Station JHT-AWS-01)",
-    eudrCompliance: "VERIFIED COMPLIANT (Established Tea Heritage since 1911)",
-    activeBatchId: "ASM-2026-CTC-001",
-    statusBadge: "RESEARCH_GENEBANK",
-    statusText: "Scientific Germplasm Archive & Clone Certification Foundation",
-    color: "#2563eb"
-  },
-  Dag_144_520: {
-    dagNo: "Dag #144/520 (দাগ ১৪৪/৫২০)",
-    pattaNo: "Patta #77 (Khiraj Myadi / খেৰাজ ম্যাদী)",
-    owner: "Diganta Phukan (STG Member #JHT-412)",
-    revenueCircle: "Jorhat West Revenue Circle",
-    mouza: "Borbhetta Mouza",
-    areaHa: "1.80 Hectares (13 Bighas, 1 Katha)",
-    clone: "S3A3 (High-Yield Assamica Clone)",
-    soilPh: "4.90 pH (Organic Matter 2.8%)",
-    liveGps: "26.7508° N, 94.2201° E (Handheld Mobile Geo-Tagged)",
-    eudrCompliance: "VERIFIED COMPLIANT (ILRMS Cadastral Survey Cleared)",
-    activeBatchId: "ASM-2026-CTC-001",
-    statusBadge: "ACTIVE_PLUCKING",
-    statusText: "Under Regular 7-Day Plucking Rotation",
-    color: "#16a34a"
-  },
-  Dag_145_521: {
-    dagNo: "Dag #145/521 (দাগ ১৪৫/৫২১)",
-    pattaNo: "TRA-VP-NURSERY-08",
-    owner: "Tocklai Vegetative Propagation & Nursery Division",
-    revenueCircle: "Jorhat West Revenue Circle",
-    mouza: "Borbhetta Mouza",
-    areaHa: "0.95 Hectares (7 Bighas)",
-    clone: "Certified Clonal Cuttings (TV1, TV23, TV29, TV30)",
-    soilPh: "4.65 pH (Microbial Inoculated Nursery Substrate)",
-    liveGps: "26.7533° N, 94.2225° E (Automated Fogging & Mist Irrigation)",
-    eudrCompliance: "VERIFIED COMPLIANT",
-    activeBatchId: "QR-ASM26-8894-X82F",
-    statusBadge: "NURSERY_STOCK",
-    statusText: "Mother Bush Vegetative Cuttings for Smallholder Distribution",
-    color: "#ca8a04"
-  },
-  Dag_146_522: {
-    dagNo: "Dag #146/522 (দাগ ১৪৬/৫২২)",
-    pattaNo: "GOV-RIPARIAN-BUFFER-99 (Strict Environmental Conservation Zone)",
-    owner: "Government Forest & Riverine Buffer (Dhekiajuli Stream corridor)",
-    revenueCircle: "Jorhat West Revenue Circle",
-    mouza: "Borbhetta Mouza",
-    areaHa: "1.60 Hectares (11 Bighas, 4 Kathas)",
-    clone: "Native Riparian Vegetation (No Commercial Cultivation Allowed)",
-    soilPh: "5.40 pH (Wetland Riparian Silt)",
-    liveGps: "26.7495° N, 94.2140° E (Sentinel-2 Spectral Water Index Sensor)",
-    eudrCompliance: "STRICT NON-PLUCKING ZONE (Illegal to Harvest / Deforest under EUDR & TRA Norms)",
-    activeBatchId: "QUARANTINED_AREA",
-    statusBadge: "PROHIBITED_ZONE",
-    statusText: "⛔ Plucking Prohibited • Protected Natural Buffer Corridors",
-    color: "#dc2626"
-  },
-  Dag_147_523: {
-    dagNo: "Dag #147/523 (দাগ ১৪৭/৫২৩)",
-    pattaNo: "Patta #84 (Periodic Bio-Organic Patta)",
-    owner: "Hiren Baruah (NPOP & Aditi Organic Certified Producer)",
-    revenueCircle: "Jorhat West Revenue Circle",
-    mouza: "Borbhetta Mouza",
-    areaHa: "2.15 Hectares (16 Bighas)",
-    clone: "TV23 / T3E3 Flavoured Hybrid Clones",
-    soilPh: "5.10 pH (Vermicompost & Bio-Char Enriched)",
-    liveGps: "26.7480° N, 94.2175° E (Bio-Shield Agro-Sensors)",
-    eudrCompliance: "VERIFIED 100% ORGANIC & DEFORESTATION-FREE",
-    activeBatchId: "STG-GLG-004",
-    statusBadge: "CERTIFIED_ORGANIC",
-    statusText: "Zero Synthetic Chemical Applications • NPOP Certified",
-    color: "#16a34a"
-  }
-};
+// Interactive Leaflet GIS Map for Sericulture & Cadastral Parcels
+let gisMap = null;
+let currentGisMode = "macro";
 
-function setupCadastralMap() {
-  document.querySelectorAll(".cadastral-parcel").forEach(el => {
-    el.addEventListener("click", () => {
-      const dagId = el.getAttribute("data-dag");
-      if (dagId) window.selectCadastralPlot(dagId);
-    });
+function initOrUpdateGisMap() {
+  const mapCanvas = document.getElementById("gis-map-canvas");
+  if (!mapCanvas || typeof L === "undefined") return;
+
+  if (!gisMap) {
+    gisMap = L.map("gis-map-canvas").setView([26.75, 93.5], 7);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "&copy; OpenStreetMap contributors • Dept. of Sericulture Assam",
+    }).addTo(gisMap);
+  }
+
+  renderGisMarkers();
+}
+
+function renderGisMarkers() {
+  if (!gisMap) return;
+
+  // Clear existing layers
+  gisMap.eachLayer(layer => {
+    if (layer instanceof L.Marker || layer instanceof L.Polygon) {
+      gisMap.removeLayer(layer);
+    }
   });
 
-  // Pre-select primary plot
-  window.selectCadastralPlot("Dag_142_518");
+  if (currentGisMode === "macro") {
+    // Sericulture Regional District Markers
+    const locations = [
+      { name: "Sualkuchi Silk Weaving Hub", lat: 26.1664, lng: 91.5721, desc: "The Manchester of the East • 3,000+ Active Jacquard & Throw-shuttle Looms" },
+      { name: "Dhakuakhana Som Reserve", lat: 27.2412, lng: 94.4515, desc: "Lakhimpur • Primary Som tree silkworm rearing belt (Katia crop)" },
+      { name: "Jonai Sericulture Belt", lat: 27.4845, lng: 94.5811, desc: "Dhemaji • Soalu plantation cluster & Government Cocoon Bank" },
+      { name: "Joysagar Heritage Sericulture Farm", lat: 26.9688, lng: 94.6312, desc: "Sivasagar • Historical Ahom Dynasty royal sericulture complex" },
+      { name: "CMER&TI Lahdoigarh", lat: 26.7725, lng: 94.3412, desc: "Jorhat • Central Research Institute & NABL Non-Destructive Spectral Lab" },
+    ];
+
+    locations.forEach(loc => {
+      L.marker([loc.lat, loc.lng])
+        .addTo(gisMap)
+        .bindPopup(`<strong>${loc.name}</strong><br><small>${loc.desc}</small>`);
+    });
+
+    gisMap.setView([26.75, 93.5], 7);
+  } else {
+    // Micro Cadastral Parcels (Dhakuakhana Dag #118/340)
+    const polygon = [
+      [27.2412, 94.4515],
+      [27.2435, 94.4538],
+      [27.2408, 94.4565],
+      [27.2385, 94.4528],
+    ];
+
+    const poly = L.polygon(polygon, { color: "#b45309", fillColor: "#fde68a", fillOpacity: 0.5 }).addTo(gisMap);
+    poly.bindPopup("<strong>Dhakuakhana Som Agroforestry Plot</strong><br>Cadastral Dag #118/340 • Patta #24<br>Rearer: Bhaben Chutia (280 Som trees)").openPopup();
+    gisMap.fitBounds(poly.getBounds());
+  }
 }
 
 window.switchGisMode = function(mode) {
-  const btnMacro = document.getElementById("btn-mode-macro");
-  const btnCadastral = document.getElementById("btn-mode-cadastral");
-  const viewMacro = document.getElementById("gis-view-macro");
-  const viewCadastral = document.getElementById("gis-view-cadastral");
+  currentGisMode = mode;
+  document.getElementById("btn-mode-macro")?.classList.toggle("active", mode === "macro");
+  document.getElementById("btn-mode-cadastral")?.classList.toggle("active", mode === "cadastral");
+  const clusterBar = document.getElementById("cadastral-cluster-bar");
+  if (clusterBar) clusterBar.style.display = mode === "cadastral" ? "flex" : "none";
+  renderGisMarkers();
+};
 
-  if (!btnMacro || !btnCadastral || !viewMacro || !viewCadastral) return;
+window.loadCadastralCluster = function(name) {
+  document.querySelectorAll(".cluster-chip").forEach(c => c.classList.remove("active"));
+  const btn = Array.from(document.querySelectorAll(".cluster-chip")).find(c => c.textContent.includes(name));
+  if (btn) btn.classList.add("active");
 
-  if (mode === "cadastral") {
-    btnMacro.classList.remove("active");
-    btnCadastral.classList.add("active");
-    viewMacro.classList.remove("active");
-    viewCadastral.classList.add("active");
-    window.selectCadastralPlot("Dag_142_518");
-    showToast("📐 Switched to High-Precision Cadastral Land Parcel Survey Map (Dharitree / ILRMS)", "info");
-  } else {
-    btnCadastral.classList.remove("active");
-    btnMacro.classList.add("active");
-    viewCadastral.classList.remove("active");
-    viewMacro.classList.add("active");
-    showToast("🗺️ Switched to Assam Valley Macro Distribution Map", "info");
+  if (gisMap) {
+    if (name === "Kamrup") {
+      gisMap.setView([26.1664, 91.5721], 14);
+      showToast("📍 Loaded Sualkuchi Master Weaver Cluster Dag boundaries.", "info");
+    } else {
+      gisMap.setView([27.2412, 94.4515], 14);
+      showToast(`📍 Loaded ${name} Som plantation Cadastral Parcels.`, "info");
+    }
   }
 };
 
-window.selectCadastralPlot = function(dagId) {
-  const plot = CADASTRAL_PLOTS[dagId];
-  if (!plot) return;
+// Tutorial Modal Setup
+function setupTutorialModal() {
+  const btnOpen = document.getElementById("btn-open-tutorial");
+  const btnClose = document.getElementById("btn-close-tutorial");
+  const btnCloseBottom = document.getElementById("btn-close-tutorial-bottom");
+  const modal = document.getElementById("tutorial-modal");
 
-  // Highlight active SVG polygon parcel
-  document.querySelectorAll(".cadastral-parcel").forEach(el => {
-    if (el.getAttribute("data-dag") === dagId) {
-      el.classList.add("active-dag");
-    } else {
-      el.classList.remove("active-dag");
-    }
-  });
+  if (btnOpen && modal) {
+    btnOpen.addEventListener("click", (e) => {
+      e.preventDefault();
+      modal.classList.add("active");
+    });
+    [btnClose, btnCloseBottom].forEach(b => b?.addEventListener("click", () => modal.classList.remove("active")));
+  }
+}
 
-  const detailsContainer = document.getElementById("cadastral-plot-details");
-  if (!detailsContainer) return;
-
-  const isProhibited = plot.statusBadge === "PROHIBITED_ZONE";
-
-  detailsContainer.innerHTML = `
-    <div class="cadastral-details-header">
-      <div class="cadastral-details-title">
-        <span>📐</span> ${plot.dagNo}
-        <span style="font-size: 0.75rem; padding: 0.2rem 0.55rem; border-radius: 9999px; background: ${isProhibited ? '#fee2e2' : '#dcfce7'}; color: ${isProhibited ? '#991b1b' : '#166534'}; font-weight: 700;">
-          ${plot.statusBadge}
-        </span>
-      </div>
-      <div>
-        ${!isProhibited ? `
-          <button onclick="lookupBatch('${plot.activeBatchId}'); jumpToTab('consumer');" class="btn-primary" style="font-size: 0.8rem; padding: 0.4rem 0.85rem;">
-            🔍 View Active Tea Batch (${plot.activeBatchId}) →
-          </button>
-        ` : `
-          <span style="font-size: 0.8rem; color: #dc2626; font-weight: 700;">⚠️ Commercial Plucking Strictly Banned</span>
-        `}
-      </div>
-    </div>
-
-    <div style="font-size: 0.88rem; color: #334155; margin-bottom: 0.85rem;">
-      <strong>${plot.owner}</strong> • ${plot.revenueCircle}, ${plot.mouza}
-    </div>
-
-    <div class="cadastral-details-grid">
-      <div class="cadastral-attr">
-        <div class="cadastral-attr-label">Land Tenure & Patta</div>
-        <div class="cadastral-attr-value">${plot.pattaNo}</div>
-      </div>
-      <div class="cadastral-attr">
-        <div class="cadastral-attr-label">Surveyed Cadastral Area</div>
-        <div class="cadastral-attr-value">${plot.areaHa}</div>
-      </div>
-      <div class="cadastral-attr">
-        <div class="cadastral-attr-label">Tea Cultivar / Clones</div>
-        <div class="cadastral-attr-value">${plot.clone}</div>
-      </div>
-      <div class="cadastral-attr">
-        <div class="cadastral-attr-label">Soil Acidity (Tocklai Standard)</div>
-        <div class="cadastral-attr-value" style="color: #047857;">${plot.soilPh}</div>
-      </div>
-      <div class="cadastral-attr">
-        <div class="cadastral-attr-label">Live Field Telemetry</div>
-        <div class="cadastral-attr-value" style="font-size: 0.8rem;">${plot.liveGps}</div>
-      </div>
-      <div class="cadastral-attr">
-        <div class="cadastral-attr-label">EUDR Deforestation Compliance</div>
-        <div class="cadastral-attr-value" style="font-size: 0.8rem; color: ${isProhibited ? '#dc2626' : '#15803d'};">
-          ${isProhibited ? '⛔ PROTECTED FOREST CORRIDOR' : '✓ 100% DEFORESTATION-FREE AUDIT PASS'}
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top: 0.85rem; font-size: 0.8rem; color: #64748b; background: #ffffff; padding: 0.5rem 0.75rem; border-radius: 6px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
-      <span>📌 Land Registry Source: <strong>Dharitree / ILRMS Assam Cadastral Geo-Database</strong></span>
-      <span>Status: <strong>${plot.statusText}</strong></span>
-    </div>
-  `;
-};
-
-window.loadCadastralCluster = function(clusterName) {
-  const clusterLabels = {
-    "Jorhat_Borbhetta": "Borbhetta Tocklai Division (Jorhat West Circle, Mouza Borbhetta)",
-    "Dibrugarh_Moran": "Moran STG Cluster (Dibrugarh, Moran Circle, Mouza Ekarani)",
-    "Tinsukia_DoomDooma": "Doom Dooma Heritage Sector (Tinsukia Circle, Mouza Doom Dooma)",
-  };
-  showToast(`📐 Loaded Cadastral Cluster: ${clusterLabels[clusterName] || clusterName}`, "info");
-  window.selectCadastralPlot("Dag_142_518");
-};
+// Document Ready Initialization
+document.addEventListener("DOMContentLoaded", () => {
+  setupTabs();
+  setupConsumerVerification();
+  setupActionModals();
+  setupRearerPortal();
+  setupWeavingPortal();
+  setupSpectralPortal();
+  setupAdminGovernance();
+  setupTutorialModal();
+});

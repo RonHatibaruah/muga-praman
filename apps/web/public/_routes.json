@@ -1,5 +1,12 @@
 {
   "version": 1,
   "include": ["/*"],
-  "exclude": ["/styles.css", "/app.js", "/index.html"]
+  "exclude": [
+    "/styles.css",
+    "/app.js",
+    "/index.html",
+    "/favicon.svg",
+    "/robots.txt",
+    "/sitemap.xml"
+  ]
 }

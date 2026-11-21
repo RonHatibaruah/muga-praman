@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <!-- Golden silk gradient -->
+    <linearGradient id="goldSilk" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A" />
+      <stop offset="35%" stop-color="#F59E0B" />
+      <stop offset="70%" stop-color="#D97706" />
+      <stop offset="100%" stop-color="#92400E" />
+    </linearGradient>
+    <!-- Royal Sericulture Maroon Background -->
+    <linearGradient id="maroonBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#831843" />
+      <stop offset="100%" stop-color="#500724" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Circular Badge Background -->
+  <circle cx="50" cy="50" r="48" fill="url(#maroonBg)" stroke="#F59E0B" stroke-width="2.5" />
+
+  <!-- Radiating Golden Luster Ring -->
+  <circle cx="50" cy="50" r="42" fill="none" stroke="#FBBF24" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.6" />
+
+  <!-- Stylized Muga Cocoon (Antheraea assamensis) -->
+  <g transform="translate(50, 48) rotate(-25)">
+    <!-- Cocoon body with natural ovate shape -->
+    <ellipse cx="0" cy="0" rx="17" ry="26" fill="url(#goldSilk)" filter="url(#glow)" />
+    <!-- Fine silk filament wrapping lines -->
+    <path d="M-12 -16 Q0 -10 12 -16" stroke="#FEF3C7" stroke-width="1.2" fill="none" opacity="0.8" />
+    <path d="M-15 -7 Q0 0 15 -7" stroke="#FEF3C7" stroke-width="1.2" fill="none" opacity="0.8" />
+    <path d="M-16 4 Q0 12 16 4" stroke="#FEF3C7" stroke-width="1.2" fill="none" opacity="0.8" />
+    <path d="M-13 15 Q0 21 13 15" stroke="#FEF3C7" stroke-width="1.2" fill="none" opacity="0.8" />
+    <!-- Silken peduncle anchor -->
+    <path d="M0 -26 Q-4 -33 -1 -38" stroke="#D97706" stroke-width="2.2" stroke-linecap="round" fill="none" />
+  </g>
+
+  <!-- Traditional Assamese Loom Wooden Shuttle (মাকু / Maku) Crossing Through -->
+  <g transform="translate(50, 52) rotate(45)">
+    <path d="M-36 0 Q-15 -5 36 0 Q-15 5 -36 0 Z" fill="#78350F" stroke="#FDE68A" stroke-width="1.2" />
+    <!-- Bobbin cavity & reeled golden yarn -->
+    <rect x="-10" y="-2" width="20" height="4" rx="1.5" fill="#F59E0B" />
+    <line x1="-8" y1="0" x2="8" y2="0" stroke="#FFFBEB" stroke-width="1" />
+  </g>
+
+  <!-- Verification Shield & Checkmark Badge (Bottom Right) -->
+  <g transform="translate(70, 70)">
+    <circle cx="0" cy="0" r="14" fill="#065F46" stroke="#34D399" stroke-width="1.8" />
+    <path d="M-5 0 L-1 4 L6 -4" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  </g>
+
+  <!-- Geographical Indication (GI) Micro Emblem (Top Left) -->
+  <g transform="translate(25, 24)">
+    <circle cx="0" cy="0" r="9" fill="#1E3A8A" stroke="#60A5FA" stroke-width="1.2" />
+    <text x="0" y="3.5" font-family="system-ui, sans-serif" font-size="7" font-weight="900" fill="#FFFFFF" text-anchor="middle">GI</text>
+  </g>
+</svg>
