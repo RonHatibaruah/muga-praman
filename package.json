@@ -14,8 +14,8 @@
     "dev:api": "npm run --workspace=apps/api dev",
     "dev:web": "npm run --workspace=apps/web dev",
     "build:cloudflare": "echo '✅ Cloudflare Pages assets ready at apps/web/public'",
-    "deploy:cloudflare": "npx wrangler pages deploy apps/web/public --project-name=muga-praman",
-    "dev:cloudflare": "npx wrangler pages dev apps/web/public"
+    "deploy:cloudflare": "cd apps/web && npx wrangler pages deploy public --project-name=muga-praman --branch=main",
+    "dev:cloudflare": "cd apps/web && npx wrangler pages dev public"
   },
   "keywords": [
     "muga-silk",
