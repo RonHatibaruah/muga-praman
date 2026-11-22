@@ -874,46 +874,46 @@ def build_proposal_pdf():
     # PAGE 12: Field 12: Resources, risks & pilot validation
     # =========================================================================
     story.append(Paragraph("Field 12: Resources, risks & pilot validation", styles['FieldHeading']))
-    story.append(Paragraph("Submission Word Budget: Word Count: ~447 words / Max: 500 words", styles['WordBudget']))
+    story.append(Paragraph("Submission Word Budget: Word Count: ~318 words / Max: 500 words", styles['WordBudget']))
     story.append(HRFlowable(width="100%", thickness=1, color=C_RULE, spaceBefore=1, spaceAfter=4))
 
-    story.append(Paragraph("Indicative Budget & Resource Allocation (Rs. 37.0 Lakhs Total)", styles['SubSectionHead']))
+    story.append(Paragraph("Indicative Budget & Resource Allocation (Rs. 40.0 Lakhs Total Grant)", styles['SubSectionHead']))
     budget_data = [
         [Paragraph("Category & Cost Driver", styles['TableHead']), Paragraph("Technical Scope & Description", styles['TableHead']), Paragraph("Amount (INR)", styles['TableHead']), Paragraph("% Budget", styles['TableHead'])],
         [
-            Paragraph("<b>Hardware & Sensors</b>", styles['TableCellBold']),
-            Paragraph("4x Portable Handheld NIR Spectrometers (900–1700 nm) + 10x BLE Digital Scales for seed grainages", styles['TableCell']),
-            Paragraph("Rs. 11,50,000", styles['TableCellBold']),
-            Paragraph("31.1%", styles['TableCell'])
+            Paragraph("<b>Software Development & Engineering Team</b>", styles['TableCellBold']),
+            Paragraph("Lead Architect, Mobile PWA Engineer, WebGIS Developer, ML Chemometrics Data Scientist, and Security QA (12-month development sprint)", styles['TableCell']),
+            Paragraph("Rs. 20,00,000", styles['TableCellBold']),
+            Paragraph("50.0%", styles['TableCell'])
         ],
         [
-            Paragraph("<b>Smart Tag Inventory</b>", styles['TableCellBold']),
-            Paragraph("50,000x NTAG 424 DNA Cryptographic NFC/QR Sew-in Smart Labels for pilot garments", styles['TableCell']),
-            Paragraph("Rs. 4,50,000", styles['TableCellBold']),
-            Paragraph("12.2%", styles['TableCell'])
+            Paragraph("<b>Hardware & Molecular Sensors</b>", styles['TableCellBold']),
+            Paragraph("3x Portable Handheld NIR Spectrometers (900–1700 nm) + 10x BLE Digital Scales for seed grainages & optical calibration sets", styles['TableCell']),
+            Paragraph("Rs. 8,50,000", styles['TableCellBold']),
+            Paragraph("21.3%", styles['TableCell'])
         ],
         [
-            Paragraph("<b>Software & Chemometrics</b>", styles['TableCellBold']),
-            Paragraph("PWA, WebGIS, Cloudflare serverless edge, PLS-DA model training, smart contract security audit", styles['TableCell']),
-            Paragraph("Rs. 10,50,000", styles['TableCellBold']),
-            Paragraph("28.4%", styles['TableCell'])
+            Paragraph("<b>Field Pilot, Training & Extension</b>", styles['TableCellBold']),
+            Paragraph("Lakhimpur rearer cooperative onboarding, Sualkuchi master weaver workshops, Assamese manual printing, and community liaison", styles['TableCell']),
+            Paragraph("Rs. 5,00,000", styles['TableCellBold']),
+            Paragraph("12.5%", styles['TableCell'])
         ],
         [
-            Paragraph("<b>Field Pilot & Training</b>", styles['TableCellBold']),
-            Paragraph("Lakhimpur rearer cooperative onboarding, Sualkuchi weaver workshops, Assamese manual printing", styles['TableCell']),
-            Paragraph("Rs. 6,50,000", styles['TableCellBold']),
-            Paragraph("17.6%", styles['TableCell'])
+            Paragraph("<b>Smart Tag Inventory (NFC/QR)</b>", styles['TableCellBold']),
+            Paragraph("40,000x NTAG 424 DNA Cryptographic NFC/QR Sew-in Smart Labels for pilot garments and tamper-evident packaging", styles['TableCell']),
+            Paragraph("Rs. 3,50,000", styles['TableCellBold']),
+            Paragraph("8.7%", styles['TableCell'])
         ],
         [
-            Paragraph("<b>Cloud & Contingency</b>", styles['TableCellBold']),
-            Paragraph("Cloudflare enterprise edge, Polygon L2 gas reserve, project administration and buffer", styles['TableCell']),
-            Paragraph("Rs. 4,00,000", styles['TableCellBold']),
-            Paragraph("10.7%", styles['TableCell'])
+            Paragraph("<b>Cloud Infrastructure & Contingency</b>", styles['TableCellBold']),
+            Paragraph("Cloudflare enterprise serverless edge, Polygon L2 gas reserve, third-party security audit, and emergency contingency reserve", styles['TableCell']),
+            Paragraph("Rs. 3,00,000", styles['TableCellBold']),
+            Paragraph("7.5%", styles['TableCell'])
         ],
         [
             Paragraph("<b>TOTAL DEVELOPMENT BUDGET</b>", styles['TableCellBold']),
-            Paragraph("<b>Complete 12-Month Pilot to Statewide Handover Budget (Within Rs. 40 Lakhs Tier)</b>", styles['TableCellBold']),
-            Paragraph("<b>Rs. 37,00,000</b>", styles['TableCellBold']),
+            Paragraph("<b>Total Grant Request for 12-Month Pilot to Statewide Handover</b>", styles['TableCellBold']),
+            Paragraph("<b>Rs. 40,00,000</b>", styles['TableCellBold']),
             Paragraph("<b>100.0%</b>", styles['TableCellBold'])
         ]
     ]

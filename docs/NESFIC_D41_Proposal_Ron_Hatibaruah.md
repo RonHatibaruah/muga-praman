@@ -353,11 +353,12 @@ Muga-Praman introduces the world's first unified non-destructive molecular finge
 *(Word count: 422 words / Max: 500 words)*
 
 ### Development & Validation Cost Drivers
-The budget is allocated across high-leverage hardware deployment, software refinement, and grassroots field onboarding:
-1. **Hardware Procurement (38%):** Procuring 10 field-ready handheld NIR spectrometers (approx. ₹1,50,000 to ₹2,20,000 per unit) for Sualkuchi weaving cooperatives and Dhakuakhana Cocoon Bank; 10,000 encrypted NXP NTAG 424 DNA NFC tags (₹15 to ₹25 per tag).
-2. **Software Engineering & Security Audits (28%):** Refining chemometric classification algorithms, smart contract gas optimization, and third-party cybersecurity penetration testing.
-3. **Grassroots Field Training & Community Mobilization (22%):** Organizing hands-on workshops in Assamese for 500 rearers, 200 master weavers, and Directorate flying squad personnel.
-4. **Edge Infrastructure & Cloud Operations (12%):** Cloudflare Pages edge hosting, domain registration, and NABL laboratory reference testing fees.
+The total indicative grant request is **₹40.0 Lakhs (40 Lacs)**, structured for maximum engineering rigor and grassroots field validation:
+1. **Software Development & Engineering Team (₹20.0 Lakhs - 50.0%):** Lead Architect, Mobile PWA Engineer, WebGIS Developer, ML Chemometrics Data Scientist, and Security QA Engineer across the 12-month development and integration lifecycle.
+2. **Hardware & Molecular Sensors (₹8.5 Lakhs - 21.3%):** 3x Portable Handheld NIR Spectrometers (900–1700 nm) + 10x Bluetooth BLE Digital Scales for seed grainages and optical calibration sets.
+3. **Field Pilot, Cooperative Onboarding & Training (₹5.0 Lakhs - 12.5%):** Lakhimpur rearer cooperative onboarding, Sualkuchi master weaver workshops, bilingual Assamese training manuals, extension camps & community liaison.
+4. **Smart Tag Inventory - NFC/QR (₹3.5 Lakhs - 8.7%):** 40,000x NTAG 424 DNA Cryptographic NFC/QR Sew-in Smart Labels for pilot garments and tamper-evident packaging.
+5. **Cloud Infrastructure, Security Audits & Contingency (₹3.0 Lakhs - 7.5%):** Cloudflare enterprise serverless edge hosting, Polygon Layer-2 gas reserve, external smart contract audit, and emergency contingency reserve.
 
 ### Key Risks & Practical Mitigations
 1. **Risk: Dust, Humidity & Environmental Wear on Optical Sensors in Sericulture Belts.**
