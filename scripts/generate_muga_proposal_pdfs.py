@@ -360,6 +360,9 @@ def build_proposal_pdf():
     story.append(Paragraph("Specific Gap Addressed & Intended Outcome", styles['SubSectionHead']))
     story.append(Paragraph("<b>Muga-Praman</b> eliminates the trade-off between testing accuracy and garment preservation through non-destructive Near-Infrared (NIR) spectroscopy paired with cryptographic blockchain provenance. The intended outcome is an automated, tamper-proof cocoon-to-consumer traceability ecosystem pre-empting adulteration, securing fair wages, and restoring global luxury confidence in Assam's golden heritage.", styles['Body']))
 
+    story.append(Spacer(1, 3))
+    story.append(RLImage(get_asset("muga_fig_prop_gap"), width=485, height=130))
+
     story.append(PageBreak())
 
     # =========================================================================
@@ -401,6 +404,9 @@ def build_proposal_pdf():
         ('RIGHTPADDING', (0,0), (-1,-1), 6),
     ]))
     story.append(shift_table)
+
+    story.append(Spacer(1, 4))
+    story.append(RLImage(get_asset("muga_fig_prop_solution"), width=485, height=155))
 
     story.append(PageBreak())
 
