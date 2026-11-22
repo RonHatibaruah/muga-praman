@@ -119,6 +119,17 @@ class NumberedPoWCanvas(canvas.Canvas):
         self.restoreState()
 
 
+
+def get_asset(name):
+    """Returns high-impact .jpg if exists, otherwise .png."""
+    jpg = os.path.join(DOCS_DIR, "assets", f"{name}.jpg")
+    if os.path.exists(jpg):
+        return jpg
+    png = os.path.join(DOCS_DIR, "assets", f"{name}.png")
+    if os.path.exists(png):
+        return png
+    return jpg
+
 def get_styles():
     base = getSampleStyleSheet()
     styles = {
@@ -305,7 +316,11 @@ def build_proposal_pdf():
         ],
         [
             Paragraph("<b>Live Prototype:</b> https://muga-praman.pages.dev/", styles['MetaKey']),
-            Paragraph("<b>GitHub Repo:</b> https://github.com/RonHatibaruah/muga-praman", styles['MetaKey'])
+            Paragraph("<b>App Tutorial & Guide:</b> https://muga-praman.pages.dev/#tutorial", styles['MetaKey'])
+        ],
+        [
+            Paragraph("<b>GitHub Repo:</b> https://github.com/RonHatibaruah/muga-praman", styles['MetaKey']),
+            Paragraph("<b>Platform Status:</b> Operational TRL-5 • Active Smart Contracts", styles['MetaKey'])
         ]
     ]
     meta_table = Table(meta_data, colWidths=[240, 247])
@@ -410,7 +425,7 @@ def build_proposal_pdf():
     story.append(Paragraph("• <b>Automated Test Suite:</b> 9 out of 9 unit and integration tests passing, validating Merkle tree hashing, NIR spectral analysis, and batch state transitions.", styles['Bullet']))
 
     story.append(Spacer(1, 3))
-    story.append(RLImage(os.path.join(DOCS_DIR, "assets/muga_fig_prop_wireframes.png"), width=485, height=195))
+    story.append(RLImage(get_asset("muga_fig_prop_wireframes"), width=485, height=195))
 
     story.append(PageBreak())
 
@@ -431,7 +446,7 @@ def build_proposal_pdf():
     story.append(Paragraph("• <b>Hardware Security:</b> NTAG 424 DNA tamper-evident NFC tags with cryptographic SUN (Secure Unique NFC) mirroring, preventing tag cloning and geographic replay attacks.", styles['Bullet']))
 
     story.append(Spacer(1, 3))
-    story.append(RLImage(os.path.join(DOCS_DIR, "assets/muga_fig_prop_tech_arch.png"), width=485, height=205))
+    story.append(RLImage(get_asset("muga_fig_prop_tech_arch"), width=485, height=205))
 
     story.append(PageBreak())
 
@@ -491,6 +506,9 @@ def build_proposal_pdf():
     story.append(method_table)
     story.append(Spacer(1, 6))
 
+    story.append(Spacer(1, 4))
+    story.append(RLImage(get_asset("muga_fig_prop_methodology"), width=485, height=185))
+    story.append(Spacer(1, 4))
     story.append(Paragraph("Risk Management & Verification Gates", styles['SubSectionHead']))
     story.append(Paragraph("Each stage requires strict sign-off criteria before progressing: Stage 1 requires >99% laboratory cross-validation on blind silk swatches; Stage 4 requires zero false-negative adulteration flags on known synthetic blends; Stage 5 requires 100% offline sync recovery across rural rearing hubs.", styles['Body']))
 
@@ -549,7 +567,7 @@ def build_proposal_pdf():
     story.append(Paragraph("Roadmap Visualization & Critical Path", styles['SubSectionHead']))
     story.append(Paragraph("The critical path centers on NIR spectral calibration in Phase 1 and handheld hardware procurement in Phase 2. Prototype validation begins at Month 6, with full pilot evidence available for Directorate review by Month 9.", styles['Body']))
     story.append(Spacer(1, 3))
-    story.append(RLImage(os.path.join(DOCS_DIR, "assets/muga_fig4_roadmap.png"), width=485, height=155))
+    story.append(RLImage(get_asset("muga_fig4_roadmap"), width=485, height=155))
 
     story.append(PageBreak())
 
@@ -615,6 +633,9 @@ def build_proposal_pdf():
     story.append(data_table)
     story.append(Spacer(1, 6))
 
+    story.append(Spacer(1, 4))
+    story.append(RLImage(get_asset("muga_fig_prop_data_flow"), width=485, height=185))
+    story.append(Spacer(1, 4))
     story.append(Paragraph("Dependencies & Realistic Access Assumptions", styles['SubSectionHead']))
     story.append(Paragraph("The platform does not assume unconfirmed real-time API access to Dharitree during field operations. Cadastral Dag boundaries are cached locally in GeoJSON format. NIR spectral standards are calibrated on physical samples directly with CMER&TI scientists, ensuring 100% operational autonomy even in offline rearing regions.", styles['Body']))
 
@@ -746,7 +767,7 @@ def build_proposal_pdf():
     story.append(Paragraph("Prior Research & Prototype Evidence", styles['SubSectionHead']))
     story.append(Paragraph("The NIR chemometric model builds upon established scientific literature from the <b>Central Silk Board (CSB)</b> and CMER&TI validating that Antheraea assamensis fibroin exhibits distinct β-sheet crystalline vibrations compared to Antheraea mylitta (Tussar) and Bombyx mori (Mulberry). All 9 automated test suites in the open-source repository (<code>apps/api/test/</code>) pass with zero errors.", styles['Body']))
     story.append(Spacer(1, 2))
-    story.append(RLImage(os.path.join(DOCS_DIR, "assets/muga_fig3_benchmarks.png"), width=485, height=185))
+    story.append(RLImage(get_asset("muga_fig3_benchmarks"), width=485, height=185))
 
     story.append(PageBreak())
 
@@ -772,6 +793,8 @@ def build_proposal_pdf():
     story.append(Paragraph("• <b>Geographical Indications Act 1999:</b> Enforces statutory compliance for Assam Golden Silk GI-55, restricting certified tags exclusively to genuine geo-fenced handloom output.", styles['Bullet']))
     story.append(Paragraph("• <b>Non-Invasive Decision Support & Human Review:</b> The platform operates strictly as an intelligent auditing and decision-support layer. Anomaly flags quarantine batches from automated GI certification but require a physical review by a designated Sericulture Quality Officer before any punitive action, ensuring natural justice.", styles['Bullet']))
 
+    story.append(Spacer(1, 4))
+    story.append(RLImage(get_asset("muga_fig_prop_security_dpdp"), width=485, height=185))
     story.append(PageBreak())
 
     # =========================================================================
@@ -837,6 +860,8 @@ def build_proposal_pdf():
     story.append(Paragraph("Intellectual Property & Dependencies", styles['SubSectionHead']))
     story.append(Paragraph("Core software architecture, ONNX chemometric training pipelines, and smart contracts are developed under open-source licenses (MIT/Apache 2.0). Proprietary NIR chemometric calibrations developed in collaboration with CMER&TI will be co-patented as government-shared IP, ensuring public domain utility for Assam.", styles['Body']))
 
+    story.append(Spacer(1, 4))
+    story.append(RLImage(get_asset("muga_fig_prop_innovation_moat"), width=485, height=180))
     story.append(PageBreak())
 
     # =========================================================================
@@ -972,7 +997,11 @@ def build_pow_pdf():
         ],
         [
             Paragraph("<b>Live Prototype:</b> https://muga-praman.pages.dev/", styles['MetaKey']),
-            Paragraph("<b>GitHub Repo:</b> https://github.com/RonHatibaruah/muga-praman", styles['MetaKey'])
+            Paragraph("<b>App Tutorial & Guide:</b> https://muga-praman.pages.dev/#tutorial", styles['MetaKey'])
+        ],
+        [
+            Paragraph("<b>GitHub Repo:</b> https://github.com/RonHatibaruah/muga-praman", styles['MetaKey']),
+            Paragraph("<b>Validation Status:</b> TRL-5 Working Prototype • 9/9 Unit Tests Pass", styles['MetaKey'])
         ]
     ]
     meta_table = Table(meta_data, colWidths=[240, 247])
@@ -988,6 +1017,8 @@ def build_pow_pdf():
     story.append(meta_table)
     story.append(Spacer(1, 6))
 
+    story.append(RLImage(get_asset("muga_hero_pow_composite"), width=485, height=160))
+    story.append(Spacer(1, 4))
     story.append(Paragraph("1. Executive Summary & Prototype Status", styles['FieldHeading']))
     story.append(HRFlowable(width="100%", thickness=1, color=C_RULE, spaceBefore=1, spaceAfter=4))
 
@@ -1044,12 +1075,12 @@ def build_pow_pdf():
     story.append(Paragraph("2. Live System Architecture & Technical Pipeline", styles['FieldHeading']))
     story.append(Paragraph("<b>Figure 1: Muga-Praman 4-Tier Cryptographic Architecture & Edge Processing Pipeline</b>", styles['SubSectionHead']))
     story.append(Spacer(1, 2))
-    story.append(RLImage(os.path.join(DOCS_DIR, "assets/muga_fig1_architecture.png"), width=485, height=265))
+    story.append(RLImage(get_asset("muga_fig1_architecture"), width=485, height=255))
     story.append(Spacer(1, 5))
 
     story.append(Paragraph("<b>Wireframe 1: Executive Sericulture Directorate & CMER&TI Command Center</b>", styles['SubSectionHead']))
     story.append(Spacer(1, 2))
-    story.append(RLImage(os.path.join(DOCS_DIR, "assets/muga_wireframe1_dashboard.png"), width=485, height=265))
+    story.append(RLImage(get_asset("muga_wireframe1_dashboard"), width=485, height=255))
 
     story.append(PageBreak())
 
@@ -1062,12 +1093,12 @@ def build_pow_pdf():
 
     story.append(Paragraph("<b>Wireframe 2: Sualkuchi Artisan Handloom WebGIS & Plantation Cadastral Explorer</b>", styles['SubSectionHead']))
     story.append(Spacer(1, 2))
-    story.append(RLImage(os.path.join(DOCS_DIR, "assets/muga_wireframe2_cadastral_gis.png"), width=485, height=255))
+    story.append(RLImage(get_asset("muga_wireframe2_cadastral_gis"), width=485, height=250))
     story.append(Spacer(1, 5))
 
     story.append(Paragraph("<b>Wireframe 3: Polu-Sewa (Muga Rearer Offline Mobile PWA with BLE Digital Scale Sync)</b>", styles['SubSectionHead']))
     story.append(Spacer(1, 2))
-    story.append(RLImage(os.path.join(DOCS_DIR, "assets/muga_wireframe3_stg_mobile.png"), width=485, height=255))
+    story.append(RLImage(get_asset("muga_wireframe3_stg_mobile"), width=485, height=250))
 
     story.append(PageBreak())
 
@@ -1076,12 +1107,12 @@ def build_pow_pdf():
     # =========================================================================
     story.append(Paragraph("<b>Wireframe 4: Citizen / Consumer Silk Authenticity & GI-55 Certificate Passport</b>", styles['SubSectionHead']))
     story.append(Spacer(1, 2))
-    story.append(RLImage(os.path.join(DOCS_DIR, "assets/muga_wireframe4_consumer_passport.png"), width=485, height=260))
+    story.append(RLImage(get_asset("muga_wireframe4_consumer_passport"), width=485, height=255))
     story.append(Spacer(1, 5))
 
     story.append(Paragraph("<b>Figure 2: Non-Destructive NIR Spectroscopy (Amide Peaks) & 5-Vector Defect Classifier</b>", styles['SubSectionHead']))
     story.append(Spacer(1, 2))
-    story.append(RLImage(os.path.join(DOCS_DIR, "assets/muga_fig2_spectral_interceptor.png"), width=485, height=260))
+    story.append(RLImage(get_asset("muga_fig2_spectral_interceptor"), width=485, height=255))
     story.append(HRFlowable(width="100%", thickness=1, color=C_RULE, spaceBefore=4, spaceAfter=4))
 
     story.append(PageBreak())
@@ -1092,7 +1123,7 @@ def build_pow_pdf():
     story.append(Paragraph("4. Empirical Test Benchmarks on Representative Assam Scenarios", styles['FieldHeading']))
     story.append(Paragraph("<b>Figure 3: System Performance Benchmarks across Simulated Muga Ingestion Scenarios</b>", styles['SubSectionHead']))
     story.append(Spacer(1, 2))
-    story.append(RLImage(os.path.join(DOCS_DIR, "assets/muga_fig3_benchmarks.png"), width=485, height=210))
+    story.append(RLImage(get_asset("muga_fig3_benchmarks"), width=485, height=205))
     story.append(Spacer(1, 3))
 
     bench_data = [
@@ -1233,7 +1264,7 @@ def build_pow_pdf():
     story.append(Paragraph("7. Pilot Validation & Scaling Roadmap", styles['FieldHeading']))
     story.append(Paragraph("<b>Figure 4: 12-Month Phased Rollout & Cluster Onboarding Roadmap (Lakhimpur, Sualkuchi, Dhemaji)</b>", styles['SubSectionHead']))
     story.append(Spacer(1, 2))
-    story.append(RLImage(os.path.join(DOCS_DIR, "assets/muga_fig4_roadmap.png"), width=485, height=155))
+    story.append(RLImage(get_asset("muga_fig4_roadmap"), width=485, height=155))
     story.append(Spacer(1, 4))
 
     pilot_box = [
