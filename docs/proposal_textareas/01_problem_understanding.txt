@@ -1,0 +1,26 @@
+================================================================================
+FIELD 1: Problem understanding & user workflow
+Prompt: Explain the problem, users/beneficiaries and current workflow. Identify the specific gap(s) addressed and the intended outcome.
+Word Count: 323 / 500 words (Strictly verified)
+================================================================================
+
+--- [START COPY FOR TEXTAREA] ---
+Problem Context & Scale:
+Assam holds a global monopoly on golden Muga silk (Antheraea assamensis), protected under Geographical Indication registration (GI-55). However, the value chain suffers severe structural vulnerabilities that threaten sericulture rearers and Sualkuchi weavers:
+1. Rampant adulteration with cheaper Tussar silk (Antheraea mylitta), Eri, Mulberry, and synthetic viscose/polyester rayon, masquerading as pure Muga at 40%–60% markups.
+2. Destructive and slow traditional laboratory testing methods (burn test, chemical dissolution in copper ethylenediamine) that ruin finished sarees worth Rs. 35,000 to Rs. 1,50,000.
+3. Opaque paper-based cocoon sourcing where commercial reelers mix untraced cocoons without DFL (Disease-Free Laying) pedigree or certified seed station records.
+4. Counterfeit paper Silk Mark tags and unauthorized GI label copying on powerloom-woven synthetic garments.
+5. Economic marginalization of >35,000 indigenous sericulture farm families and >12,000 Sualkuchi traditional handloom weavers facing unfair price suppression.
+
+Current Workflow & Its Structural Gaps:
+Currently, the Muga silk supply chain operates in fragmented, informal silos. Rearers harvest cocoons in Upper Assam (Lakhimpur, Dhemaji) and sell to itinerant middlemen with handwritten slips. Yarn is spun on motorized or traditional bhir charkhas and sold in Sualkuchi without batch integrity. Finished apparel receives paper tags that are easily duplicated. Discrepancies surface only when consumers discover fiber degradation after purchase, damaging the global reputation of Assam Golden Silk.
+
+Users & Beneficiaries:
+• Primary Administrative Users: Directorate of Sericulture inspectors, Handloom Quality Controllers, and CMER&TI scientific officers.
+• Supply Chain Operators: Registered silkworm seed grainages, rearer cooperatives, reeling units, and Sualkuchi master weavers.
+• Ultimate Beneficiaries: 35,000+ indigenous Muga rearers receiving fair DBT pricing, 12,000+ Sualkuchi handloom artisans, and global luxury consumers guaranteed 100% authentic GI-55 golden Muga.
+
+Specific Gap Addressed & Intended Outcome:
+Muga-Praman eliminates the trade-off between testing accuracy and garment preservation through non-destructive Near-Infrared (NIR) spectroscopy paired with cryptographic blockchain provenance. The intended outcome is an automated, tamper-proof cocoon-to-consumer traceability ecosystem pre-empting adulteration, securing fair wages, and restoring global luxury confidence in Assam's golden heritage.
+--- [END COPY FOR TEXTAREA] ---

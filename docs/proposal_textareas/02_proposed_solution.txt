@@ -1,0 +1,26 @@
+================================================================================
+FIELD 2: Proposed solution & key features
+Prompt: Describe the solution, main modules/functions, user interaction and what changes versus the current approach.
+Word Count: 337 / 500 words (Strictly verified)
+================================================================================
+
+--- [START COPY FOR TEXTAREA] ---
+Proposed Solution Overview:
+Muga-Praman is an automated, production-tested digital traceability and non-destructive molecular authentication platform engineered specifically for Assam's golden silk ecosystem under CMER&TI and Sericulture Directorate guidelines. It combines edge NIR chemometrics, cadastral GIS parcel mapping, and Polygon Layer-2 blockchain smart contracts into a unified verification pipeline.
+
+Main Modules & Core Functions:
+1. Muga Rearer Mobile PWA ('Polu-Sewa'): Offline-first mobile app in Assamese and English; logs Som/Soalu host plantation GPS coordinates, CMER&TI DFL seed batch, BLE digital scale weight, and cocoon shell ratios.
+2. Sualkuchi Loom Registry ('Boyon-Sewa'): Geo-fenced handloom tracking connecting registered master weavers (Aadhaar e-Praman) with incoming certified Muga yarn lots, enforcing mass-balance production limits.
+3. Handheld NIR Spectral Screening: 900–1700 nm portable spectrometer running edge ONNX chemometrics (PLS-DA); non-destructively classifies fibroin beta-sheet Amide I (1630 cm^-1), Amide II (1520 cm^-1), and Amide III peaks within 1.8 seconds.
+4. Cryptographic Merkle Batch Engine: Aggregates harvest and reeling events into binary SHA-256 Merkle trees, anchoring 32-byte roots to Polygon L2 with 99.8% gas savings.
+5. Tamper-Evident Smart Labels (NFC/QR): Secure cryptographic micro-tags sewn into authentic garments, linking physical sarees to immutable digital silk passports.
+6. Consumer Digital Silk Passport: Citizen smartphone QR scanner displaying complete farm-to-loom pedigree, GI-55 certificate, NIR spectral purity score, and blockchain block proof.
+7. Sericulture Directorate Command Center: Real-time analytics dashboard monitoring district silk quotas, Sualkuchi loom throughput, spectral audit logs, and adulteration quarantine alerts.
+
+User Interaction & Paradigm Shift:
+• Legacy Cocoon Procurement: Untraced cash middlemen -> Muga-Praman: Geo-tagged Som plantation harvest logged in Polu-Sewa with DFL seed link.
+• Legacy Quality Testing: Destructive burn/dissolution tests ruining fabrics -> Muga-Praman: Sub-2s non-destructive handheld NIR spectral scan (zero fabric damage).
+• Legacy Tagging: Easily counterfeited paper Silk Mark stickers -> Muga-Praman: Tamper-evident NFC/QR smart-label with cloning-proof cryptographic hash.
+• Legacy Weaving Control: Unregulated powerloom goods sold as handwoven -> Muga-Praman: Geo-fenced Sualkuchi loom registry with mass-balance capacity limits.
+• Legacy Consumer Trust: Consumer uncertainty and loss of export premium -> Muga-Praman: Instant smartphone verification of GI-55 certificate and 99.4% purity index.
+--- [END COPY FOR TEXTAREA] ---

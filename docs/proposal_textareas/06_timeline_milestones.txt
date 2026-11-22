@@ -1,0 +1,31 @@
+================================================================================
+FIELD 6: Development timeline & milestones
+Prompt: Provide an indicative development timeline with phases, milestones, deliverables and dependencies, including when the solution will be ready for validation.
+Word Count: 233 / 500 words (Strictly verified)
+================================================================================
+
+--- [START COPY FOR TEXTAREA] ---
+Indicative 12-Month Development Timeline:
+The project is structured into four quarterly phases with clear deliverables, dependencies, and validation checkpoints:
+
+• Q1 (Months 1–3): Foundation & Spectral Calibration
+  - Milestones: CMER&TI institutional sign-off; 1,200 spectral training samples collected; core smart contracts drafted.
+  - Deliverables: Calibrated PLS-DA model; Cloudflare D1 database schema; initial prototype web portal.
+  - Dependencies: CMER&TI laboratory access; reference silk sample procurement.
+
+• Q2 (Months 4–6): Prototype Build & Hardware Integration
+  - Milestones: BLE sensor integration complete; Polu-Sewa mobile PWA functional; Polygon L2 testnet deployment.
+  - Deliverables: Alpha release of Polu-Sewa; Web Bluetooth NIR driver; Merkle batching engine.
+  - Dependencies: Handheld NIR spectrometer hardware delivery; Dharitree GIS boundary access.
+
+• Q3 (Months 7–9): 90-Day Field Pilot & Validation
+  - Milestones: Live corridor rollout across Lakhimpur to Sualkuchi; 250,000 cocoons traced; 5,000 handwoven sarees smart-tagged; consumer QR passport tested across Assam emporiums.
+  - Deliverables: Pilot validation report; consumer feedback dataset; NABL concordance audit.
+  - Dependencies: Weaver cooperative onboarding; NFC smart label manufacturing lead time.
+  - Validation Checkpoint: Solution fully ready for independent regulatory and field validation by Month 8.
+
+• Q4 (Months 10–12): Statewide Scaling & Institutional Handover
+  - Milestones: Statewide rollout across Kamrup, Lakhimpur, Dhemaji, Golaghat; Sericulture Directorate Command Center live integration; Open API and SDK handover to Government of Assam.
+  - Deliverables: Final production deployment; comprehensive Assamese training toolkit; project closeout dossier.
+  - Dependencies: Directorate IT infrastructure readiness; master trainer availability.
+--- [END COPY FOR TEXTAREA] ---

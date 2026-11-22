@@ -1,0 +1,34 @@
+================================================================================
+FIELD 5: Development methodology & intermediate steps
+Prompt: Show the sequence from discovery/requirements through design, prototype, MVP, testing and refinement, with key outputs.
+Word Count: 287 / 500 words (Strictly verified)
+================================================================================
+
+--- [START COPY FOR TEXTAREA] ---
+Iterative Co-Design Methodology:
+Muga-Praman follows an Agile, human-centered DevSecOps methodology structured across six sequential phases ensuring scientific rigor, institutional alignment, and weaver adoption:
+
+Phase 1: Discovery & Spectral Baseline (Months 1–2)
+• Activities: Consultations with CMER&TI Lahdoigarh, Sualkuchi weavers, and Lakhimpur rearers. Collect 1,200 reference silk swatches (Muga, Tussar, Eri, Mulberry, Viscose) for NIR calibration.
+• Key Outputs: Stakeholder requirements matrix, NIR calibration library, cadastral boundary GeoJSONs.
+
+Phase 2: Architectural Design & Chemometric Modeling (Months 3–4)
+• Activities: Train PLS-DA classification models (target: >99% specificity for Antheraea assamensis). Design Cloudflare edge serverless API, smart contracts, and database schemas.
+• Key Outputs: Exported ONNX model (<5 MB), audited Solidity smart contracts, Figma interactive design system.
+
+Phase 3: Prototype & Sensor Integration (Months 5–6)
+• Activities: Build Polu-Sewa mobile PWA, connect Web Bluetooth NIR and scale drivers, implement binary Merkle tree engine on Polygon testnet.
+• Key Outputs: Functional lab prototype connecting hardware scanner to testnet smart contract.
+
+Phase 4: Field MVP Deployment (Months 7–8)
+• Activities: Deploy pilot across 250 Lakhimpur rearers, 2 commercial reeling units, and 100 Sualkuchi master looms. Trace 250,000 cocoons and 5,000 certified handwoven garments.
+• Key Outputs: 5,000 smart-tagged sarees in market, live analytics dashboard, field usability logs.
+
+Phase 5: Testing, Hardening & NABL Cross-Validation (Months 9–10)
+• Activities: Validate NIR accuracy against CSB and NABL accredited wet-chemistry benchmarks. Conduct third-party smart contract audits and penetration testing.
+• Key Outputs: NABL concordance validation report, smart contract security audit certificate.
+
+Phase 6: Institutional Handover & Statewide Scaling (Months 11–12)
+• Activities: Train 50 Sericulture Directorate inspectors and 1,000 weavers. Deploy production instances to Govt of Assam cloud infrastructure with full SOP documentation.
+• Key Outputs: Statewide production rollout, user manuals in Assamese/English, API documentation.
+--- [END COPY FOR TEXTAREA] ---

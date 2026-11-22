@@ -1,0 +1,29 @@
+================================================================================
+FIELD 10: Security, privacy, safety & compliance
+Prompt: Identify relevant security, privacy, safety, regulatory, interoperability, auditability and human-review requirements and how they will be addressed.
+Word Count: 226 / 500 words (Strictly verified)
+================================================================================
+
+--- [START COPY FOR TEXTAREA] ---
+Comprehensive Security & Compliance Architecture:
+Muga-Praman addresses regulatory, privacy, and security mandates across physical, network, and cryptographic layers:
+
+• DPDP Act 2023 & Farmer Privacy:
+  - Strict data minimization: No plaintext PII or raw Aadhaar numbers stored on-chain or in serverless databases.
+  - Farmer identity is verified via UIDAI-compliant one-way cryptographic hashes.
+  - Explicit consent logs captured in Assamese and English prior to location geo-tagging.
+
+• Smart Contract Auditability & Security:
+  - Smart contracts written in Solidity 0.8.20 incorporating OpenZeppelin audited access control (AccessControlUpgradeable) and reentrancy guards.
+  - Multi-signature governance: Emergency pause and parameter modifications require 3-of-5 threshold signatures from Sericulture Directorate officers and CMER&TI directors.
+  - Timelock controller enforces a 48-hour delay on critical smart contract updates.
+
+• Regulatory & Standard Compliance:
+  - Geographical Indication: Direct compliance with GI-55 statutory guidelines for Assam Golden Silk.
+  - Silk Mark Standards: Interoperable with Silk Mark Organization of India (SMOI) serialization standards.
+  - Hardware Safety: Handheld NIR spectrometers use eye-safe Class 1 infrared light sources, certified under IEC 60825-1 for safe operation in weaving sheds and marketplaces.
+
+• Human-in-the-Loop Review & Appeal Mechanism:
+  - If a batch is flagged for adulteration by NIR chemometrics, the reeler/weaver is granted an automated 7-day appeal window.
+  - A joint verification panel (comprising a CMER&TI scientist and a Sualkuchi Handloom Officer) conducts a secondary referee assay before any batch is permanently blacklisted.
+--- [END COPY FOR TEXTAREA] ---

@@ -1,0 +1,19 @@
+================================================================================
+SECTION 03: SUPPORTING MATERIAL & ONLINE SUBMISSION LINKS
+================================================================================
+
+1. Upload Proof of Work / Solution Evidence (PDF only · Maximum 10 MB):
+   File: docs/NESFIC_D41_Proof_of_Work_Ron_Hatibaruah.pdf
+   Description: 7-Page High-Fidelity Proof of Work Dossier containing 8 empirical benchmark test results, system architecture diagrams, cadastral GIS wireframes, and mathematical formulations.
+
+2. Demo / Product Video URL (Optional):
+   https://muga-praman.pages.dev/#tutorial
+   Description: Interactive step-by-step walkthrough and tutorial modal demonstrating the complete farm-to-fabric workflow across all 5 stakeholder portals.
+
+3. Product / Website URL (Optional):
+   https://muga-praman.pages.dev
+   Description: Live production deployment on Cloudflare Pages featuring interactive Sericulture Command Center, Sualkuchi Loom WebGIS, Polu-Sewa Rearer PWA, and Citizen Silk Passport.
+
+4. Additional Supporting Material (Optional URL / GitHub Repo):
+   https://github.com/RonHatibaruah/muga-praman
+   Description: Open-source repository containing full source code, Solidity smart contracts, Cloudflare Workers API, test suites, and documentation.

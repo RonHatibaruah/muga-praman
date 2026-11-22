@@ -1,0 +1,38 @@
+================================================================================
+FIELD 8: Team, manpower & expertise
+Prompt: Identify roles, relevant domain/technical expertise and indicative manpower by development phase. Highlight critical specialist skills.
+Word Count: 283 / 500 words (Strictly verified)
+================================================================================
+
+--- [START COPY FOR TEXTAREA] ---
+Core Technical Team & Domain Expertise:
+The implementation team combines multidisciplinary expertise across blockchain systems, chemometrics, sericulture domain science, and Assam handloom field operations:
+
+1. Ron Hatibaruah (Lead Applicant & System Architect):
+   - Responsibilities: Overall architecture, Cloudflare edge runtime, Solidity smart contracts, Merkle aggregation engine, and security compliance.
+   - Qualifications: Full-Stack & Blockchain Architect with experience in decentralized provenance and government tech.
+   - Manpower: 100% Full-Time (Months 1–12).
+
+2. NIR Chemometrics Specialist (Senior Data Scientist):
+   - Responsibilities: NIR spectral preprocessing, PLS-DA classification models, ONNX runtime conversion, and CMER&TI laboratory validation.
+   - Qualifications: M.Tech / Ph.D. in Analytical Chemistry / Chemometrics; expertise in fiber spectroscopy.
+   - Manpower: 75% Allocation (Months 1–8).
+
+3. Sericulture Field Coordinator (Domain Specialist):
+   - Responsibilities: Stakeholder liaison with Lakhimpur rearers, Sualkuchi weaving cooperatives, DFL seed grainages, and Assam Directorate.
+   - Qualifications: M.Sc. Sericulture / Textiles; 8+ years field experience in Assam silk value chain.
+   - Manpower: 100% Full-Time (Months 3–12).
+
+4. Mobile & WebGIS Engineer (Frontend Developer):
+   - Responsibilities: Polu-Sewa offline-first PWA, Assamese localization, Web Bluetooth BLE scale drivers, and Leaflet cadastral GIS mapping.
+   - Qualifications: B.Tech Computer Science; expertise in React, PWA, IndexedDB, and Leaflet/GIS.
+   - Manpower: 100% Full-Time (Months 2–10).
+
+5. QA & Security Auditor (Cybersecurity Specialist):
+   - Responsibilities: Smart contract security audits, cryptographic Merkle tree unit tests, penetration testing, and ISO 27001 data protection.
+   - Qualifications: Certified Ethical Hacker (CEH) / Smart Contract Auditor; 5+ years security experience.
+   - Manpower: 50% Allocation (Months 3–4, 9–11).
+
+Scientific Advisory & Critical Specialist Skills:
+The team is supported by honorary scientific advisors from CMER&TI Lahdoigarh for fibroin molecular spectral calibration and senior master weavers from the Sualkuchi Weavers Guild for traditional handloom verification, ensuring both scientific rigor and community acceptance.
+--- [END COPY FOR TEXTAREA] ---

@@ -1,0 +1,16 @@
+================================================================================
+FIELD 4: Technology & solution architecture
+Prompt: Describe stack and architecture: software/hardware, AI/ML models or algorithms, methods/rules, APIs/integrations, data flow and hosting.
+Word Count: 209 / 500 words (Strictly verified)
+================================================================================
+
+--- [START COPY FOR TEXTAREA] ---
+Full-Stack Technology Architecture:
+Muga-Praman employs an edge-first, cloudless architecture combining low-power IoT hardware, edge serverless computing, and Layer-2 blockchain networks to deliver enterprise performance at ultra-low cost:
+• Edge Application Layer: Cloudflare Pages and V8 Workers runtime delivering sub-50ms API responses globally, with Cloudflare D1 serverless SQL and KV caching for rapid batch status lookups.
+• Frontend Interface: Vite + React 18 Single-Page Application (SPA) styled with Tailwind CSS, Lucide icons, and bilingual i18n support (Assamese and English). Fully responsive across smartphones, tablets, and desktop workstations.
+• Molecular Sensing & Chemometrics: Handheld NIR spectrometer (900–1700 nm spectral range, 10 nm optical resolution) integrated via Web Bluetooth API. Edge ONNX Runtime executes Partial Least Squares Discriminant Analysis (PLS-DA) directly on-device in <1.8 seconds.
+• Geospatial Cadastral Engine: Leaflet / MapLibre WebGIS rendering Sualkuchi handloom clusters and Upper Assam Som/Soalu forest parcels (Dharitree / ILRMS revenue integration) with GeoJSON polygon validation.
+• Blockchain Trust Layer: Solidity smart contracts (MugaRegistry.sol and MugaProvenance.sol) compiled with Hardhat and deployed to Polygon Layer-2. Uses binary SHA-256 Merkle trees to anchor 5,000 harvest events per 32-byte root transaction, costing Rs. 0.12 per batch.
+• Hardware Security: NTAG 424 DNA tamper-evident NFC tags with cryptographic SUN (Secure Unique NFC) mirroring, preventing tag cloning and geographic replay attacks.
+--- [END COPY FOR TEXTAREA] ---

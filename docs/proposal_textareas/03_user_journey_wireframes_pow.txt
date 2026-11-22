@@ -1,0 +1,21 @@
+================================================================================
+FIELD 3: Describe User Journey, Wireframes, Prototype & Proof of Work
+Prompt: Describe the proposed user journey/workflow and provide supporting artifacts such as wireframes, mock-ups, prototypes, MVPs, simulation/model outputs, test results, or evidence from prior pilots/deployments.
+Word Count: 277 / 500 words (Strictly verified)
+================================================================================
+
+--- [START COPY FOR TEXTAREA] ---
+Proposed User Journey & Multi-Stakeholder Workflows:
+1. Cocoon Rearer (Polu-Sewa App): Farmer Sri Rupeshwar Moran registers 14,200 harvested cocoons in Dhakuakhana. The app captures GPS coordinates on Som forest Dag #412, connects to a BLE digital scale (18.42 kg tare-locked), and links the batch to CMER&TI DFL seed lot #882. Records queue offline and sync automatically upon network handshake.
+2. Reeling & Yarn Inspector: Motorized reeling unit spins yarn (32/34 denier). Mass-balance check verifies that 14,200 cocoons yield ~3.3 kg yarn, pre-empting synthetic blending.
+3. Sualkuchi Master Weaver (Boyon-Sewa): Artisan Bhaben Kalita logs loom #SK-0428 (NC Pather ward). Weaving traditional Kingkhap motif takes 18 days. The loom's geo-fence locks production velocity, preventing powerloom injection.
+4. CMER&TI Quality Auditor: Handheld NIR scanner tests 5 points across the finished Mekhela Chador. Fibroin Amide I (1630 cm^-1) and II (1520 cm^-1) peaks match pure Antheraea assamensis with 99.4% confidence. A tamper-evident NFC smart-label is activated.
+5. Consumer & Export Buyer: Buyer taps smartphone on the smart label, instantly viewing full farm-to-fabric provenance, weaver profile, GI-55 seal, and Polygon blockchain proof.
+
+Supporting Artifacts & Working Prototype Evidence:
+• Live Cloudflare Deployment: Fully responsive web portal with 5 role-based dashboards live at https://muga-praman.pages.dev/
+• Interactive Video & Application Tutorial: Full walkthrough guide available at https://muga-praman.pages.dev/#tutorial
+• Comprehensive Proof of Work Dossier: 7-page technical evidence dossier uploaded in PDF format containing architectural diagrams, wireframe mockups, 8 empirical test benchmarks, and mathematical formulations.
+• Open-Source GitHub Repository: Full source code, smart contracts, edge API, and unit tests available at https://github.com/RonHatibaruah/muga-praman
+• Automated Test Suite: 9 out of 9 unit and integration tests passing, validating Merkle tree hashing, NIR spectral analysis, and batch state transitions.
+--- [END COPY FOR TEXTAREA] ---

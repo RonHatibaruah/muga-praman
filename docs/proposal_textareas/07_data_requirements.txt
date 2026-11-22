@@ -1,0 +1,33 @@
+================================================================================
+FIELD 7: Data & information requirements
+Prompt: Specify data/information needed for development and testing, formats, processing/annotation needs, dependencies and assumptions. Do not assume unconfirmed access.
+Word Count: 233 / 500 words (Strictly verified)
+================================================================================
+
+--- [START COPY FOR TEXTAREA] ---
+Data & Information Requirements:
+Development and testing rely on specific empirical datasets spanning spectral physics, sericulture genetics, cadastral land boundaries, and blockchain transactions:
+
+• NIR Spectral Training Library:
+  - Formats: CSV / JCAMP-DX raw reflectance spectra (900–1700 nm, 1 nm pitch).
+  - Sources: CMER&TI Lahdoigarh & NABL textile labs.
+  - Annotation: 1,200 pure and blended samples (Muga, Tussar, Eri, Mulberry, Viscose, Polyester) labeled with ground-truth composition.
+
+• Silkworm Seed Grainage Records:
+  - Formats: JSON / REST API via Govt Seed Station databases.
+  - Sources: CMER&TI and Govt Seed Stations (Lakhimpur).
+  - Annotation: Disease-Free Laying (DFL) batch ID, moth examination results, microsporidia / Pebrine spore screening clearance.
+
+• Cadastral Som/Soalu Forest Parcels:
+  - Formats: GeoJSON / Shapefiles (WGS84 projection).
+  - Sources: Dharitree / ILRMS portal, Assam Revenue Department.
+  - Annotation: Revenue circle, Dag number, Patta number, verified Som plantation acreage, rearer leasehold tenure.
+
+• Sualkuchi Loom & Artisan Registry:
+  - Formats: Tabular CSV / Relational SQL schema.
+  - Sources: Sualkuchi Handloom Weavers Cooperative Societies.
+  - Annotation: Weaver Pehchan card ID, Aadhaar hash, loom serial number, registered ward location, traditional motif certifications.
+
+Data Governance & Dependencies:
+All data models assume privacy-by-design under the Digital Personal Data Protection (DPDP) Act 2023. Rearer and weaver Aadhaar numbers are never stored in plaintext; only salted SHA-256 hashes are used for de-duplicated identity attestation. Open-source GIS datasets (OpenStreetMap, Bhuvan) provide fallback spatial layers if departmental cadastral APIs experience downtime.
+--- [END COPY FOR TEXTAREA] ---

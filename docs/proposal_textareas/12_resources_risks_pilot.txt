@@ -1,0 +1,36 @@
+================================================================================
+FIELD 12: Resources, risks & pilot validation
+Prompt: Provide indicative development/validation resource and cost drivers, key risks and mitigations. Briefly state how the developed solution would subsequently be pilot-validated in the stated context.
+Word Count: 308 / 500 words (Strictly verified)
+================================================================================
+
+--- [START COPY FOR TEXTAREA] ---
+Indicative Budget & Resource Allocation (Rs. 40.0 Lakhs Total Grant):
+The total grant requirement of Rs. 40.0 Lakhs is allocated across five high-leverage cost drivers ensuring engineering rigor and grassroots field validation:
+
+1. Software Development & Engineering Team: Rs. 20,00,000 (50.0%)
+   Technical Scope: Lead System Architect, Mobile PWA Engineer, WebGIS Developer, ML Chemometrics Data Scientist, and Security QA Engineer across the 12-month development and integration sprint.
+
+2. Hardware & Molecular Sensors: Rs. 8,50,000 (21.3%)
+   Technical Scope: 3x Portable Handheld NIR Spectrometers (900–1700 nm) + 10x Bluetooth BLE Digital Scales for seed grainages and optical calibration sets.
+
+3. Field Pilot, Training & Extension: Rs. 5,00,000 (12.5%)
+   Technical Scope: Lakhimpur rearer cooperative onboarding, Sualkuchi master weaver workshops, bilingual Assamese training manuals, extension camps, and community liaison.
+
+4. Smart Tag Inventory (NFC/QR): Rs. 3,50,000 (8.7%)
+   Technical Scope: 40,000x NTAG 424 DNA Cryptographic NFC/QR Sew-in Smart Labels for pilot garments and tamper-evident packaging.
+
+5. Cloud Infrastructure & Contingency: Rs. 3,00,000 (7.5%)
+   Technical Scope: Cloudflare enterprise serverless edge hosting, Polygon Layer-2 gas reserve, third-party smart contract security audit, and emergency contingency reserve.
+
+TOTAL DEVELOPMENT BUDGET: Rs. 40,00,000 (100.0%)
+Total Grant Request for 12-Month Pilot to Statewide Handover.
+
+Key Risks & Mitigation Strategies:
+• Rural Connectivity Gaps in remote forest plantations (Moderate): Polu-Sewa offline-first architecture with encrypted IndexedDB queuing; automatic background sync.
+• Weaver Adoption Resistance among elder artisans (High): Bilingual Assamese/English UI with large tactile touch targets; weaver wage incentives and training workshops.
+• Smart Tag Physical Durability during washing/dry cleaning (Moderate): Waterproof, heat-resistant silicone-encapsulated NFC chips rated for 50+ dry cleaning cycles.
+
+Pilot Validation in Assam Context:
+The solution will be validated across a 90-day pilot trial connecting the Lakhimpur Silkworm Seed Grainage with 100 registered Sualkuchi handlooms, tracing 250,000 cocoons and 5,000 certified handwoven sarees. Success criteria include 100% elimination of unverified yarn mixing and zero false-positive rejections on pure Muga.
+--- [END COPY FOR TEXTAREA] ---
