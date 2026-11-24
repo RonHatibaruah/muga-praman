@@ -15,5 +15,5 @@ SECTION 03: SUPPORTING MATERIAL & ONLINE SUBMISSION LINKS
    Description: Live production deployment on Cloudflare Pages featuring interactive Sericulture Command Center, Sualkuchi Loom WebGIS, Polu-Sewa Rearer PWA, and Citizen Silk Passport.
 
 4. Additional Supporting Material (Optional URL / GitHub Repo):
-   https://github.com/RonHatibaruah/muga-praman
+   https://github.com/serveandsecure/MugaSilk
    Description: Open-source repository containing full source code, Solidity smart contracts, Cloudflare Workers API, test suites, and documentation.

@@ -319,7 +319,7 @@ def build_proposal_pdf():
             Paragraph("<b>App Tutorial & Guide:</b> https://muga-praman.pages.dev/#tutorial", styles['MetaKey'])
         ],
         [
-            Paragraph("<b>GitHub Repo:</b> https://github.com/RonHatibaruah/muga-praman", styles['MetaKey']),
+            Paragraph("<b>GitHub Repo:</b> https://github.com/serveandsecure/MugaSilk", styles['MetaKey']),
             Paragraph("<b>Platform Status:</b> Operational TRL-5 • Active Smart Contracts", styles['MetaKey'])
         ]
     ]
@@ -427,7 +427,7 @@ def build_proposal_pdf():
     story.append(Paragraph("Supporting Artifacts & Working Prototype Evidence", styles['SubSectionHead']))
     story.append(Paragraph("• <b>Live Cloudflare Deployment:</b> Fully responsive web portal with 5 role-based dashboards live at <code>https://muga-praman.pages.dev/</code>.", styles['Bullet']))
     story.append(Paragraph("• <b>Comprehensive Proof of Work Dossier:</b> 7-page technical evidence dossier uploaded alongside this proposal containing architectural diagrams, wireframe mockups, 8 empirical test benchmarks, and mathematical formulations.", styles['Bullet']))
-    story.append(Paragraph("• <b>Open-Source GitHub Repository:</b> Full source code, smart contracts, edge API, and unit tests available at <code>https://github.com/RonHatibaruah/muga-praman</code>.", styles['Bullet']))
+    story.append(Paragraph("• <b>Open-Source GitHub Repository:</b> Full source code, smart contracts, edge API, and unit tests available at <code>https://github.com/serveandsecure/MugaSilk</code>.", styles['Bullet']))
     story.append(Paragraph("• <b>Automated Test Suite:</b> 9 out of 9 unit and integration tests passing, validating Merkle tree hashing, NIR spectral analysis, and batch state transitions.", styles['Bullet']))
 
     story.append(Spacer(1, 3))
@@ -1006,7 +1006,7 @@ def build_pow_pdf():
             Paragraph("<b>App Tutorial & Guide:</b> https://muga-praman.pages.dev/#tutorial", styles['MetaKey'])
         ],
         [
-            Paragraph("<b>GitHub Repo:</b> https://github.com/RonHatibaruah/muga-praman", styles['MetaKey']),
+            Paragraph("<b>GitHub Repo:</b> https://github.com/serveandsecure/MugaSilk", styles['MetaKey']),
             Paragraph("<b>Validation Status:</b> TRL-5 Working Prototype • 9/9 Unit Tests Pass", styles['MetaKey'])
         ]
     ]

@@ -6,7 +6,7 @@
 **Lead Applicant & Innovator:** Ron Hatibaruah  
 **Date:** November 2026  
 **Working Prototype Repositories & URLs:**  
-- **Suggested GitHub Repository:** `muga-praman` ([https://github.com/RonHatibaruah/muga-praman](https://github.com/RonHatibaruah/muga-praman))  
+- **Suggested GitHub Repository:** `muga-praman` ([https://github.com/serveandsecure/MugaSilk](https://github.com/serveandsecure/MugaSilk))  
 - **Web Prototype:** `http://localhost:3000` (Active Live Deployment)  
 - **API Engine:** `http://localhost:4000/api`  
 

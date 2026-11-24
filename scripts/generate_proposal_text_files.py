@@ -73,7 +73,7 @@ Supporting Artifacts & Working Prototype Evidence:
 • Live Cloudflare Deployment: Fully responsive web portal with 5 role-based dashboards live at https://muga-praman.pages.dev/
 • Interactive Video & Application Tutorial: Full walkthrough guide available at https://muga-praman.pages.dev/#tutorial
 • Comprehensive Proof of Work Dossier: 7-page technical evidence dossier uploaded in PDF format containing architectural diagrams, wireframe mockups, 8 empirical test benchmarks, and mathematical formulations.
-• Open-Source GitHub Repository: Full source code, smart contracts, edge API, and unit tests available at https://github.com/RonHatibaruah/muga-praman
+• Open-Source GitHub Repository: Full source code, smart contracts, edge API, and unit tests available at https://github.com/serveandsecure/MugaSilk
 • Automated Test Suite: 9 out of 9 unit and integration tests passing, validating Merkle tree hashing, NIR spectral analysis, and batch state transitions."""
     },
     {
@@ -337,7 +337,7 @@ def main():
         "Total Grant Request: Rs. 40.0 Lakhs (Software Team: Rs. 20.0 Lakhs)",
         "Live Production Platform: https://muga-praman.pages.dev",
         "Interactive Video & Application Tutorial: https://muga-praman.pages.dev/#tutorial",
-        "GitHub Repository: https://github.com/RonHatibaruah/muga-praman",
+        "GitHub Repository: https://github.com/serveandsecure/MugaSilk",
         "Proof of Work PDF: docs/NESFIC_D41_Proof_of_Work_Ron_Hatibaruah.pdf",
         "=" * 80,
         "",
@@ -408,7 +408,7 @@ SECTION 03: SUPPORTING MATERIAL & ONLINE SUBMISSION LINKS
    Description: Live production deployment on Cloudflare Pages featuring interactive Sericulture Command Center, Sualkuchi Loom WebGIS, Polu-Sewa Rearer PWA, and Citizen Silk Passport.
 
 4. Additional Supporting Material (Optional URL / GitHub Repo):
-   https://github.com/RonHatibaruah/muga-praman
+   https://github.com/serveandsecure/MugaSilk
    Description: Open-source repository containing full source code, Solidity smart contracts, Cloudflare Workers API, test suites, and documentation.
 """
     master_lines.append(supporting_content)

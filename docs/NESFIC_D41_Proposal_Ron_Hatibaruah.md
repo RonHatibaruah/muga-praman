@@ -9,7 +9,7 @@
 **Challenge Initiative:** Assam Innovation & Startup Foundation (AISF) & Department of Innovation, Incubation and Startups (DIIS)  
 **Live Production Platform:** [https://muga-praman.pages.dev](https://muga-praman.pages.dev)  
 **Interactive Application Tutorial:** [https://muga-praman.pages.dev/#tutorial](https://muga-praman.pages.dev/#tutorial)  
-**Public GitHub Repository:** [https://github.com/RonHatibaruah/muga-praman](https://github.com/RonHatibaruah/muga-praman)  
+**Public GitHub Repository:** [https://github.com/serveandsecure/MugaSilk](https://github.com/serveandsecure/MugaSilk)  
 
 ---
 
@@ -76,7 +76,7 @@ The Muga-Praman workflow moves through five interconnected stages:
 A fully functional, publicly accessible web prototype has been built and deployed globally on Cloudflare Pages edge infrastructure, backed by a Node.js REST engine and Solidity smart contracts:
 - **Live Public Prototype:** [https://muga-praman.pages.dev](https://muga-praman.pages.dev)
 - **Interactive Application Tutorial:** [https://muga-praman.pages.dev/#tutorial](https://muga-praman.pages.dev/#tutorial)
-- **Public GitHub Repository:** [https://github.com/RonHatibaruah/muga-praman](https://github.com/RonHatibaruah/muga-praman)
+- **Public GitHub Repository:** [https://github.com/serveandsecure/MugaSilk](https://github.com/serveandsecure/MugaSilk)
 
 ### Core Prototype Views Implemented
 1. **Consumer QR Explorer:** Features quick-demo chips for 6 authentic batches across Lakhimpur, Dhemaji, Sivasagar, and Sualkuchi, an interactive chronological timeline, printable Official Provenance Certificate, and GS1 Digital Link sticker generator.
@@ -290,7 +290,7 @@ The platform features an automated unit and integration test suite executing via
 
 #### 3. Empirical Evidence of Progress
 - **Working Production Deployment:** The application is deployed and live at [https://muga-praman.pages.dev](https://muga-praman.pages.dev).
-- **Open-Source Codebase:** All frontend, backend, smart contract, and shared module source code is committed to GitHub at [https://github.com/RonHatibaruah/muga-praman](https://github.com/RonHatibaruah/muga-praman).
+- **Open-Source Codebase:** All frontend, backend, smart contract, and shared module source code is committed to GitHub at [https://github.com/serveandsecure/MugaSilk](https://github.com/serveandsecure/MugaSilk).
 - **Live API Endpoints:** Health check ([https://muga-praman.pages.dev/api/health](https://muga-praman.pages.dev/api/health)) and batch verification ([https://muga-praman.pages.dev/api/verify/QR-MUG26-8894-X82F](https://muga-praman.pages.dev/api/verify/QR-MUG26-8894-X82F)) returning live structured JSON responses.
 - **Interactive Spectrogram Visualization:** Live rendering of optical absorbance curves across Amide I (1650 cm⁻¹), II (1520 cm⁻¹), and III (1235 cm⁻¹) bands.
 - **Pilot Evidence:** Benchmarked against authentic Muga Mekhela Sador samples from Sualkuchi Silk Weaving Cluster and Lakhimpur Som farms, successfully detecting synthetic adulteration without fabric damage.
@@ -388,4 +388,4 @@ Pilot validation will be executed over 6 months across two designated hubs:
 - **Upload Proof of Work / Solution Evidence:** Upload [`docs/NESFIC_D41_Proof_of_Work.md`](file:///Users/kalyan/Downloads/2026/Nov2026/Muga-Silk-Trace-NESFIC-D-41/docs/NESFIC_D41_Proof_of_Work.md) (converted to PDF).
 - **Product / Website URL:** `https://muga-praman.pages.dev`
 - **Interactive Application Tutorial URL:** `https://muga-praman.pages.dev/#tutorial`
-- **Additional Supporting Material (GitHub Repository):** `https://github.com/RonHatibaruah/muga-praman`
+- **Additional Supporting Material (GitHub Repository):** `https://github.com/serveandsecure/MugaSilk`
