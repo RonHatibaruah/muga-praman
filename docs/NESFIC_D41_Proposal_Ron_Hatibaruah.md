@@ -5,7 +5,10 @@
 **Problem Statement ID:** NESFIC-D-41 (Government Track)  
 **Problem Owner:** Department of Handloom, Textiles & Sericulture, Government of Assam  
 **Scientific Partner:** Central Muga Eri Research & Training Institute (CMER&TI), Lahdoigarh, Jorhat  
-**Lead Applicant:** Ron Hatibaruah (ron.hatibaruah@gmail.com)  
+**Lead Applicant:** Anindita Sonowal (serveandsecure@gmail.com)  
+**Company / Organization:** Server and Secure Pvt Ltd  
+**Copyright:** © 2026 Server and Secure Pvt Ltd. All rights reserved.  
+**Disclaimer:** Muga-Praman (NESFIC-D-41) is a technological prototype developed for NESFIC 2026. Models and smart contracts are demonstrative implementations subject to statutory validation.  
 **Challenge Initiative:** Assam Innovation & Startup Foundation (AISF) & Department of Innovation, Incubation and Startups (DIIS)  
 **Live Production Platform:** [https://muga-praman.pages.dev](https://muga-praman.pages.dev)  
 **Interactive Application Tutorial:** [https://muga-praman.pages.dev/#tutorial](https://muga-praman.pages.dev/#tutorial)  
@@ -227,9 +230,9 @@ Muga-Praman requires specific, confirmed scientific, spatial, and administrative
 ### Team Leadership & Technical Structure
 The project is directed by a multidisciplinary team combining deep systems engineering, chemometric spectroscopy expertise, blockchain architecture, and grassroots sericulture domain experience.
 
-#### 1. Principal Innovator & Lead Systems Architect: Ron Hatibaruah
+#### 1. Lead Applicant & Principal Innovator: Anindita Sonowal (Server and Secure Pvt Ltd)
 - **Role:** Overall project governance, technical architecture, and stakeholder alignment.
-- **Expertise:** Full-stack cloud-native systems, cryptographic Merkle tree engines, Edge API infrastructure, and successful track record in the NESFIC innovation ecosystem.
+- **Expertise:** Lead Systems Architect at Server and Secure Pvt Ltd, full-stack cloud-native systems, cryptographic Merkle tree engines, Edge API infrastructure, and successful track record in the NESFIC innovation ecosystem.
 - **Commitment:** 100% Dedicated Full-Time (Months 1–12).
 
 #### 2. Sericulture Chemometrics & Spectroscopy Specialist

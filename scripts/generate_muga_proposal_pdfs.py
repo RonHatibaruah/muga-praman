@@ -17,8 +17,10 @@ from reportlab.platypus import (
 from reportlab.pdfgen import canvas
 
 DOCS_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "docs")
-PROPOSAL_PDF_PATH = os.path.join(DOCS_DIR, "NESFIC_D41_Proposal_Ron_Hatibaruah.pdf")
-POW_PDF_PATH = os.path.join(DOCS_DIR, "NESFIC_D41_Proof_of_Work_Ron_Hatibaruah.pdf")
+PROPOSAL_PDF_PATH = os.path.join(DOCS_DIR, "NESFIC_D41_Proposal_Anindita_Sonowal.pdf")
+POW_PDF_PATH = os.path.join(DOCS_DIR, "NESFIC_D41_Proof_of_Work_Anindita_Sonowal.pdf")
+PROPOSAL_PDF_LEGACY_PATH = os.path.join(DOCS_DIR, "NESFIC_D41_Proposal_Ron_Hatibaruah.pdf")
+POW_PDF_LEGACY_PATH = os.path.join(DOCS_DIR, "NESFIC_D41_Proof_of_Work_Ron_Hatibaruah.pdf")
 
 # Brand Palette: Pure Muga Gold, Sericulture Green, Traditional Maroon, Slate
 C_GOLD_DARK = colors.HexColor("#78350f")    # Rich Amber / Muga Dark Ochre
@@ -57,21 +59,21 @@ class NumberedProposalCanvas(canvas.Canvas):
         self.saveState()
         # Running header on pages 2+
         if self._pageNumber > 1:
-            self.setFont("Helvetica", 8)
+            self.setFont("Helvetica", 7.8)
             self.setFillColor(C_MUTED)
             self.drawString(54, 804, "Government of Assam • Department of Handloom, Textiles & Sericulture • NESFIC-D-41")
-            self.drawRightString(541, 804, "Muga-Praman — Ron Hatibaruah")
+            self.drawRightString(541, 804, "Muga-Praman — Anindita Sonowal (Server and Secure)")
             self.setStrokeColor(colors.HexColor("#e2e8f0"))
             self.setLineWidth(0.5)
             self.line(54, 797, 541, 797)
 
         # Running footer on all pages
-        self.setFont("Helvetica", 8)
+        self.setFont("Helvetica", 7.2)
         self.setFillColor(C_MUTED)
         self.setStrokeColor(colors.HexColor("#e2e8f0"))
         self.setLineWidth(0.5)
         self.line(54, 46, 541, 46)
-        self.drawString(54, 34, "NESFIC 2026 Proposal • Problem NESFIC-D-41 • Applicant: Ron Hatibaruah")
+        self.drawString(54, 34, "NESFIC 2026 Proposal • Problem NESFIC-D-41 • Lead Applicant: Anindita Sonowal • © 2026 Server and Secure Pvt Ltd")
         page_str = f"Page {self._pageNumber} of {page_count}"
         self.drawRightString(541, 34, page_str)
         self.restoreState()
@@ -99,21 +101,21 @@ class NumberedPoWCanvas(canvas.Canvas):
         self.saveState()
         # Running header on pages 2+
         if self._pageNumber > 1:
-            self.setFont("Helvetica", 8)
+            self.setFont("Helvetica", 7.8)
             self.setFillColor(C_MUTED)
             self.drawString(54, 804, "Government of Assam • Department of Handloom, Textiles & Sericulture • NESFIC-D-41")
-            self.drawRightString(541, 804, "Muga-Praman — Ron Hatibaruah")
+            self.drawRightString(541, 804, "Muga-Praman — Anindita Sonowal (Server and Secure)")
             self.setStrokeColor(colors.HexColor("#e2e8f0"))
             self.setLineWidth(0.5)
             self.line(54, 797, 541, 797)
 
         # Running footer on all pages
-        self.setFont("Helvetica", 8)
+        self.setFont("Helvetica", 7.2)
         self.setFillColor(C_MUTED)
         self.setStrokeColor(colors.HexColor("#e2e8f0"))
         self.setLineWidth(0.5)
         self.line(54, 46, 541, 46)
-        self.drawString(54, 34, "NESFIC 2026 Proposal • Problem NESFIC-D-41 • Applicant: Ron Hatibaruah")
+        self.drawString(54, 34, "NESFIC 2026 PoW • Problem NESFIC-D-41 • Lead Applicant: Anindita Sonowal • © 2026 Server and Secure Pvt Ltd")
         page_str = f"Page {self._pageNumber} of {page_count}"
         self.drawRightString(541, 34, page_str)
         self.restoreState()
@@ -311,7 +313,7 @@ def build_proposal_pdf():
             Paragraph("<b>Challenge Owner:</b> Dept of Handloom, Textiles & Sericulture, Assam", styles['MetaKey'])
         ],
         [
-            Paragraph("<b>Lead Applicant:</b> Ron Hatibaruah", styles['MetaKey']),
+            Paragraph("<b>Lead Applicant:</b> Anindita Sonowal (Server and Secure)", styles['MetaKey']),
             Paragraph("<b>Scientific Partner:</b> CMER&TI Lahdoigarh, Jorhat & AISF / DIIS", styles['MetaKey'])
         ],
         [
@@ -660,9 +662,9 @@ def build_proposal_pdf():
     team_data = [
         [Paragraph("Role & Designation", styles['TableHead']), Paragraph("Key Responsibilities", styles['TableHead']), Paragraph("Domain Expertise & Qualifications", styles['TableHead']), Paragraph("Manpower Allocation", styles['TableHead'])],
         [
-            Paragraph("<b>Ron Hatibaruah</b><br/>Lead Applicant & System Architect", styles['TableCellBold']),
+            Paragraph("<b>Anindita Sonowal</b><br/>Lead Applicant & System Architect", styles['TableCellBold']),
             Paragraph("Overall architecture, Cloudflare edge runtime, Solidity smart contracts, Merkle aggregation engine, and security compliance.", styles['TableCell']),
-            Paragraph("Full-Stack & Blockchain Architect; experience in decentralized provenance and government tech.", styles['TableCell']),
+            Paragraph("Lead Systems Architect at Server and Secure Pvt Ltd; experience in decentralized provenance and government tech.", styles['TableCell']),
             Paragraph("100% Full-Time<br/>(Months 1–12)", styles['TableCellBold'])
         ],
         [
@@ -965,8 +967,12 @@ def build_proposal_pdf():
 
     story.append(Paragraph("Pilot Validation in Assam Context", styles['SubSectionHead']))
     story.append(Paragraph("The solution will be validated across a 90-day pilot trial connecting the <b>Lakhimpur Silkworm Seed Grainage</b> with 100 registered <b>Sualkuchi handlooms</b>, tracing 250,000 cocoons and 5,000 certified handwoven sarees. Success criteria include 100% elimination of unverified yarn mixing and zero false-positive rejections on pure Muga.", styles['Body']))
+    story.append(Spacer(1, 6))
+    story.append(Paragraph("<b>Disclaimer & Copyright Notice:</b> Muga-Praman (NESFIC-D-41) is a technological prototype engineered for the North East Seva First Innovation Challenge (NESFIC 2026). All spectral chemometric models, smart contract architectures, and cadastral GIS mapping layers presented herein are working artifacts subject to statutory validation. © 2026 Server and Secure Pvt Ltd. All rights reserved. • Lead Applicant: Anindita Sonowal.", styles['CalloutText']))
 
     doc.build(story, canvasmaker=NumberedProposalCanvas)
+    import shutil
+    shutil.copyfile(PROPOSAL_PDF_PATH, PROPOSAL_PDF_LEGACY_PATH)
     print("Successfully Generated Proposal PDF:", PROPOSAL_PDF_PATH)
 
 
@@ -998,7 +1004,7 @@ def build_pow_pdf():
             Paragraph("<b>Department:</b> Handloom, Textiles & Sericulture, Assam", styles['MetaKey'])
         ],
         [
-            Paragraph("<b>Lead Applicant:</b> Ron Hatibaruah", styles['MetaKey']),
+            Paragraph("<b>Lead Applicant:</b> Anindita Sonowal (Server and Secure)", styles['MetaKey']),
             Paragraph("<b>Scientific Partner:</b> CMER&TI Lahdoigarh & AISF / DIIS", styles['MetaKey'])
         ],
         [
@@ -1305,9 +1311,9 @@ def build_pow_pdf():
         ],
         [
             Paragraph("I hereby certify that the architectural designs, empirical test benchmarks, chemometric data, and working prototype demonstrations presented in this Proof of Work dossier represent bona fide technological innovations engineered specifically for Assam's Muga silk heritage under NESFIC-D-41.<br/><br/>"
-                      "<b>Ron Hatibaruah</b><br/>Lead Applicant & System Architect<br/>Email: ron.hatibaruah@gmail.com", styles['TableCell']),
+                      "<b>Anindita Sonowal</b><br/>Lead Applicant & System Architect<br/>Server and Secure Pvt Ltd<br/>Email: serveandsecure@gmail.com", styles['TableCell']),
             Paragraph("Prepared for submission to the <b>Department of Handloom, Textiles & Sericulture, Government of Assam</b> and <b>Central Muga Eri Research & Training Institute (CMER&TI)</b> under the North East Seva First Innovation Challenge (NESFIC 2026).<br/><br/>"
-                      "<b>Assam Startup (AISF)</b> • Government of Assam<br/>Status: Working Prototype Validated (TRL-5)", styles['TableCell'])
+                      "<b>Server and Secure Pvt Ltd</b> in collaboration with<br/><b>Assam Startup (AISF)</b> • Government of Assam<br/>Status: Working Prototype Validated (TRL-5)", styles['TableCell'])
         ]
     ]
     s_table = Table(sign_data, colWidths=[240, 247])
@@ -1321,8 +1327,12 @@ def build_pow_pdf():
         ('RIGHTPADDING', (0,0), (-1,-1), 8),
     ]))
     story.append(s_table)
+    story.append(Spacer(1, 6))
+    story.append(Paragraph("<b>Disclaimer & Copyright Notice:</b> Muga-Praman (NESFIC-D-41) is a technological prototype engineered for NESFIC 2026. All spectral chemometric models, smart contract architectures, and cadastral GIS mapping layers presented herein are working artifacts subject to statutory validation. © 2026 Server and Secure Pvt Ltd. All rights reserved. • Lead Applicant: Anindita Sonowal.", styles['CalloutText']))
 
     doc.build(story, canvasmaker=NumberedPoWCanvas)
+    import shutil
+    shutil.copyfile(POW_PDF_PATH, POW_PDF_LEGACY_PATH)
     print("Successfully Generated PoW PDF:", POW_PDF_PATH)
 
 

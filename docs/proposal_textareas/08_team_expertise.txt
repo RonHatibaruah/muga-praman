@@ -1,16 +1,16 @@
 ================================================================================
 FIELD 8: Team, manpower & expertise
 Prompt: Identify roles, relevant domain/technical expertise and indicative manpower by development phase. Highlight critical specialist skills.
-Word Count: 283 / 500 words (Strictly verified)
+Word Count: 288 / 500 words (Strictly verified)
 ================================================================================
 
 --- [START COPY FOR TEXTAREA] ---
 Core Technical Team & Domain Expertise:
 The implementation team combines multidisciplinary expertise across blockchain systems, chemometrics, sericulture domain science, and Assam handloom field operations:
 
-1. Ron Hatibaruah (Lead Applicant & System Architect):
+1. Anindita Sonowal (Lead Applicant & System Architect):
    - Responsibilities: Overall architecture, Cloudflare edge runtime, Solidity smart contracts, Merkle aggregation engine, and security compliance.
-   - Qualifications: Full-Stack & Blockchain Architect with experience in decentralized provenance and government tech.
+   - Qualifications: Lead Systems Architect at Server and Secure Pvt Ltd with experience in decentralized provenance and government tech.
    - Manpower: 100% Full-Time (Months 1–12).
 
 2. NIR Chemometrics Specialist (Senior Data Scientist):

@@ -1103,7 +1103,7 @@ function setupAdminGovernance() {
         adminAuthenticated = true;
         if (loginView) loginView.style.display = "none";
         if (authView) authView.style.display = "block";
-        showToast("🏛️ Welcome Dr. Hatibaruah! Sericulture Command Center unlocked.", "success");
+        showToast("🏛️ Welcome Anindita Sonowal! Sericulture Command Center unlocked.", "success");
         renderAdminAnalytics();
         renderAdminGITable();
         renderAdminAlerts();
@@ -1356,11 +1356,14 @@ function setupTutorialModal() {
   const btnClose = document.getElementById("btn-close-tutorial");
   const btnCloseBottom = document.getElementById("btn-close-tutorial-bottom");
   const modal = document.getElementById("tutorial-modal");
+  const triggers = document.querySelectorAll(".tutorial-trigger, #btn-open-tutorial, #footer-tutorial-link");
 
-  if (btnOpen && modal) {
-    btnOpen.addEventListener("click", (e) => {
-      e.preventDefault();
-      modal.classList.add("active");
+  if (modal) {
+    triggers.forEach(t => {
+      t.addEventListener("click", (e) => {
+        e.preventDefault();
+        modal.classList.add("active");
+      });
     });
     [btnClose, btnCloseBottom].forEach(b => b?.addEventListener("click", () => modal.classList.remove("active")));
   }

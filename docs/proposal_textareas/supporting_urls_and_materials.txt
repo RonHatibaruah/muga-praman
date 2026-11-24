@@ -3,8 +3,9 @@ SECTION 03: SUPPORTING MATERIAL & ONLINE SUBMISSION LINKS
 ================================================================================
 
 1. Upload Proof of Work / Solution Evidence (PDF only · Maximum 10 MB):
-   File: docs/NESFIC_D41_Proof_of_Work_Ron_Hatibaruah.pdf
-   Description: 7-Page High-Fidelity Proof of Work Dossier containing 8 empirical benchmark test results, system architecture diagrams, cadastral GIS wireframes, and mathematical formulations.
+   File: docs/NESFIC_D41_Proof_of_Work_Anindita_Sonowal.pdf
+   (Alternate filename: docs/NESFIC_D41_Proof_of_Work_Ron_Hatibaruah.pdf)
+   Description: 7-Page High-Fidelity Proof of Work Dossier by Server and Secure Pvt Ltd (Lead Applicant: Anindita Sonowal) containing 8 empirical benchmark test results, system architecture diagrams, cadastral GIS wireframes, and mathematical formulations.
 
 2. Demo / Product Video URL (Optional):
    https://muga-praman.pages.dev/#tutorial
@@ -17,3 +18,8 @@ SECTION 03: SUPPORTING MATERIAL & ONLINE SUBMISSION LINKS
 4. Additional Supporting Material (Optional URL / GitHub Repo):
    https://github.com/serveandsecure/MugaSilk
    Description: Open-source repository containing full source code, Solidity smart contracts, Cloudflare Workers API, test suites, and documentation.
+
+LEGAL & INTELLECTUAL PROPERTY:
+• Lead Applicant: Anindita Sonowal
+• Copyright: © 2026 Server and Secure Pvt Ltd. All rights reserved.
+• Disclaimer: Muga-Praman (NESFIC-D-41) is a digital provenance and non-destructive molecular authentication platform engineered for NESFIC 2026 under Dept. of Handloom, Textiles & Sericulture, Govt. of Assam, in scientific collaboration with CMER&TI Lahdoigarh. Models and smart contracts are working prototype implementations subject to statutory institutional review.

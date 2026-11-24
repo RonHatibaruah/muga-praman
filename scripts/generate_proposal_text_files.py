@@ -190,9 +190,9 @@ All data models assume privacy-by-design under the Digital Personal Data Protect
         "content": """Core Technical Team & Domain Expertise:
 The implementation team combines multidisciplinary expertise across blockchain systems, chemometrics, sericulture domain science, and Assam handloom field operations:
 
-1. Ron Hatibaruah (Lead Applicant & System Architect):
+1. Anindita Sonowal (Lead Applicant & System Architect):
    - Responsibilities: Overall architecture, Cloudflare edge runtime, Solidity smart contracts, Merkle aggregation engine, and security compliance.
-   - Qualifications: Full-Stack & Blockchain Architect with experience in decentralized provenance and government tech.
+   - Qualifications: Lead Systems Architect at Server and Secure Pvt Ltd with experience in decentralized provenance and government tech.
    - Manpower: 100% Full-Time (Months 1–12).
 
 2. NIR Chemometrics Specialist (Senior Data Scientist):
@@ -333,12 +333,15 @@ def main():
         "NESFIC 2026 PROPOSAL: COPY-PASTE READY TEXTAREA CONTENTS (FIELDS 1 TO 12)",
         "Problem Statement ID: NESFIC-D-41 (Digital Traceability & Non-Destructive Authentication of Muga Silk)",
         "Challenge Owner: Dept. of Handloom, Textiles & Sericulture, Govt. of Assam; CMER&TI Lahdoigarh",
-        "Lead Applicant: Ron Hatibaruah (ron.hatibaruah@gmail.com)",
+        "Lead Applicant: Anindita Sonowal (serveandsecure@gmail.com)",
+        "Organization: Server and Secure Pvt Ltd",
         "Total Grant Request: Rs. 40.0 Lakhs (Software Team: Rs. 20.0 Lakhs)",
         "Live Production Platform: https://muga-praman.pages.dev",
         "Interactive Video & Application Tutorial: https://muga-praman.pages.dev/#tutorial",
         "GitHub Repository: https://github.com/serveandsecure/MugaSilk",
-        "Proof of Work PDF: docs/NESFIC_D41_Proof_of_Work_Ron_Hatibaruah.pdf",
+        "Proof of Work PDF: docs/NESFIC_D41_Proof_of_Work_Anindita_Sonowal.pdf",
+        "Copyright: © 2026 Server and Secure Pvt Ltd. All rights reserved.",
+        "Disclaimer: Prototype developed for NESFIC 2026. Models and contracts subject to statutory validation.",
         "=" * 80,
         "",
         "INSTRUCTIONS FOR ONLINE APPLICATION FORM:",
@@ -396,8 +399,9 @@ SECTION 03: SUPPORTING MATERIAL & ONLINE SUBMISSION LINKS
 ================================================================================
 
 1. Upload Proof of Work / Solution Evidence (PDF only · Maximum 10 MB):
-   File: docs/NESFIC_D41_Proof_of_Work_Ron_Hatibaruah.pdf
-   Description: 7-Page High-Fidelity Proof of Work Dossier containing 8 empirical benchmark test results, system architecture diagrams, cadastral GIS wireframes, and mathematical formulations.
+   File: docs/NESFIC_D41_Proof_of_Work_Anindita_Sonowal.pdf
+   (Alternate filename: docs/NESFIC_D41_Proof_of_Work_Ron_Hatibaruah.pdf)
+   Description: 7-Page High-Fidelity Proof of Work Dossier by Server and Secure Pvt Ltd (Lead Applicant: Anindita Sonowal) containing 8 empirical benchmark test results, system architecture diagrams, cadastral GIS wireframes, and mathematical formulations.
 
 2. Demo / Product Video URL (Optional):
    https://muga-praman.pages.dev/#tutorial
@@ -410,6 +414,11 @@ SECTION 03: SUPPORTING MATERIAL & ONLINE SUBMISSION LINKS
 4. Additional Supporting Material (Optional URL / GitHub Repo):
    https://github.com/serveandsecure/MugaSilk
    Description: Open-source repository containing full source code, Solidity smart contracts, Cloudflare Workers API, test suites, and documentation.
+
+LEGAL & INTELLECTUAL PROPERTY:
+• Lead Applicant: Anindita Sonowal
+• Copyright: © 2026 Server and Secure Pvt Ltd. All rights reserved.
+• Disclaimer: Muga-Praman (NESFIC-D-41) is a digital provenance and non-destructive molecular authentication platform engineered for NESFIC 2026 under Dept. of Handloom, Textiles & Sericulture, Govt. of Assam, in scientific collaboration with CMER&TI Lahdoigarh. Models and smart contracts are working prototype implementations subject to statutory institutional review.
 """
     master_lines.append(supporting_content)
 
