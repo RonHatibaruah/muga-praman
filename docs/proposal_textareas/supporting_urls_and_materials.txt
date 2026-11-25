@@ -8,11 +8,11 @@ SECTION 03: SUPPORTING MATERIAL & ONLINE SUBMISSION LINKS
    Description: 7-Page High-Fidelity Proof of Work Dossier by Server and Secure Pvt Ltd (Lead Applicant: Anindita Sonowal) containing 8 empirical benchmark test results, system architecture diagrams, cadastral GIS wireframes, and mathematical formulations.
 
 2. Demo / Product Video URL (Optional):
-   https://muga-praman.pages.dev/#tutorial
+   https://mugatrack.sascol.com#tutorial
    Description: Interactive step-by-step walkthrough and tutorial modal demonstrating the complete farm-to-fabric workflow across all 5 stakeholder portals.
 
 3. Product / Website URL (Optional):
-   https://muga-praman.pages.dev
+   https://mugatrack.sascol.com
    Description: Live production deployment on Cloudflare Pages featuring interactive Sericulture Command Center, Sualkuchi Loom WebGIS, Polu-Sewa Rearer PWA, and Citizen Silk Passport.
 
 4. Additional Supporting Material (Optional URL / GitHub Repo):

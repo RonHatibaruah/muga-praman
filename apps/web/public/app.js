@@ -834,7 +834,7 @@ function renderPackagingStamp(b) {
       </div>
       <div style="font-size: 0.75rem; color: #64748b;">
         Scan to view complete farmer, reeling, loom, and CMER&TI spectral test history.<br>
-        https://muga-trace.assam.gov.in/verify/${b.id}
+        https://mugatrack.sascol.com/verify/${b.id}
       </div>
     </div>
   `;

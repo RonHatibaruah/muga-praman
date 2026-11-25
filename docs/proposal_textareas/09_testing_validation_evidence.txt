@@ -14,8 +14,8 @@ Muga-Praman incorporates a multi-tier testing framework ensuring mathematical ac
 • Tamper-Evident NFC Security: NTAG 424 DNA tags validated against cloning attacks using dynamic AES-128 cryptographic SUN (Secure Unique NFC) mirroring. Each physical tap produces an unpredictable single-use token verified by the backend.
 
 Evidence of Prior Progress & Working Prototypes:
-• Working MVP deployed live to Cloudflare Pages at https://muga-praman.pages.dev/ with role-based portals for Directorate Admin, Sualkuchi Weavers, Cocoon Rearers, CMER&TI Auditors, and Consumers.
-• Interactive Tutorial and Walkthrough modal live at https://muga-praman.pages.dev/#tutorial
+• Working MVP deployed live to Cloudflare Pages at https://mugatrack.sascol.com/ with role-based portals for Directorate Admin, Sualkuchi Weavers, Cocoon Rearers, CMER&TI Auditors, and Consumers.
+• Interactive Tutorial and Walkthrough modal live at https://mugatrack.sascol.com#tutorial
 • Comprehensive 7-page Proof of Work Dossier with 8 empirical test benchmarks (TC-01 through TC-08) covering Merkle verification, denier consistency, and spectral peak ratio analyses.
 • Prior research references: CMER&TI annual reports on Muga fibroin secondary structure and published spectroscopic studies on Antheraea assamensis beta-sheet crystallization.
 --- [END COPY FOR TEXTAREA] ---

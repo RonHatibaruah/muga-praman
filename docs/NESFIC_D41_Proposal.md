@@ -3,7 +3,9 @@
 **Challenge Track:** Government Track (Dept. of Handloom, Textiles & Sericulture)  
 **Problem Statement Title:** Digital Traceability and Non-Destructive Authentication of Muga Silk and Apparel from Cocoon to Consumer  
 **Project Title:** Muga-Praman (মুগা-প্ৰমাণ): AI & Spectroscopic Traceability Engine for Assam Muga Silk  
-**Principal Innovator:** Ron Hatibaruah  
+**Lead Applicant:** Anindita Sonowal (Server and Secure Pvt Ltd)  
+**Live Production Prototype:** [https://mugatrack.sascol.com](https://mugatrack.sascol.com)  
+**Interactive Application Tutorial:** [https://mugatrack.sascol.com#tutorial](https://mugatrack.sascol.com#tutorial)  
 **Target Beneficiaries:** 50,000+ Sericulture Rearers, 25,000+ Sualkuchi Master Weavers, Handloom Co-Operatives, and Global Luxury Silk Buyers  
 
 ---

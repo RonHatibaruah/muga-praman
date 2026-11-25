@@ -34,7 +34,7 @@ BG_LIGHT = "#f8fafc"
 CARD_LIGHT = "#ffffff"
 BORDER_LIGHT = "#cbd5e1"
 
-def draw_browser_chrome(ax, title, url="https://muga-praman.pages.dev"):
+def draw_browser_chrome(ax, title, url="https://mugatrack.sascol.com"):
     # Window chrome bar
     rect_bar = patches.Rectangle((0, 0.93), 1, 0.07, transform=ax.transAxes, facecolor="#121d28", edgecolor=None, zorder=10)
     ax.add_patch(rect_bar)

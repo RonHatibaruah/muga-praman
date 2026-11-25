@@ -3,12 +3,12 @@
 **Initiative:** North East Seva First Innovation Challenge (NESFIC) 2026  
 **Problem Owner:** Department of Handloom, Textiles & Sericulture, Government of Assam  
 **Scientific Partner:** Central Muga Eri Research & Training Institute (CMER&TI), Lahdoigarh, Jorhat  
-**Lead Applicant & Innovator:** Ron Hatibaruah  
+**Lead Applicant & Innovator:** Anindita Sonowal (Server and Secure Pvt Ltd)  
 **Date:** November 2026  
 **Working Prototype Repositories & URLs:**  
-- **Suggested GitHub Repository:** `muga-praman` ([https://github.com/serveandsecure/MugaSilk](https://github.com/serveandsecure/MugaSilk))  
-- **Web Prototype:** `http://localhost:3000` (Active Live Deployment)  
-- **API Engine:** `http://localhost:4000/api`  
+- **Live Production Prototype:** [https://mugatrack.sascol.com](https://mugatrack.sascol.com)  
+- **App Tutorial & Guide:** [https://mugatrack.sascol.com#tutorial](https://mugatrack.sascol.com#tutorial)  
+- **GitHub Repository:** [https://github.com/serveandsecure/MugaSilk](https://github.com/serveandsecure/MugaSilk)  
 
 ---
 

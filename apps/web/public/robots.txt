@@ -9,4 +9,4 @@ Disallow: /api/admin/
 Disallow: /functions/
 
 # Geographic and Search Engine Sitemaps
-Sitemap: https://muga-trace.assam.gov.in/sitemap.xml
+Sitemap: https://mugatrack.sascol.com/sitemap.xml

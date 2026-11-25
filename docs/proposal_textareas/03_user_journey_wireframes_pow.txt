@@ -13,8 +13,8 @@ Proposed User Journey & Multi-Stakeholder Workflows:
 5. Consumer & Export Buyer: Buyer taps smartphone on the smart label, instantly viewing full farm-to-fabric provenance, weaver profile, GI-55 seal, and Polygon blockchain proof.
 
 Supporting Artifacts & Working Prototype Evidence:
-• Live Cloudflare Deployment: Fully responsive web portal with 5 role-based dashboards live at https://muga-praman.pages.dev/
-• Interactive Video & Application Tutorial: Full walkthrough guide available at https://muga-praman.pages.dev/#tutorial
+• Live Cloudflare Deployment: Fully responsive web portal with 5 role-based dashboards live at https://mugatrack.sascol.com/
+• Interactive Video & Application Tutorial: Full walkthrough guide available at https://mugatrack.sascol.com#tutorial
 • Comprehensive Proof of Work Dossier: 7-page technical evidence dossier uploaded in PDF format containing architectural diagrams, wireframe mockups, 8 empirical test benchmarks, and mathematical formulations.
 • Open-Source GitHub Repository: Full source code, smart contracts, edge API, and unit tests available at https://github.com/serveandsecure/MugaSilk
 • Automated Test Suite: 9 out of 9 unit and integration tests passing, validating Merkle tree hashing, NIR spectral analysis, and batch state transitions.

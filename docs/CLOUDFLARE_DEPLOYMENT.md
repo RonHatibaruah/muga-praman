@@ -14,8 +14,8 @@ The application is completely configured and optimized for zero-cost, high-speed
    npx wrangler pages deploy apps/web/public --project-name=muga-praman
    ```
 2. Follow the terminal prompt to log into your Cloudflare account (if not already authenticated).
-3. Cloudflare will publish the site and provide a permanent global live URL:
-   `https://muga-praman.pages.dev`
+3. Cloudflare will publish the site and provide a permanent global live URL / custom domain:
+   `https://mugatrack.sascol.com` (Cloudflare Pages fallback: `https://muga-praman.pages.dev`)
 
 ---
 

@@ -317,8 +317,8 @@ def build_proposal_pdf():
             Paragraph("<b>Scientific Partner:</b> CMER&TI Lahdoigarh, Jorhat & AISF / DIIS", styles['MetaKey'])
         ],
         [
-            Paragraph("<b>Live Prototype:</b> https://muga-praman.pages.dev/", styles['MetaKey']),
-            Paragraph("<b>App Tutorial & Guide:</b> https://muga-praman.pages.dev/#tutorial", styles['MetaKey'])
+            Paragraph("<b>Live Prototype:</b> https://mugatrack.sascol.com", styles['MetaKey']),
+            Paragraph("<b>App Tutorial & Guide:</b> https://mugatrack.sascol.com#tutorial", styles['MetaKey'])
         ],
         [
             Paragraph("<b>GitHub Repo:</b> https://github.com/serveandsecure/MugaSilk", styles['MetaKey']),
@@ -427,7 +427,7 @@ def build_proposal_pdf():
     story.append(Paragraph("5. <b>Consumer & Export Buyer:</b> Buyer taps smartphone on the smart label, instantly viewing full farm-to-fabric provenance, weaver profile, GI-55 seal, and Polygon blockchain proof.", styles['Bullet']))
 
     story.append(Paragraph("Supporting Artifacts & Working Prototype Evidence", styles['SubSectionHead']))
-    story.append(Paragraph("• <b>Live Cloudflare Deployment:</b> Fully responsive web portal with 5 role-based dashboards live at <code>https://muga-praman.pages.dev/</code>.", styles['Bullet']))
+    story.append(Paragraph("• <b>Live Cloudflare Deployment:</b> Fully responsive web portal with 5 role-based dashboards live at <code>https://mugatrack.sascol.com/</code>.", styles['Bullet']))
     story.append(Paragraph("• <b>Comprehensive Proof of Work Dossier:</b> 7-page technical evidence dossier uploaded alongside this proposal containing architectural diagrams, wireframe mockups, 8 empirical test benchmarks, and mathematical formulations.", styles['Bullet']))
     story.append(Paragraph("• <b>Open-Source GitHub Repository:</b> Full source code, smart contracts, edge API, and unit tests available at <code>https://github.com/serveandsecure/MugaSilk</code>.", styles['Bullet']))
     story.append(Paragraph("• <b>Automated Test Suite:</b> 9 out of 9 unit and integration tests passing, validating Merkle tree hashing, NIR spectral analysis, and batch state transitions.", styles['Bullet']))
@@ -1008,8 +1008,8 @@ def build_pow_pdf():
             Paragraph("<b>Scientific Partner:</b> CMER&TI Lahdoigarh & AISF / DIIS", styles['MetaKey'])
         ],
         [
-            Paragraph("<b>Live Prototype:</b> https://muga-praman.pages.dev/", styles['MetaKey']),
-            Paragraph("<b>App Tutorial & Guide:</b> https://muga-praman.pages.dev/#tutorial", styles['MetaKey'])
+            Paragraph("<b>Live Prototype:</b> https://mugatrack.sascol.com", styles['MetaKey']),
+            Paragraph("<b>App Tutorial & Guide:</b> https://mugatrack.sascol.com#tutorial", styles['MetaKey'])
         ],
         [
             Paragraph("<b>GitHub Repo:</b> https://github.com/serveandsecure/MugaSilk", styles['MetaKey']),
@@ -1064,7 +1064,7 @@ def build_pow_pdf():
         [
             Paragraph("<b>Live Edge Deployment</b>", styles['TableCellBold']),
             Paragraph("Cloudflare Pages + V8 Workers global edge deployment with sub-50ms API latency.", styles['TableCell']),
-            Paragraph("Live at https://muga-praman.pages.dev/ with HTTP 200 health.", styles['TableCell'])
+            Paragraph("Live at https://mugatrack.sascol.com/ with HTTP 200 health.", styles['TableCell'])
         ]
     ]
     trl_table = Table(trl_data, colWidths=[120, 240, 127])
@@ -1100,7 +1100,7 @@ def build_pow_pdf():
     # PAGE 3: Section 3: Wireframes 2 & 3
     # =========================================================================
     story.append(Paragraph("3. Wireframes & User Interface Evidence", styles['FieldHeading']))
-    story.append(Paragraph("The following wireframe diagrams reflect the live, working user interfaces rendered by the deployed web application at <code>https://muga-praman.pages.dev/</code>:", styles['Body']))
+    story.append(Paragraph("The following wireframe diagrams reflect the live, working user interfaces rendered by the deployed web application at <code>https://mugatrack.sascol.com/</code>:", styles['Body']))
     story.append(Spacer(1, 2))
 
     story.append(Paragraph("<b>Wireframe 2: Sualkuchi Artisan Handloom WebGIS & Plantation Cadastral Explorer</b>", styles['SubSectionHead']))

@@ -5,35 +5,35 @@
 
   <!-- Core Portal -->
   <url>
-    <loc>https://muga-trace.assam.gov.in/</loc>
+    <loc>https://mugatrack.sascol.com/</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="as-IN" href="https://muga-trace.assam.gov.in/?lang=as" />
-    <xhtml:link rel="alternate" hreflang="en-IN" href="https://muga-trace.assam.gov.in/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="as-IN" href="https://mugatrack.sascol.com/?lang=as" />
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://mugatrack.sascol.com/?lang=en" />
   </url>
 
   <!-- Geographical Indication (GI) Verification Deep Links -->
   <url>
-    <loc>https://muga-trace.assam.gov.in/verify/MUG-2026-MS-001</loc>
+    <loc>https://mugatrack.sascol.com/verify/MUG-2026-MS-001</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://muga-trace.assam.gov.in/verify/MUG-2026-SAR-002</loc>
+    <loc>https://mugatrack.sascol.com/verify/MUG-2026-SAR-002</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://muga-trace.assam.gov.in/verify/MUG-2026-YRN-003</loc>
+    <loc>https://mugatrack.sascol.com/verify/MUG-2026-YRN-003</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://muga-trace.assam.gov.in/verify/MUG-2026-RIH-005</loc>
+    <loc>https://mugatrack.sascol.com/verify/MUG-2026-RIH-005</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -41,25 +41,25 @@
 
   <!-- Geographic Clusters & Sericulture Regions -->
   <url>
-    <loc>https://muga-trace.assam.gov.in/clusters/kamrup-sualkuchi-weaving</loc>
+    <loc>https://mugatrack.sascol.com/clusters/kamrup-sualkuchi-weaving</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://muga-trace.assam.gov.in/clusters/lakhimpur-dhakuakhana-rearing</loc>
+    <loc>https://mugatrack.sascol.com/clusters/lakhimpur-dhakuakhana-rearing</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://muga-trace.assam.gov.in/clusters/dhemaji-som-plantations</loc>
+    <loc>https://mugatrack.sascol.com/clusters/dhemaji-som-plantations</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://muga-trace.assam.gov.in/clusters/sivasagar-sericulture-farms</loc>
+    <loc>https://mugatrack.sascol.com/clusters/sivasagar-sericulture-farms</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -67,13 +67,13 @@
 
   <!-- Legal & Laboratory Specifications -->
   <url>
-    <loc>https://muga-trace.assam.gov.in/cert/gi-38-assam-muga-silk</loc>
+    <loc>https://mugatrack.sascol.com/cert/gi-38-assam-muga-silk</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://muga-trace.assam.gov.in/auth/cmer-ti-spectral-lab</loc>
+    <loc>https://mugatrack.sascol.com/auth/cmer-ti-spectral-lab</loc>
     <lastmod>2026-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

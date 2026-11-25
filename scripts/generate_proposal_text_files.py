@@ -70,8 +70,8 @@ User Interaction & Paradigm Shift:
 5. Consumer & Export Buyer: Buyer taps smartphone on the smart label, instantly viewing full farm-to-fabric provenance, weaver profile, GI-55 seal, and Polygon blockchain proof.
 
 Supporting Artifacts & Working Prototype Evidence:
-• Live Cloudflare Deployment: Fully responsive web portal with 5 role-based dashboards live at https://muga-praman.pages.dev/
-• Interactive Video & Application Tutorial: Full walkthrough guide available at https://muga-praman.pages.dev/#tutorial
+• Live Cloudflare Deployment: Fully responsive web portal with 5 role-based dashboards live at https://mugatrack.sascol.com/
+• Interactive Video & Application Tutorial: Full walkthrough guide available at https://mugatrack.sascol.com#tutorial
 • Comprehensive Proof of Work Dossier: 7-page technical evidence dossier uploaded in PDF format containing architectural diagrams, wireframe mockups, 8 empirical test benchmarks, and mathematical formulations.
 • Open-Source GitHub Repository: Full source code, smart contracts, edge API, and unit tests available at https://github.com/serveandsecure/MugaSilk
 • Automated Test Suite: 9 out of 9 unit and integration tests passing, validating Merkle tree hashing, NIR spectral analysis, and batch state transitions."""
@@ -232,8 +232,8 @@ Muga-Praman incorporates a multi-tier testing framework ensuring mathematical ac
 • Tamper-Evident NFC Security: NTAG 424 DNA tags validated against cloning attacks using dynamic AES-128 cryptographic SUN (Secure Unique NFC) mirroring. Each physical tap produces an unpredictable single-use token verified by the backend.
 
 Evidence of Prior Progress & Working Prototypes:
-• Working MVP deployed live to Cloudflare Pages at https://muga-praman.pages.dev/ with role-based portals for Directorate Admin, Sualkuchi Weavers, Cocoon Rearers, CMER&TI Auditors, and Consumers.
-• Interactive Tutorial and Walkthrough modal live at https://muga-praman.pages.dev/#tutorial
+• Working MVP deployed live to Cloudflare Pages at https://mugatrack.sascol.com/ with role-based portals for Directorate Admin, Sualkuchi Weavers, Cocoon Rearers, CMER&TI Auditors, and Consumers.
+• Interactive Tutorial and Walkthrough modal live at https://mugatrack.sascol.com#tutorial
 • Comprehensive 7-page Proof of Work Dossier with 8 empirical test benchmarks (TC-01 through TC-08) covering Merkle verification, denier consistency, and spectral peak ratio analyses.
 • Prior research references: CMER&TI annual reports on Muga fibroin secondary structure and published spectroscopic studies on Antheraea assamensis beta-sheet crystallization."""
     },
@@ -336,8 +336,8 @@ def main():
         "Lead Applicant: Anindita Sonowal (serveandsecure@gmail.com)",
         "Organization: Server and Secure Pvt Ltd",
         "Total Grant Request: Rs. 40.0 Lakhs (Software Team: Rs. 20.0 Lakhs)",
-        "Live Production Platform: https://muga-praman.pages.dev",
-        "Interactive Video & Application Tutorial: https://muga-praman.pages.dev/#tutorial",
+        "Live Production Platform: https://mugatrack.sascol.com",
+        "Interactive Video & Application Tutorial: https://mugatrack.sascol.com#tutorial",
         "GitHub Repository: https://github.com/serveandsecure/MugaSilk",
         "Proof of Work PDF: docs/NESFIC_D41_Proof_of_Work_Anindita_Sonowal.pdf",
         "Copyright: © 2026 Server and Secure Pvt Ltd. All rights reserved.",
@@ -404,11 +404,11 @@ SECTION 03: SUPPORTING MATERIAL & ONLINE SUBMISSION LINKS
    Description: 7-Page High-Fidelity Proof of Work Dossier by Server and Secure Pvt Ltd (Lead Applicant: Anindita Sonowal) containing 8 empirical benchmark test results, system architecture diagrams, cadastral GIS wireframes, and mathematical formulations.
 
 2. Demo / Product Video URL (Optional):
-   https://muga-praman.pages.dev/#tutorial
+   https://mugatrack.sascol.com#tutorial
    Description: Interactive step-by-step walkthrough and tutorial modal demonstrating the complete farm-to-fabric workflow across all 5 stakeholder portals.
 
 3. Product / Website URL (Optional):
-   https://muga-praman.pages.dev
+   https://mugatrack.sascol.com
    Description: Live production deployment on Cloudflare Pages featuring interactive Sericulture Command Center, Sualkuchi Loom WebGIS, Polu-Sewa Rearer PWA, and Citizen Silk Passport.
 
 4. Additional Supporting Material (Optional URL / GitHub Repo):
